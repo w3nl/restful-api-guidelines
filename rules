@@ -1,0 +1,112 @@
+{
+  "rules": [
+    {
+      "id": "#106",
+      "title": "MUST not break backward compatibility"
+    },
+    {
+      "id": "#107",
+      "title": "SHOULD prefer compatible extensions"
+    },
+    {
+      "id": "#108",
+      "title": "MUST prepare clients accept compatible API extensions"
+    },
+    {
+      "id": "#109",
+      "title": "SHOULD design APIs conservatively"
+    },
+    {
+      "id": "#110",
+      "title": "MUST always return JSON objects as top-level data structures"
+    },
+    {
+      "id": "#111",
+      "title": "MUST treat Open API specification as open for extension by default"
+    },
+    {
+      "id": "#112",
+      "title": "SHOULD used open-ended list of values (`x-extensible-enum`) for enumerations"
+    },
+    {
+      "id": "#113",
+      "title": "SHOULD avoid versioning"
+    },
+    {
+      "id": "#114",
+      "title": "MUST use media type versioning"
+    },
+    {
+      "id": "#115",
+      "title": "MUST not use URI versioning"
+    },
+    {
+      "id": "#133",
+      "title": "MAY use standardized headers"
+    },
+    {
+      "id": "#167",
+      "title": "MUST use JSON to encode structured data"
+    },
+    {
+      "id": "#168",
+      "title": "MAY use non JSON media types for binary data or alternative content representations"
+    },
+    {
+      "id": "#169",
+      "title": "MUST use standard date and time formats"
+    },
+    {
+      "id": "#172",
+      "title": "SHOULD prefer standard media type name `application/json`"
+    },
+    {
+      "id": "#173",
+      "title": "MUST use the common money object"
+    },
+    {
+      "id": "#174",
+      "title": "MUST use common field names and semantics"
+    },
+    {
+      "id": "#178",
+      "title": "MUST use `Content-*` headers correctly"
+    },
+    {
+      "id": "#179",
+      "title": "MAY use `Content-Location` header"
+    },
+    {
+      "id": "#180",
+      "title": "SHOULD use `Location` header instead of `Content-Location` header"
+    },
+    {
+      "id": "#181",
+      "title": "MAY consider to support `Prefer` header to handle processing preferences"
+    },
+    {
+      "id": "#182",
+      "title": "MAY consider to support `ETag` together with `If-Match`/`If-None-Match` header"
+    },
+    {
+      "id": "#192",
+      "title": "MUST publish Open API specification"
+    },
+    {
+      "id": "#193",
+      "title": "SHOULD monitor API usage"
+    },
+    {
+      "id": "#230",
+      "title": "MAY consider to support `Idempotency-Key` header"
+    },
+    {
+      "id": "#238",
+      "title": "SHOULD use standardized property formats"
+    },
+    {
+      "id": "#239",
+      "title": "SHOULD encode embedded binary data in `base64url`"
+    }
+  ]
+}
