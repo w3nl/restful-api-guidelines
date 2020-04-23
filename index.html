@@ -5,9 +5,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.10">
-<meta name="keywords" content="Pon, Guidelines, RESTful, API, Events, Schema">
+<meta name="keywords" content="Pon, Guidelines, Development, API, Events, Schema">
 <meta name="copyright" content="CC-BY-SA 4.0">
-<title>Pon Integration Guidlines</title>
+<title>Pon Integration and Development Guidelines</title>
 <style>
 /*! normalize.css v2.1.2 | MIT License | git.io/normalize */
 /* ========================================================================== HTML5 display definitions ========================================================================== */
@@ -1299,11 +1299,8 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_pon_integration_guidlines"><a class="link" href="#_pon_integration_guidlines">Pon Integration Guidlines</a></h2>
+<h2 id="_pon_integration_and_development_guidelines"><a class="link" href="#_pon_integration_and_development_guidelines">Pon Integration and Development Guidelines</a></h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>Pon</p>
-</div>
 <div class="imageblock">
 <div class="content">
 <img src="assets/pon-logo.png" alt="Pon Logo">
@@ -1315,7 +1312,7 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <div id="toc" class="toc">
 <div id="toctitle" class="title">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_pon_integration_guidlines">Pon Integration Guidlines</a></li>
+<li><a href="#_pon_integration_and_development_guidelines">Pon Integration and Development Guidelines</a></li>
 <li><a href="#introduction">1. Introduction</a>
 <ul class="sectlevel2">
 <li><a href="#conventions-used-in-these-guidelines">1.1. Conventions used in these guidelines</a></li>
@@ -1392,6 +1389,7 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <li><a href="#pon-development-introduction">3.1.1. Introduction</a></li>
 <li><a href="#244">3.1.2. Coding rule: logical structured code</a></li>
 <li><a href="#245">3.1.3. Coding rule: code is self explanatory</a></li>
+<li><a href="#246">3.1.4. Coding rule: solution design steps are template based</a></li>
 </ul>
 </li>
 <li><a href="#file-structure-and-naming">3.2. File structure and naming</a>
@@ -1449,8 +1447,8 @@ interpreted as described in <a href="https://www.ietf.org/rfc/rfc2119.txt">RFC
 <div class="sect2">
 <h3 id="pon-specific-information"><a class="link" href="#pon-specific-information">1.2. Pon specific information</a></h3>
 <div class="paragraph">
-<p>The purpose of our "RESTful API guidelines" is to define standards to
-successfully establish "consistent API look and feel" quality. The integration
+<p>The purpose of these guidelines is to define standards to successfully establish
+"consistent integration and development look and feel" quality. The integration
 guild drafted and owns this document. Teams are responsible to fulfill these
 guidelines during API development and are encouraged to contribute to guideline
 evolution via pull requests.</p>
@@ -2685,7 +2683,7 @@ business impact of the application
 </table>
 </div>
 <div class="paragraph">
-<p>The following chapters will further explain the ißntrications of this rule.</p>
+<p>The following chapters will further explain the intrications of this rule.</p>
 </div>
 </div>
 <div class="sect3">
@@ -2729,6 +2727,12 @@ easy to find code to be updated.</p>
 <div class="paragraph">
 <p>All code is sufficiently documented in order to reduce the effort<sup><a href="#244">244</a></sup>
 required for updates and changes</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="246"><a class="link" href="#246">3.1.4. Coding rule: solution design steps are template based</a></h4>
+<div class="paragraph">
+<p>Refers to “<em>taking into account the lifetime, security and business impact</em>”.</p>
 </div>
 </div>
 </div>
@@ -2790,7 +2794,7 @@ var title = document.createElement('div');
 title.id = 'toctitle';
 
 var link = document.createElement('a');
-link.innerText = 'API Guidelines';
+link.innerText = 'Integration / Development Guidelines';
 link.href = '#';
 
 title.append(link);
@@ -2860,7 +2864,7 @@ window.cookieconsent.initialise({
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-23 15:10:43 UTC
+Last updated 2020-04-23 15:21:39 UTC
 </div>
 </div>
 <style>

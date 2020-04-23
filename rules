@@ -539,6 +539,10 @@
     {
       "id": "#245",
       "title": "== Coding rule: code is self explanatory"
+    },
+    {
+      "id": "#246",
+      "title": "== Coding rule: solution design steps are template based"
     }
   ]
 }
