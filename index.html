@@ -1398,6 +1398,8 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <li><a href="#243">3.2.2. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> filenames are either CamelCase or snake_case</a></li>
 </ul>
 </li>
+<li><a href="#version-control">3.3. Version control</a></li>
+<li><a href="#software-testing">3.4. Testing code</a></li>
 </ul>
 </li>
 </ul>
@@ -2641,10 +2643,7 @@ the deprecation info (see hint in <a href="#189"><span class="should-keyword"><s
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="development-guidelines"><a class="link" href="#development-guidelines">3.1. General development guidelines</a></h3>
-<div class="paragraph">
-<p>[[heinlein-quote] ]</p>
-</div>
-<div class="quoteblock">
+<div id="heinlein-quote" class="quoteblock">
 <blockquote>
 <div class="paragraph">
 <p>Progress is made by lazy men looking for easier ways to do things.</p>
@@ -2677,13 +2676,18 @@ How much effort is required<sup><a href="#244">244</a></sup> for another develop
 compare experience to pick up where the previous developer left off to fix,
 enhance or build upon the source code - without involving the previous
 developer<sup><a href="#245">245</a></sup> and taking into account the lifetime, security and
-business impact of the application
+business impact of the application.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>The following chapters will further explain the intrications of this rule.</p>
+<p>There is a clear relationship betwee the amount of bugs in the code and the
+development effort required, needlessly complex unlogical code will in itself be
+a source of new bugs.</p>
+</div>
+<div class="paragraph">
+<p>The following chapters will further explain the intricacies of this rule.</p>
 </div>
 </div>
 <div class="sect3">
@@ -2718,6 +2722,28 @@ easy to find code to be updated.</p>
 </tr>
 </table>
 </div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="title">Once and only once / don&#8217;t repeat yourself (DRY)</div>
+<div class="paragraph">
+<p>The once and only once rule is one of the most fundamental principles of
+software development, it can be seen as a hallmark of good and clean code and
+will greatly reduce developer effort when applied corretly. But it is not the
+goal of software development; the goal is resolving challenges of the business
+under their conditions.</p>
+</div>
+<div class="paragraph">
+<p>DRY code is good, but it is always a choice.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 </div>
 <div class="sect3">
 <h4 id="245"><a class="link" href="#245">3.1.3. Coding rule: code is self explanatory</a></h4>
@@ -2733,6 +2759,23 @@ required for updates and changes</p>
 <h4 id="246"><a class="link" href="#246">3.1.4. Coding rule: solution design steps are template based</a></h4>
 <div class="paragraph">
 <p>Refers to “<em>taking into account the lifetime, security and business impact</em>”.</p>
+</div>
+<div class="paragraph">
+<p>Solution design comes first, coding second. The solution design must address the
+following</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Software lifetime</p>
+</li>
+<li>
+<p>Required security</p>
+</li>
+<li>
+<p>Business impact</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -2760,6 +2803,14 @@ at least the following</p>
 <div class="paragraph">
 <p>Filenames</p>
 </div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="version-control"><a class="link" href="#version-control">3.3. Version control</a></h3>
+
+</div>
+<div class="sect2">
+<h3 id="software-testing"><a class="link" href="#software-testing">3.4. Testing code</a></h3>
 <!-- Adds rule id as a postfix to all rule titles -->
 <script>
 var ruleIdRegEx = /(\d)+/;
@@ -2855,7 +2906,6 @@ window.cookieconsent.initialise({
 </div>
 </div>
 </div>
-</div>
 <div id="footnotes">
 <hr>
 <div class="footnote" id="_footnotedef_1">
@@ -2864,7 +2914,7 @@ window.cookieconsent.initialise({
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-23 15:21:39 UTC
+Last updated 2020-04-23 15:39:12 UTC
 </div>
 </div>
 <style>
