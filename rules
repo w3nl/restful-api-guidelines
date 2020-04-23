@@ -1,48 +1,248 @@
 {
   "rules": [
     {
+      "id": "#100",
+      "title": "STATUS-RFPMUST follow API first principle"
+    },
+    {
+      "id": "#101",
+      "title": "STATUS-RFPMUST provide API specification"
+    },
+    {
+      "id": "#102",
+      "title": "STATUS-RFPMAY provide API user manual"
+    },
+    {
+      "id": "#103",
+      "title": "STATUS-RFPMUST write APIs using U.S. English"
+    },
+    {
+      "id": "#104",
+      "title": "STATUS-RFPMUST secure endpoints"
+    },
+    {
+      "id": "#105",
+      "title": "STATUS-RFPSHOULD define and assign permissions (scopes)"
+    },
+    {
       "id": "#106",
-      "title": "MUST not break backward compatibility"
+      "title": "STATUS-RFPMUST not break backward compatibility"
     },
     {
       "id": "#107",
-      "title": "SHOULD prefer compatible extensions"
+      "title": "STATUS-RFPSHOULD prefer compatible extensions"
     },
     {
       "id": "#108",
-      "title": "MUST prepare clients accept compatible API extensions"
+      "title": "STATUS-RFPMUST prepare clients accept compatible API extensions"
     },
     {
       "id": "#109",
-      "title": "SHOULD design APIs conservatively"
+      "title": "STATUS-RFPSHOULD design APIs conservatively"
     },
     {
       "id": "#110",
-      "title": "MUST always return JSON objects as top-level data structures"
-    },
-    {
-      "id": "#111",
-      "title": "MUST treat Open API specification as open for extension by default"
+      "title": "STATUS-RFPMUST always return JSON objects as top-level data structures if JSON is being used"
     },
     {
       "id": "#112",
-      "title": "SHOULD used open-ended list of values (`x-extensible-enum`) for enumerations"
+      "title": "STATUS-RFPSHOULD refrain from using enumerations"
     },
     {
       "id": "#113",
-      "title": "SHOULD avoid versioning"
+      "title": "STATUS-RFPSHOULD avoid versioning"
     },
     {
       "id": "#114",
-      "title": "MUST use media type versioning"
+      "title": "STATUS-TODOMUST API Versioning Has No “Right Way”"
     },
     {
       "id": "#115",
-      "title": "MUST not use URI versioning"
+      "title": "STATUS-RFPSHOULD use URI versioning"
+    },
+    {
+      "id": "#116",
+      "title": "STATUS-RFPMAY use semantic versioning"
+    },
+    {
+      "id": "#118",
+      "title": "MUST property names must be ASCII snake_case (and never camelCase): `^[a-z_][a-z_0-9]*$`"
+    },
+    {
+      "id": "#120",
+      "title": "SHOULD pluralize array names"
+    },
+    {
+      "id": "#122",
+      "title": "MUST not use `null` for boolean properties"
+    },
+    {
+      "id": "#123",
+      "title": "MUST use same semantics for `null` and absent properties"
+    },
+    {
+      "id": "#124",
+      "title": "SHOULD not use `null` for empty arrays"
+    },
+    {
+      "id": "#125",
+      "title": "SHOULD represent enumerations as strings"
+    },
+    {
+      "id": "#126",
+      "title": "SHOULD define dates properties compliant with RFC 3339"
+    },
+    {
+      "id": "#127",
+      "title": "SHOULD define time durations and intervals properties conform to ISO 8601"
+    },
+    {
+      "id": "#129",
+      "title": "MUST use lowercase separate words with hyphens for path segments"
+    },
+    {
+      "id": "#130",
+      "title": "MUST use snake_case (never camelCase) for query parameters"
+    },
+    {
+      "id": "#132",
+      "title": "SHOULD prefer hyphenated-pascal-case for HTTP header fields"
     },
     {
       "id": "#133",
       "title": "MAY use standardized headers"
+    },
+    {
+      "id": "#134",
+      "title": "MUST pluralize resource names"
+    },
+    {
+      "id": "#135",
+      "title": "SHOULD not use /api as base path"
+    },
+    {
+      "id": "#136",
+      "title": "MUST avoid trailing slashes"
+    },
+    {
+      "id": "#137",
+      "title": "MUST stick to conventional query parameters"
+    },
+    {
+      "id": "#138",
+      "title": "MUST avoid actions — think about resources"
+    },
+    {
+      "id": "#139",
+      "title": "SHOULD model complete business processes"
+    },
+    {
+      "id": "#140",
+      "title": "SHOULD define _useful_ resources"
+    },
+    {
+      "id": "#141",
+      "title": "MUST keep URLs verb-free"
+    },
+    {
+      "id": "#142",
+      "title": "MUST use domain-specific resource names"
+    },
+    {
+      "id": "#143",
+      "title": "MUST identify resources and sub-resources via path segments"
+    },
+    {
+      "id": "#144",
+      "title": "SHOULD only use UUIDs if necessary"
+    },
+    {
+      "id": "#145",
+      "title": "MAY consider using (non-)nested URLs"
+    },
+    {
+      "id": "#146",
+      "title": "SHOULD limit number of resource types"
+    },
+    {
+      "id": "#147",
+      "title": "SHOULD limit number of sub-resource levels"
+    },
+    {
+      "id": "#148",
+      "title": "MUST use HTTP methods correctly"
+    },
+    {
+      "id": "#149",
+      "title": "MUST fulfill common method properties"
+    },
+    {
+      "id": "#150",
+      "title": "MUST use standard HTTP status codes"
+    },
+    {
+      "id": "#151",
+      "title": "MUST specify success and error responses"
+    },
+    {
+      "id": "#152",
+      "title": "MUST use code 207 for batch or bulk requests"
+    },
+    {
+      "id": "#153",
+      "title": "MUST use code 429 with headers for rate limits"
+    },
+    {
+      "id": "#154",
+      "title": "MUST define collection format of header and query parameters"
+    },
+    {
+      "id": "#155",
+      "title": "SHOULD reduce bandwidth needs and improve responsiveness"
+    },
+    {
+      "id": "#156",
+      "title": "SHOULD use `gzip` compression"
+    },
+    {
+      "id": "#157",
+      "title": "SHOULD support partial responses via filtering"
+    },
+    {
+      "id": "#158",
+      "title": "SHOULD allow optional embedding of sub-resources"
+    },
+    {
+      "id": "#159",
+      "title": "MUST support pagination"
+    },
+    {
+      "id": "#160",
+      "title": "SHOULD prefer cursor-based pagination, avoid offset-based pagination"
+    },
+    {
+      "id": "#161",
+      "title": "SHOULD use pagination links where applicable"
+    },
+    {
+      "id": "#162",
+      "title": "MUST use REST maturity level 2"
+    },
+    {
+      "id": "#163",
+      "title": "MAY use REST maturity level 3 - HATEOAS"
+    },
+    {
+      "id": "#164",
+      "title": "MUST use common hypertext controls"
+    },
+    {
+      "id": "#165",
+      "title": "SHOULD use simple hypertext controls for pagination and self-references"
+    },
+    {
+      "id": "#166",
+      "title": "MUST not use link headers with JSON entities"
     },
     {
       "id": "#167",
@@ -57,6 +257,14 @@
       "title": "MUST use standard date and time formats"
     },
     {
+      "id": "#170",
+      "title": "SHOULD use standards for country, language and currency codes"
+    },
+    {
+      "id": "#171",
+      "title": "MUST define format for number and integer types"
+    },
+    {
       "id": "#172",
       "title": "SHOULD prefer standard media type name `application/json`"
     },
@@ -67,6 +275,14 @@
     {
       "id": "#174",
       "title": "MUST use common field names and semantics"
+    },
+    {
+      "id": "#176",
+      "title": "MUST use problem JSON"
+    },
+    {
+      "id": "#177",
+      "title": "MUST not expose stack traces"
     },
     {
       "id": "#178",
@@ -89,6 +305,42 @@
       "title": "MAY consider to support `ETag` together with `If-Match`/`If-None-Match` header"
     },
     {
+      "id": "#183",
+      "title": "MUST use only the specified proprietary Pon headers"
+    },
+    {
+      "id": "#184",
+      "title": "MUST propagate proprietary headers"
+    },
+    {
+      "id": "#185",
+      "title": "STATUS-RFPMUST obtain approval of clients before API shut down"
+    },
+    {
+      "id": "#186",
+      "title": "STATUS-RFPMUST collect external partner consent on deprecation time span"
+    },
+    {
+      "id": "#187",
+      "title": "MUST reflect deprecation in API specifications"
+    },
+    {
+      "id": "#188",
+      "title": "MUST monitor usage of deprecated API scheduled for sunset"
+    },
+    {
+      "id": "#189",
+      "title": "SHOULD add `Deprecation` and `Sunset` header to responses"
+    },
+    {
+      "id": "#190",
+      "title": "SHOULD add monitoring for `Deprecation` and `Sunset` header"
+    },
+    {
+      "id": "#191",
+      "title": "MUST not start using deprecated APIs"
+    },
+    {
       "id": "#192",
       "title": "MUST publish Open API specification"
     },
@@ -97,8 +349,164 @@
       "title": "SHOULD monitor API usage"
     },
     {
+      "id": "#194",
+      "title": "MUST treat events as part of the service interface"
+    },
+    {
+      "id": "#195",
+      "title": "MUST make event schema available for review"
+    },
+    {
+      "id": "#196",
+      "title": "MUST ensure event schema conforms to Open API schema object"
+    },
+    {
+      "id": "#197",
+      "title": "MUST ensure that events are registered as event types"
+    },
+    {
+      "id": "#198",
+      "title": "MUST ensure that events conform to a well-known event category"
+    },
+    {
+      "id": "#199",
+      "title": "MUST ensure that events define useful business resources"
+    },
+    {
+      "id": "#200",
+      "title": "MUST ensure that events do not provide sensitive data"
+    },
+    {
+      "id": "#201",
+      "title": "MUST use the general event category to signal steps and arrival points in business processes"
+    },
+    {
+      "id": "#202",
+      "title": "MUST use data change events to signal mutations"
+    },
+    {
+      "id": "#203",
+      "title": "SHOULD provide means for explicit event ordering"
+    },
+    {
+      "id": "#204",
+      "title": "SHOULD use the hash partition strategy for data change events"
+    },
+    {
+      "id": "#205",
+      "title": "SHOULD ensure that data change events match the APIs resources"
+    },
+    {
+      "id": "#207",
+      "title": "MUST indicate ownership of event types"
+    },
+    {
+      "id": "#208",
+      "title": "MUST define event payloads compliant with overall API guidelines"
+    },
+    {
+      "id": "#209",
+      "title": "MUST maintain backwards compatibility for events"
+    },
+    {
+      "id": "#210",
+      "title": "SHOULD avoid `additionalProperties` in event type definitions"
+    },
+    {
+      "id": "#211",
+      "title": "MUST use unique event identifiers"
+    },
+    {
+      "id": "#212",
+      "title": "SHOULD design for idempotent out-of-order processing"
+    },
+    {
+      "id": "#213",
+      "title": "MUST follow naming convention for event type names"
+    },
+    {
+      "id": "#214",
+      "title": "MUST prepare event consumers for duplicate events"
+    },
+    {
+      "id": "#215",
+      "title": "STATUS-RFPMAY provide API identifiers"
+    },
+    {
+      "id": "#216",
+      "title": "SHOULD define maps using `additionalProperties`"
+    },
+    {
+      "id": "#217",
+      "title": "MUST use full, absolute URI"
+    },
+    {
+      "id": "#218",
+      "title": "STATUS-RFPSHOULD contain API meta information"
+    },
+    {
+      "id": "#219",
+      "title": "STATUS-RFPSHOULD provide API audience"
+    },
+    {
+      "id": "#220",
+      "title": "MUST use most specific HTTP status codes"
+    },
+    {
+      "id": "#223",
+      "title": "MUST-SHOULD use functional naming schema"
+    },
+    {
+      "id": "#224",
+      "title": "MUST follow naming convention for hostnames"
+    },
+    {
+      "id": "#225",
+      "title": "STATUS-RFPMAY follow naming convention for permissions (scopes)"
+    },
+    {
+      "id": "#226",
+      "title": "MUST document implicit filtering"
+    },
+    {
+      "id": "#227",
+      "title": "MUST document cachable `GET`, `HEAD`, and `POST` endpoints"
+    },
+    {
+      "id": "#228",
+      "title": "MUST use URL-friendly resource identifiers"
+    },
+    {
+      "id": "#229",
+      "title": "SHOULD consider to design `POST` and `PATCH` idempotent"
+    },
+    {
       "id": "#230",
       "title": "MAY consider to support `Idempotency-Key` header"
+    },
+    {
+      "id": "#231",
+      "title": "Should use secondary key for idempotent `POST` design"
+    },
+    {
+      "id": "#233",
+      "title": "MUST support `X-Flow-ID`"
+    },
+    {
+      "id": "#234",
+      "title": "STATUS-RFPMUST only use durable and immutable remote references"
+    },
+    {
+      "id": "#235",
+      "title": "SHOULD name date/time properties with `_at` suffix"
+    },
+    {
+      "id": "#236",
+      "title": "SHOULD design simple query languages using query parameters"
+    },
+    {
+      "id": "#237",
+      "title": "SHOULD design complex query languages using JSON"
     },
     {
       "id": "#238",
@@ -107,6 +515,18 @@
     {
       "id": "#239",
       "title": "SHOULD encode embedded binary data in `base64url`"
+    },
+    {
+      "id": "#240",
+      "title": "MUST declare enum values using UPPER_SNAKE_CASE format"
+    },
+    {
+      "id": "#241",
+      "title": "MAY expose compound keys as resource identifiers"
+    },
+    {
+      "id": "#242",
+      "title": "STATUS-RFPMUST add comment to file"
     }
   ]
 }
