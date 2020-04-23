@@ -538,11 +538,19 @@
     },
     {
       "id": "#245",
-      "title": "== Coding rule: code is self explanatory"
+      "title": "== Coding rule: code is self-explanatory"
     },
     {
       "id": "#246",
-      "title": "== Coding rule: solution design steps are template based"
+      "title": "== Coding rule: solution design steps are template-based"
+    },
+    {
+      "id": "#247",
+      "title": "== Coding rule: code quality is known"
+    },
+    {
+      "id": "#248",
+      "title": "== Definition: code quality"
     }
   ]
 }

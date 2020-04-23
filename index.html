@@ -1387,9 +1387,11 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <li><a href="#development-guidelines">3.1. General development guidelines</a>
 <ul class="sectlevel3">
 <li><a href="#pon-development-introduction">3.1.1. Introduction</a></li>
-<li><a href="#244">3.1.2. Coding rule: logical structured code</a></li>
-<li><a href="#245">3.1.3. Coding rule: code is self explanatory</a></li>
-<li><a href="#246">3.1.4. Coding rule: solution design steps are template based</a></li>
+<li><a href="#248">3.1.2. Definition: code quality</a></li>
+<li><a href="#244">3.1.3. Coding rule: logical structured code</a></li>
+<li><a href="#245">3.1.4. Coding rule: code is self-explanatory</a></li>
+<li><a href="#246">3.1.5. Coding rule: solution design steps are template-based</a></li>
+<li><a href="#247">3.1.6. Coding rule: code quality is known</a></li>
 </ul>
 </li>
 <li><a href="#file-structure-and-naming">3.2. File structure and naming</a>
@@ -2659,7 +2661,7 @@ the deprecation info (see hint in <a href="#189"><span class="should-keyword"><s
 <p>This chapter is about coding, developing or anything related to using a
 programming language to solve a problem. A problem is defined as a resolution
 for a challenge the business is facing. The mission of a coder is to write ”
-good”, ”clean” and ”secure” code.  These terms are ill defined.</p>
+good”, ”clean” and ”secure” code.  These terms are ill-defined.</p>
 </div>
 <div class="paragraph">
 <p>At Pon we consider code ”good”, ”clean” and ”secure” based on the following rule
@@ -2673,16 +2675,16 @@ of thumb</p>
 </td>
 <td class="content">
 How much effort is required<sup><a href="#244">244</a></sup> for another developer of
-compare experience to pick up where the previous developer left off to fix,
+comparable experience to pick up where the previous developer left off to fix,
 enhance or build upon the source code - without involving the previous
-developer<sup><a href="#245">245</a></sup> and taking into account the lifetime, security and
-business impact of the application.
+developer<sup><a href="#245">245</a></sup> and taking into account the lifetime, quality, security
+and the business<sup><a href="#246">246</a></sup> impact of the application.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>There is a clear relationship betwee the amount of bugs in the code and the
+<p>There is a clear relationship between the amount of bugs in the code and the
 development effort required, needlessly complex unlogical code will in itself be
 a source of new bugs.</p>
 </div>
@@ -2691,7 +2693,34 @@ a source of new bugs.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="244"><a class="link" href="#244">3.1.2. Coding rule: logical structured code</a></h4>
+<h4 id="248"><a class="link" href="#248">3.1.2. Definition: code quality</a></h4>
+<div id="wikipedia-quote-software-quality" class="quoteblock">
+<blockquote>
+<div class="ulist">
+<ul>
+<li>
+<p>Software functional quality reflects how well it complies with or conforms to a
+given design, based on functional requirements or specifications.  That
+attribute can also be described as the fitness for purpose of a piece of
+software or how it compares to competitors in the marketplace as a worthwhile
+product. It is the degree to which the correct software was produced.</p>
+</li>
+<li>
+<p>Software structural quality refers to how it meets non-functional requirements
+that support the delivery of the functional requirements, such as robustness or
+maintainability. It has a lot more to do with the degree to which the software
+works as needed.</p>
+</li>
+</ul>
+</div>
+</blockquote>
+<div class="attribution">
+&#8212; Wikipedia
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="244"><a class="link" href="#244">3.1.3. Coding rule: logical structured code</a></h4>
 <div class="paragraph">
 <p>Refers to “<em>How much effort</em>”.</p>
 </div>
@@ -2733,7 +2762,7 @@ easy to find code to be updated.</p>
 <div class="paragraph">
 <p>The once and only once rule is one of the most fundamental principles of
 software development, it can be seen as a hallmark of good and clean code and
-will greatly reduce developer effort when applied corretly. But it is not the
+will greatly reduce developer effort when applied correctly. But it is not the
 goal of software development; the goal is resolving challenges of the business
 under their conditions.</p>
 </div>
@@ -2746,7 +2775,7 @@ under their conditions.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="245"><a class="link" href="#245">3.1.3. Coding rule: code is self explanatory</a></h4>
+<h4 id="245"><a class="link" href="#245">3.1.4. Coding rule: code is self-explanatory</a></h4>
 <div class="paragraph">
 <p>Refers to “<em>without involving the previous developer</em>”.</p>
 </div>
@@ -2756,9 +2785,10 @@ required for updates and changes</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="246"><a class="link" href="#246">3.1.4. Coding rule: solution design steps are template based</a></h4>
+<h4 id="246"><a class="link" href="#246">3.1.5. Coding rule: solution design steps are template-based</a></h4>
 <div class="paragraph">
-<p>Refers to “<em>taking into account the lifetime, security and business impact</em>”.</p>
+<p>Refers to “<em>taking into account the lifetime, quality, security and business
+impact</em>”.</p>
 </div>
 <div class="paragraph">
 <p>Solution design comes first, coding second. The solution design must address the
@@ -2770,12 +2800,27 @@ following</p>
 <p>Software lifetime</p>
 </li>
 <li>
+<p>Required quality</p>
+</li>
+<li>
 <p>Required security</p>
 </li>
 <li>
 <p>Business impact</p>
 </li>
 </ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="247"><a class="link" href="#247">3.1.6. Coding rule: code quality is known</a></h4>
+<div class="paragraph">
+<p>Based on the quality as discussed in the <a href="#246">solution design</a> steps the code
+quality must be known.</p>
+</div>
+<div class="paragraph">
+<p>This rule does not state that code must be fully automatically tested and
+scoring 100/100 on quality. This rule states that the quality, as agreed upon
+beforehand with the business, is known and documented.</p>
 </div>
 </div>
 </div>
@@ -2914,7 +2959,7 @@ window.cookieconsent.initialise({
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-23 15:39:12 UTC
+Last updated 2020-04-23 16:00:39 UTC
 </div>
 </div>
 <style>
