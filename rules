@@ -14,7 +14,7 @@
     },
     {
       "id": "#103",
-      "title": "STATUS-RFPMUST write APIs using U.S. English"
+      "title": "STATUS-RFPMUST write all resources using U.S. English"
     },
     {
       "id": "#104",
@@ -527,6 +527,18 @@
     {
       "id": "#242",
       "title": "STATUS-RFPMUST add comment to file"
+    },
+    {
+      "id": "#243",
+      "title": "STATUS-RFPMUST filenames are either CamelCase or snake_case"
+    },
+    {
+      "id": "#244",
+      "title": "== Coding rule: logical structured code"
+    },
+    {
+      "id": "#245",
+      "title": "== Coding rule: code is self explanatory"
     }
   ]
 }
