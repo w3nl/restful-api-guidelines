@@ -1389,7 +1389,7 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <li><a href="#pon-development-introduction">3.1.1. Introduction</a></li>
 <li><a href="#248">3.1.2. Definition: code quality</a></li>
 <li><a href="#244">3.1.3. Coding rule: logical structured code</a></li>
-<li><a href="#245">3.1.4. Coding rule: code is self-explanatory</a></li>
+<li><a href="#245">3.1.4. Coding rule: code and code changes are self-explanatory</a></li>
 <li><a href="#246">3.1.5. Coding rule: solution design steps are template-based</a></li>
 <li><a href="#247">3.1.6. Coding rule: code quality is known</a></li>
 </ul>
@@ -1402,6 +1402,7 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 </li>
 <li><a href="#version-control">3.3. Version control</a></li>
 <li><a href="#software-testing">3.4. Testing code</a></li>
+<li><a href="#development-environment">3.5. Development environment</a></li>
 </ul>
 </li>
 </ul>
@@ -2678,7 +2679,7 @@ How much effort is required<sup><a href="#244">244</a></sup> for another develop
 comparable experience to pick up where the previous developer left off to fix,
 enhance or build upon the source code - without involving the previous
 developer<sup><a href="#245">245</a></sup> and taking into account the lifetime, quality, security
-and the business<sup><a href="#246">246</a></sup> impact of the application.
+and the business impact<sup><a href="#246">246</a></sup> of the application.
 </td>
 </tr>
 </table>
@@ -2715,7 +2716,7 @@ works as needed.</p>
 </div>
 </blockquote>
 <div class="attribution">
-&#8212; Wikipedia
+&#8212; <a href="https://en.wikipedia.org/wiki/Software_quality">Wikipedia</a>
 </div>
 </div>
 </div>
@@ -2766,22 +2767,33 @@ will greatly reduce developer effort when applied correctly. But it is not the
 goal of software development; the goal is resolving challenges of the business
 under their conditions.</p>
 </div>
-<div class="paragraph">
-<p>DRY code is good, but it is always a choice.</p>
-</div>
 </td>
 </tr>
 </table>
 </div>
+<div class="paragraph">
+<p>DRY code is good, but it is always a choice.</p>
+</div>
 </div>
 <div class="sect3">
-<h4 id="245"><a class="link" href="#245">3.1.4. Coding rule: code is self-explanatory</a></h4>
+<h4 id="245"><a class="link" href="#245">3.1.4. Coding rule: code and code changes are self-explanatory</a></h4>
 <div class="paragraph">
 <p>Refers to “<em>without involving the previous developer</em>”.</p>
 </div>
 <div class="paragraph">
 <p>All code is sufficiently documented in order to reduce the effort<sup><a href="#244">244</a></sup>
-required for updates and changes</p>
+required for updates and changes.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Code changes are documented and should contain a reference to an issue
+tracking system</p>
+</li>
+<li>
+<p>Deviation from guidelines is always documented</p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect3">
@@ -2856,6 +2868,13 @@ at least the following</p>
 </div>
 <div class="sect2">
 <h3 id="software-testing"><a class="link" href="#software-testing">3.4. Testing code</a></h3>
+
+</div>
+<div class="sect2">
+<h3 id="development-environment"><a class="link" href="#development-environment">3.5. Development environment</a></h3>
+<div class="paragraph">
+<p>Which tools are required for a developer to be at peak efficiency?</p>
+</div>
 <!-- Adds rule id as a postfix to all rule titles -->
 <script>
 var ruleIdRegEx = /(\d)+/;
@@ -2959,7 +2978,7 @@ window.cookieconsent.initialise({
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-23 16:00:39 UTC
+Last updated 2020-04-24 07:59:49 UTC
 </div>
 </div>
 <style>
