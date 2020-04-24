@@ -551,6 +551,14 @@
     {
       "id": "#248",
       "title": "== Definition: code quality"
+    },
+    {
+      "id": "#249",
+      "title": "STATUS-RFPSHOULD have pre-defined development environment(s)"
+    },
+    {
+      "id": "#250",
+      "title": "STATUS-RFPMUST include guidelines in onboarding procedure"
     }
   ]
 }

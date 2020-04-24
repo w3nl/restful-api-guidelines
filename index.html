@@ -1319,90 +1319,104 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <li><a href="#pon-specific-information">1.2. Pon specific information</a></li>
 </ul>
 </li>
-<li><a href="#_integration_guidelines">2. Integration guidelines</a>
+<li><a href="#_generic">2. Generic</a>
 <ul class="sectlevel2">
-<li><a href="#principles">2.1. Principles</a>
+<li><a href="#onboarding">2.1. Onboarding</a>
 <ul class="sectlevel3">
-<li><a href="#api-design-principles">2.1.1. API design principles</a></li>
-<li><a href="#api-as-a-product">2.1.2. API as a product</a></li>
-<li><a href="#api-first">2.1.3. API first</a></li>
-</ul>
-</li>
-<li><a href="#general-guidelines">2.2. General guidelines</a>
-<ul class="sectlevel3">
-<li><a href="#100">2.2.1. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> follow API first principle</a></li>
-<li><a href="#101">2.2.2. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> provide API specification</a></li>
-<li><a href="#234">2.2.3. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> only use durable and immutable remote references</a></li>
-<li><a href="#102">2.2.4. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="may-keyword"><strong>MAY</strong></span> provide API user manual</a></li>
-<li><a href="#103">2.2.5. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> write all resources using U.S. English</a>
+<li><a href="#250">2.1.1. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> include guidelines in onboarding procedure</a></li>
+<li><a href="#249">2.1.2. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="should-keyword"><strong>SHOULD</strong></span> have pre-defined development environment(s)</a>
 <ul class="sectlevel4">
-<li><a href="#_audience">2.2.5.1. Audience</a></li>
+<li><a href="#_patrons"><span class="patron">Patron(s) 🤍</span></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#meta-information">2.3. Meta information</a>
-<ul class="sectlevel3">
-<li><a href="#218">2.3.1. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="should-keyword"><strong>SHOULD</strong></span> contain API meta information</a></li>
-<li><a href="#116">2.3.2. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="may-keyword"><strong>MAY</strong></span> use semantic versioning</a></li>
-<li><a href="#215">2.3.3. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="may-keyword"><strong>MAY</strong></span> provide API identifiers</a></li>
-<li><a href="#219">2.3.4. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="should-keyword"><strong>SHOULD</strong></span> provide API audience</a></li>
 </ul>
 </li>
-<li><a href="#security">2.4. Security</a>
-<ul class="sectlevel3">
-<li><a href="#104">2.4.1. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> secure endpoints</a></li>
-<li><a href="#105">2.4.2. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="should-keyword"><strong>SHOULD</strong></span> define and assign permissions (scopes)</a></li>
-<li><a href="#225">2.4.3. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="may-keyword"><strong>MAY</strong></span> follow naming convention for permissions (scopes)</a></li>
-</ul>
-</li>
-<li><a href="#compatibility">2.5. Compatibility</a>
-<ul class="sectlevel3">
-<li><a href="#106">2.5.1. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> not break backward compatibility</a></li>
-<li><a href="#107">2.5.2. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="should-keyword"><strong>SHOULD</strong></span> prefer compatible extensions</a></li>
-<li><a href="#108">2.5.3. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> prepare clients accept compatible API extensions</a></li>
-<li><a href="#109">2.5.4. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="should-keyword"><strong>SHOULD</strong></span> design APIs conservatively</a></li>
-<li><a href="#110">2.5.5. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> always return JSON objects as top-level data structures if JSON is being used</a></li>
-<li><a href="#112">2.5.6. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="should-keyword"><strong>SHOULD</strong></span> refrain from using enumerations</a></li>
-<li><a href="#113">2.5.7. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="should-keyword"><strong>SHOULD</strong></span> avoid versioning</a></li>
-<li><a href="#114">2.5.8. {STATUS-TODO} <span class="must-keyword"><strong>MUST</strong></span> API Versioning Has No “Right Way”</a></li>
-<li><a href="#115">2.5.9. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="should-keyword"><strong>SHOULD</strong></span> use URI versioning</a></li>
-</ul>
-</li>
-<li><a href="#deprecation">2.6. Deprecation</a>
-<ul class="sectlevel3">
-<li><a href="#185">2.6.1. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> obtain approval of clients before API shut down</a></li>
-<li><a href="#186">2.6.2. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> collect external partner consent on deprecation time span</a></li>
-<li><a href="#187">2.6.3. <span class="must-keyword"><strong>MUST</strong></span> reflect deprecation in API specifications</a></li>
-<li><a href="#188">2.6.4. <span class="must-keyword"><strong>MUST</strong></span> monitor usage of deprecated API scheduled for sunset</a></li>
-<li><a href="#189">2.6.5. <span class="should-keyword"><strong>SHOULD</strong></span> add <code>Deprecation</code> and <code>Sunset</code> header to responses</a></li>
-<li><a href="#190">2.6.6. <span class="should-keyword"><strong>SHOULD</strong></span> add monitoring for <code>Deprecation</code> and <code>Sunset</code> header</a></li>
-<li><a href="#191">2.6.7. <span class="must-keyword"><strong>MUST</strong></span> not start using deprecated APIs</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#_development_guidelines">3. Development guidelines</a>
+<li><a href="#_integration_guidelines">3. Integration guidelines</a>
 <ul class="sectlevel2">
-<li><a href="#development-guidelines">3.1. General development guidelines</a>
+<li><a href="#principles">3.1. Principles</a>
 <ul class="sectlevel3">
-<li><a href="#pon-development-introduction">3.1.1. Introduction</a></li>
-<li><a href="#248">3.1.2. Definition: code quality</a></li>
-<li><a href="#244">3.1.3. Coding rule: logical structured code</a></li>
-<li><a href="#245">3.1.4. Coding rule: code and code changes are self-explanatory</a></li>
-<li><a href="#246">3.1.5. Coding rule: solution design steps are template-based</a></li>
-<li><a href="#247">3.1.6. Coding rule: code quality is known</a></li>
+<li><a href="#api-design-principles">3.1.1. API design principles</a></li>
+<li><a href="#api-as-a-product">3.1.2. API as a product</a></li>
+<li><a href="#api-first">3.1.3. API first</a></li>
 </ul>
 </li>
-<li><a href="#file-structure-and-naming">3.2. File structure and naming</a>
+<li><a href="#general-guidelines">3.2. General guidelines</a>
 <ul class="sectlevel3">
-<li><a href="#242">3.2.1. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> add comment to file</a></li>
-<li><a href="#243">3.2.2. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> filenames are either CamelCase or snake_case</a></li>
+<li><a href="#100">3.2.1. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> follow API first principle</a></li>
+<li><a href="#101">3.2.2. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> provide API specification</a></li>
+<li><a href="#234">3.2.3. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> only use durable and immutable remote references</a></li>
+<li><a href="#102">3.2.4. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="may-keyword"><strong>MAY</strong></span> provide API user manual</a></li>
+<li><a href="#103">3.2.5. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> write all resources using U.S. English</a>
+<ul class="sectlevel4">
+<li><a href="#_audience">Audience</a></li>
 </ul>
 </li>
-<li><a href="#version-control">3.3. Version control</a></li>
-<li><a href="#software-testing">3.4. Testing code</a></li>
-<li><a href="#development-environment">3.5. Development environment</a></li>
+</ul>
+</li>
+<li><a href="#meta-information">3.3. Meta information</a>
+<ul class="sectlevel3">
+<li><a href="#218">3.3.1. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="should-keyword"><strong>SHOULD</strong></span> contain API meta information</a></li>
+<li><a href="#116">3.3.2. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="may-keyword"><strong>MAY</strong></span> use semantic versioning</a></li>
+<li><a href="#215">3.3.3. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="may-keyword"><strong>MAY</strong></span> provide API identifiers</a></li>
+<li><a href="#219">3.3.4. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="should-keyword"><strong>SHOULD</strong></span> provide API audience</a></li>
+</ul>
+</li>
+<li><a href="#security">3.4. Security</a>
+<ul class="sectlevel3">
+<li><a href="#104">3.4.1. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> secure endpoints</a></li>
+<li><a href="#105">3.4.2. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="should-keyword"><strong>SHOULD</strong></span> define and assign permissions (scopes)</a></li>
+<li><a href="#225">3.4.3. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="may-keyword"><strong>MAY</strong></span> follow naming convention for permissions (scopes)</a></li>
+</ul>
+</li>
+<li><a href="#compatibility">3.5. Compatibility</a>
+<ul class="sectlevel3">
+<li><a href="#106">3.5.1. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> not break backward compatibility</a></li>
+<li><a href="#107">3.5.2. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="should-keyword"><strong>SHOULD</strong></span> prefer compatible extensions</a></li>
+<li><a href="#108">3.5.3. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> prepare clients accept compatible API extensions</a></li>
+<li><a href="#109">3.5.4. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="should-keyword"><strong>SHOULD</strong></span> design APIs conservatively</a></li>
+<li><a href="#110">3.5.5. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> always return JSON objects as top-level data structures if JSON is being used</a></li>
+<li><a href="#112">3.5.6. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="should-keyword"><strong>SHOULD</strong></span> refrain from using enumerations</a></li>
+<li><a href="#113">3.5.7. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="should-keyword"><strong>SHOULD</strong></span> avoid versioning</a></li>
+<li><a href="#114">3.5.8. {STATUS-TODO} <span class="must-keyword"><strong>MUST</strong></span> API Versioning Has No “Right Way”</a></li>
+<li><a href="#115">3.5.9. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="should-keyword"><strong>SHOULD</strong></span> use URI versioning</a></li>
+</ul>
+</li>
+<li><a href="#deprecation">3.6. Deprecation</a>
+<ul class="sectlevel3">
+<li><a href="#185">3.6.1. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> obtain approval of clients before API shut down</a></li>
+<li><a href="#186">3.6.2. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> collect external partner consent on deprecation time span</a></li>
+<li><a href="#187">3.6.3. <span class="must-keyword"><strong>MUST</strong></span> reflect deprecation in API specifications</a></li>
+<li><a href="#188">3.6.4. <span class="must-keyword"><strong>MUST</strong></span> monitor usage of deprecated API scheduled for sunset</a></li>
+<li><a href="#189">3.6.5. <span class="should-keyword"><strong>SHOULD</strong></span> add <code>Deprecation</code> and <code>Sunset</code> header to responses</a></li>
+<li><a href="#190">3.6.6. <span class="should-keyword"><strong>SHOULD</strong></span> add monitoring for <code>Deprecation</code> and <code>Sunset</code> header</a></li>
+<li><a href="#191">3.6.7. <span class="must-keyword"><strong>MUST</strong></span> not start using deprecated APIs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_development_guidelines">4. Development guidelines</a>
+<ul class="sectlevel2">
+<li><a href="#development-guidelines">4.1. General development guidelines</a>
+<ul class="sectlevel3">
+<li><a href="#pon-development-introduction">4.1.1. Introduction</a></li>
+<li><a href="#248">4.1.2. Definition: code quality</a></li>
+<li><a href="#244">4.1.3. Coding rule: logical structured code</a></li>
+<li><a href="#245">4.1.4. Coding rule: code and code changes are self-explanatory</a></li>
+<li><a href="#246">4.1.5. Coding rule: solution design steps are template-based</a></li>
+<li><a href="#247">4.1.6. Coding rule: code quality is known</a></li>
+</ul>
+</li>
+<li><a href="#file-structure-and-naming">4.2. File structure and naming</a>
+<ul class="sectlevel3">
+<li><a href="#242">4.2.1. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> add comment to file</a></li>
+<li><a href="#243">4.2.2. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> filenames are either CamelCase or snake_case</a></li>
+</ul>
+</li>
+<li><a href="#version-control">4.3. Version control</a></li>
+<li><a href="#software-testing">4.4. Testing code</a></li>
+<li><a href="#development-environment">4.5. Development environment</a></li>
 </ul>
 </li>
 </ul>
@@ -1487,12 +1501,45 @@ available, it has to be re-reviewed and changed according to current guidelines
 </div>
 </div>
 <div class="sect1">
-<h2 id="_integration_guidelines"><a class="link" href="#_integration_guidelines">2. Integration guidelines</a></h2>
+<h2 id="_generic"><a class="link" href="#_generic">2. Generic</a></h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="principles"><a class="link" href="#principles">2.1. Principles</a></h3>
+<h3 id="onboarding"><a class="link" href="#onboarding">2.1. Onboarding</a></h3>
 <div class="sect3">
-<h4 id="api-design-principles"><a class="link" href="#api-design-principles">2.1.1. API design principles</a></h4>
+<h4 id="250"><a class="link" href="#250">2.1.1. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> include guidelines in onboarding procedure</a></h4>
+<div class="paragraph">
+<p>The onboarding procedure for new developers must include familiarization with
+these guidelines.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="249"><a class="link" href="#249">2.1.2. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="should-keyword"><strong>SHOULD</strong></span> have pre-defined development environment(s)</a></h4>
+<div class="paragraph">
+<p>There should be pre-defined development environments, including OS and IDE.
+These environments will ensure a smooth onboarding and will make groups of
+developers more efficient.</p>
+</div>
+<div class="sect4">
+<h5 id="_patrons"><a class="link" href="#_patrons"><span class="patron">Patron(s) 🤍</span></a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Zeger Knops (<a href="mailto:zeger.knops@pon.com">zeger.knops@pon.com</a>)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_integration_guidelines"><a class="link" href="#_integration_guidelines">3. Integration guidelines</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="principles"><a class="link" href="#principles">3.1. Principles</a></h3>
+<div class="sect3">
+<h4 id="api-design-principles"><a class="link" href="#api-design-principles">3.1.1. API design principles</a></h4>
 <div class="paragraph">
 <p>Comparing SOA web service interfacing style of SOAP vs. REST, the former
 tend to be centered around operations that are usually use-case specific
@@ -1572,7 +1619,7 @@ Styles and the Design of Network-Based Software Architectures</a></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="api-as-a-product"><a class="link" href="#api-as-a-product">2.1.2. API as a product</a></h4>
+<h4 id="api-as-a-product"><a class="link" href="#api-as-a-product">3.1.2. API as a product</a></h4>
 <div class="paragraph">
 <p>The design of our APIs should be based on the API as a Product principle:</p>
 </div>
@@ -1617,7 +1664,7 @@ chapter) which is more focused on how we engineer high quality APIs.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="api-first"><a class="link" href="#api-first">2.1.3. API first</a></h4>
+<h4 id="api-first"><a class="link" href="#api-first">3.1.3. API first</a></h4>
 <div class="admonitionblock important">
 <table>
 <tr>
@@ -1715,13 +1762,13 @@ internal reviews.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="general-guidelines"><a class="link" href="#general-guidelines">2.2. General guidelines</a></h3>
+<h3 id="general-guidelines"><a class="link" href="#general-guidelines">3.2. General guidelines</a></h3>
 <div class="paragraph">
 <p>The titles are marked with the corresponding labels: <span class="must-keyword"><strong>MUST</strong></span>,
 <span class="should-keyword"><strong>SHOULD</strong></span>, <span class="may-keyword"><strong>MAY</strong></span>.</p>
 </div>
 <div class="sect3">
-<h4 id="100"><a class="link" href="#100">2.2.1. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> follow API first principle</a></h4>
+<h4 id="100"><a class="link" href="#100">3.2.1. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> follow API first principle</a></h4>
 <div class="paragraph">
 <p>You must follow the <a href="#api-first">API First Principle</a>, more specifically:</p>
 </div>
@@ -1737,7 +1784,7 @@ internal reviews.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="101"><a class="link" href="#101">2.2.2. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> provide API specification</a></h4>
+<h4 id="101"><a class="link" href="#101">3.2.2. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> provide API specification</a></h4>
 <div class="paragraph">
 <p>Must provide API specification according to standards as specified for API platform.</p>
 </div>
@@ -1752,7 +1799,7 @@ make it discoverable.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="234"><a class="link" href="#234">2.2.3. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> only use durable and immutable remote references</a></h4>
+<h4 id="234"><a class="link" href="#234">3.2.3. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> only use durable and immutable remote references</a></h4>
 <div class="paragraph">
 <p>Normally, API specification files must be <strong>self-contained</strong>, i.e. files
 should not contain references to local or remote content, e.g. <code>../fragment.yaml#/element</code> or
@@ -1760,7 +1807,7 @@ should not contain references to local or remote content, e.g. <code>../fragment
 </div>
 </div>
 <div class="sect3">
-<h4 id="102"><a class="link" href="#102">2.2.4. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="may-keyword"><strong>MAY</strong></span> provide API user manual</a></h4>
+<h4 id="102"><a class="link" href="#102">3.2.4. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="may-keyword"><strong>MAY</strong></span> provide API user manual</a></h4>
 <div class="paragraph">
 <p>In addition to the API Specification, it is good practice to provide an API
 user manual to improve client developer experience, especially of engineers
@@ -1792,13 +1839,13 @@ to include a link to the API user manual into the API specification using the
 </div>
 </div>
 <div class="sect3">
-<h4 id="103"><a class="link" href="#103">2.2.5. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> write all resources using U.S. English</a></h4>
+<h4 id="103"><a class="link" href="#103">3.2.5. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> write all resources using U.S. English</a></h4>
 <div class="paragraph">
 <p>All resources, APIs, documentation, commments etc. must be written in U.S.
 English.</p>
 </div>
 <div class="sect4">
-<h5 id="_audience"><a class="link" href="#_audience">2.2.5.1. Audience</a></h5>
+<h5 id="_audience"><a class="link" href="#_audience">Audience</a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -1813,9 +1860,9 @@ English.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="meta-information"><a class="link" href="#meta-information">2.3. Meta information</a></h3>
+<h3 id="meta-information"><a class="link" href="#meta-information">3.3. Meta information</a></h3>
 <div class="sect3">
-<h4 id="218"><a class="link" href="#218">2.3.1. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="should-keyword"><strong>SHOULD</strong></span> contain API meta information</a></h4>
+<h4 id="218"><a class="link" href="#218">3.3.1. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="should-keyword"><strong>SHOULD</strong></span> contain API meta information</a></h4>
 <div class="paragraph">
 <p>API specifications must contain the following meta information
 to allow for API management:</p>
@@ -1845,7 +1892,7 @@ to allow for API management:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="116"><a class="link" href="#116">2.3.2. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="may-keyword"><strong>MAY</strong></span> use semantic versioning</a></h4>
+<h4 id="116"><a class="link" href="#116">3.3.2. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="may-keyword"><strong>MAY</strong></span> use semantic versioning</a></h4>
 <div class="paragraph">
 <p>Open API allows to specify the API specification version in
 <code>#/info/version</code>. To share a common semantic of version information we
@@ -1905,7 +1952,7 @@ are free to decide whether they increment it or not.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="215"><a class="link" href="#215">2.3.3. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="may-keyword"><strong>MAY</strong></span> provide API identifiers</a></h4>
+<h4 id="215"><a class="link" href="#215">3.3.3. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="may-keyword"><strong>MAY</strong></span> provide API identifiers</a></h4>
 <div class="paragraph">
 <p>Each API specification may be provisioned with a globally unique and
 immutable API identifier.</p>
@@ -1949,7 +1996,7 @@ from any urge of changing the API identifier while evolving the API. Example:</p
 </div>
 </div>
 <div class="sect3">
-<h4 id="219"><a class="link" href="#219">2.3.4. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="should-keyword"><strong>SHOULD</strong></span> provide API audience</a></h4>
+<h4 id="219"><a class="link" href="#219">3.3.4. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="should-keyword"><strong>SHOULD</strong></span> provide API audience</a></h4>
 <div class="paragraph">
 <p>Each API must be classified with respect to the intended target <strong>audience</strong>
 supposed to consume the API, to facilitate differentiated standards on APIs
@@ -2046,9 +2093,9 @@ documentation</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="security"><a class="link" href="#security">2.4. Security</a></h3>
+<h3 id="security"><a class="link" href="#security">3.4. Security</a></h3>
 <div class="sect3">
-<h4 id="104"><a class="link" href="#104">2.4.1. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> secure endpoints</a></h4>
+<h4 id="104"><a class="link" href="#104">3.4.1. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> secure endpoints</a></h4>
 <div class="paragraph">
 <p>Every API endpoint should be secured, peferably using OAuth 2.0.</p>
 </div>
@@ -2078,7 +2125,7 @@ token of the client must have additionally the scopes scope_1 and scope_2.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="105"><a class="link" href="#105">2.4.2. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="should-keyword"><strong>SHOULD</strong></span> define and assign permissions (scopes)</a></h4>
+<h4 id="105"><a class="link" href="#105">3.4.2. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="should-keyword"><strong>SHOULD</strong></span> define and assign permissions (scopes)</a></h4>
 <div class="paragraph">
 <p>APIs should define permissions to protect their resources. Thus, at least one
 permission must be assigned to each endpoint. Permissions are defined as shown
@@ -2182,7 +2229,7 @@ standard header so to say implicitly defined via the security section.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="225"><a class="link" href="#225">2.4.3. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="may-keyword"><strong>MAY</strong></span> follow naming convention for permissions (scopes)</a></h4>
+<h4 id="225"><a class="link" href="#225">3.4.3. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="may-keyword"><strong>MAY</strong></span> follow naming convention for permissions (scopes)</a></h4>
 <div class="paragraph">
 <p>As long as the <a href="#223">functional naming</a> is not supported for permissions,
 permission names in APIs must conform to the following naming pattern:</p>
@@ -2208,9 +2255,9 @@ permission names in APIs must conform to the following naming pattern:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="compatibility"><a class="link" href="#compatibility">2.5. Compatibility</a></h3>
+<h3 id="compatibility"><a class="link" href="#compatibility">3.5. Compatibility</a></h3>
 <div class="sect3">
-<h4 id="106"><a class="link" href="#106">2.5.1. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> not break backward compatibility</a></h4>
+<h4 id="106"><a class="link" href="#106">3.5.1. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> not break backward compatibility</a></h4>
 <div class="paragraph">
 <p>Change APIs, but keep all consumers running. Consumers usually have independent
 release lifecycles, focus on stability, and avoid changes that do not provide
@@ -2254,7 +2301,7 @@ expected that code changes are necessary.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="107"><a class="link" href="#107">2.5.2. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="should-keyword"><strong>SHOULD</strong></span> prefer compatible extensions</a></h4>
+<h4 id="107"><a class="link" href="#107">3.5.2. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="should-keyword"><strong>SHOULD</strong></span> prefer compatible extensions</a></h4>
 <div class="paragraph">
 <p>API designers may apply the following rules to evolve APIs for
 services in a backward-compatible way:</p>
@@ -2295,7 +2342,7 @@ values and clients must be agnostic to new values.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="108"><a class="link" href="#108">2.5.3. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> prepare clients accept compatible API extensions</a></h4>
+<h4 id="108"><a class="link" href="#108">3.5.3. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> prepare clients accept compatible API extensions</a></h4>
 <div class="paragraph">
 <p>Service clients should apply the robustness principle:</p>
 </div>
@@ -2342,7 +2389,7 @@ Permanently).</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="109"><a class="link" href="#109">2.5.4. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="should-keyword"><strong>SHOULD</strong></span> design APIs conservatively</a></h4>
+<h4 id="109"><a class="link" href="#109">3.5.4. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="should-keyword"><strong>SHOULD</strong></span> design APIs conservatively</a></h4>
 <div class="paragraph">
 <p>Designers of service provider APIs should be conservative and accurate in what
 they accept from clients:</p>
@@ -2406,7 +2453,7 @@ specific parameter.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="110"><a class="link" href="#110">2.5.5. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> always return JSON objects as top-level data structures if JSON is being used</a></h4>
+<h4 id="110"><a class="link" href="#110">3.5.5. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> always return JSON objects as top-level data structures if JSON is being used</a></h4>
 <div class="paragraph">
 <p>In a JSON response body, you must always return a JSON object (and not e.g. an
 array) as a top level data structure to support future extensibility. JSON
@@ -2424,7 +2471,7 @@ Add example</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="112"><a class="link" href="#112">2.5.6. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="should-keyword"><strong>SHOULD</strong></span> refrain from using enumerations</a></h4>
+<h4 id="112"><a class="link" href="#112">3.5.6. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="should-keyword"><strong>SHOULD</strong></span> refrain from using enumerations</a></h4>
 <div class="paragraph">
 <p>Enumerations are per definition closed sets of values, that are assumed to be
 complete and not intended for extension. This closed principle of enumerations
@@ -2470,7 +2517,7 @@ most tools.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="113"><a class="link" href="#113">2.5.7. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="should-keyword"><strong>SHOULD</strong></span> avoid versioning</a></h4>
+<h4 id="113"><a class="link" href="#113">3.5.7. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="should-keyword"><strong>SHOULD</strong></span> avoid versioning</a></h4>
 <div class="paragraph">
 <p>When changing your APIs, do so in a compatible way and avoid generating
 additional API versions unless the API is non-functional or is degraded.
@@ -2504,7 +2551,7 @@ we strongly recommend to only use the first two approaches.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="114"><a class="link" href="#114">2.5.8. {STATUS-TODO} <span class="must-keyword"><strong>MUST</strong></span> API Versioning Has No “Right Way”</a></h4>
+<h4 id="114"><a class="link" href="#114">3.5.8. {STATUS-TODO} <span class="must-keyword"><strong>MUST</strong></span> API Versioning Has No “Right Way”</a></h4>
 <div class="paragraph">
 <p><a href="https://blog.apisyouwonthate.com/api-versioning-has-no-right-way-f3c75457c0b7">API
 Versioning Has No "Right Way"</a> provides an overview on different versioning
@@ -2512,7 +2559,7 @@ approaches to handle breaking changes without being opinionated.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="115"><a class="link" href="#115">2.5.9. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="should-keyword"><strong>SHOULD</strong></span> use URI versioning</a></h4>
+<h4 id="115"><a class="link" href="#115">3.5.9. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="should-keyword"><strong>SHOULD</strong></span> use URI versioning</a></h4>
 <div class="paragraph">
 <p>With URI versioning a (major) version number is included in the path, e.g.
 <code>/v1/customers</code>. The consumer has to wait until the provider has been released
@@ -2521,7 +2568,7 @@ and deployed.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deprecation"><a class="link" href="#deprecation">2.6. Deprecation</a></h3>
+<h3 id="deprecation"><a class="link" href="#deprecation">3.6. Deprecation</a></h3>
 <div class="paragraph">
 <p>Sometimes it is necessary to phase out an API endpoint, an API version, or an
 API feature, e.g. if a field or parameter is no longer supported or a whole
@@ -2533,7 +2580,7 @@ actions are well communicated and aligned using <em>deprecation</em> and <em>sun
 dates.</p>
 </div>
 <div class="sect3">
-<h4 id="185"><a class="link" href="#185">2.6.1. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> obtain approval of clients before API shut down</a></h4>
+<h4 id="185"><a class="link" href="#185">3.6.1. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> obtain approval of clients before API shut down</a></h4>
 <div class="paragraph">
 <p>Before shutting down an API, version of an API, or API feature the producer
 must make sure, that all clients have given their consent on a sunset date.
@@ -2545,7 +2592,7 @@ API feature.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="186"><a class="link" href="#186">2.6.2. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> collect external partner consent on deprecation time span</a></h4>
+<h4 id="186"><a class="link" href="#186">3.6.2. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> collect external partner consent on deprecation time span</a></h4>
 <div class="paragraph">
 <p>If the API is consumed by any external partner, the API owner must define a
 reasonable time span that the API will be maintained after the producer has
@@ -2556,7 +2603,7 @@ API.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="187"><a class="link" href="#187">2.6.3. <span class="must-keyword"><strong>MUST</strong></span> reflect deprecation in API specifications</a></h4>
+<h4 id="187"><a class="link" href="#187">3.6.3. <span class="must-keyword"><strong>MUST</strong></span> reflect deprecation in API specifications</a></h4>
 <div class="paragraph">
 <p>The API deprecation must be part of the API specification.</p>
 </div>
@@ -2571,7 +2618,7 @@ what consumers should use instead and how to migrate.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="188"><a class="link" href="#188">2.6.4. <span class="must-keyword"><strong>MUST</strong></span> monitor usage of deprecated API scheduled for sunset</a></h4>
+<h4 id="188"><a class="link" href="#188">3.6.4. <span class="must-keyword"><strong>MUST</strong></span> monitor usage of deprecated API scheduled for sunset</a></h4>
 <div class="paragraph">
 <p>Owners of an API, API version, or API feature used in production that is
 scheduled for sunset must monitor the usage of the sunset API, API version, or
@@ -2580,7 +2627,7 @@ breaking effects on ongoing consumers. See also <a href="#193">[193]</a>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="189"><a class="link" href="#189">2.6.5. <span class="should-keyword"><strong>SHOULD</strong></span> add <code>Deprecation</code> and <code>Sunset</code> header to responses</a></h4>
+<h4 id="189"><a class="link" href="#189">3.6.5. <span class="should-keyword"><strong>SHOULD</strong></span> add <code>Deprecation</code> and <code>Sunset</code> header to responses</a></h4>
 <div class="paragraph">
 <p>During the deprecation phase, the producer should add a <code>Deprecation: &lt;date-time&gt;</code>
 (see <a href="https://tools.ietf.org/html/draft-dalal-deprecation-header">draft: RFC
@@ -2620,7 +2667,7 @@ Caching</a>, and our syntax was not compliant with <a href="https://tools.ietf.o
 </div>
 </div>
 <div class="sect3">
-<h4 id="190"><a class="link" href="#190">2.6.6. <span class="should-keyword"><strong>SHOULD</strong></span> add monitoring for <code>Deprecation</code> and <code>Sunset</code> header</a></h4>
+<h4 id="190"><a class="link" href="#190">3.6.6. <span class="should-keyword"><strong>SHOULD</strong></span> add monitoring for <code>Deprecation</code> and <code>Sunset</code> header</a></h4>
 <div class="paragraph">
 <p>Clients should monitor the <a href="https://tools.ietf.org/html/draft-dalal-deprecation-header"><code>Deprecation</code></a> and <a href="https://tools.ietf.org/html/rfc8594"><code>Sunset</code></a> headers in HTTP responses
 to get information about future sunset of APIs and API features (see <a href="#189"><span class="should-keyword"><strong>SHOULD</strong></span> add <code>Deprecation</code> and <code>Sunset</code> header to responses</a>).
@@ -2633,7 +2680,7 @@ the deprecation info (see hint in <a href="#189"><span class="should-keyword"><s
 </div>
 </div>
 <div class="sect3">
-<h4 id="191"><a class="link" href="#191">2.6.7. <span class="must-keyword"><strong>MUST</strong></span> not start using deprecated APIs</a></h4>
+<h4 id="191"><a class="link" href="#191">3.6.7. <span class="must-keyword"><strong>MUST</strong></span> not start using deprecated APIs</a></h4>
 <div class="paragraph">
 <p>Clients must not start using deprecated APIs, API versions, or API features.</p>
 </div>
@@ -2642,10 +2689,10 @@ the deprecation info (see hint in <a href="#189"><span class="should-keyword"><s
 </div>
 </div>
 <div class="sect1">
-<h2 id="_development_guidelines"><a class="link" href="#_development_guidelines">3. Development guidelines</a></h2>
+<h2 id="_development_guidelines"><a class="link" href="#_development_guidelines">4. Development guidelines</a></h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="development-guidelines"><a class="link" href="#development-guidelines">3.1. General development guidelines</a></h3>
+<h3 id="development-guidelines"><a class="link" href="#development-guidelines">4.1. General development guidelines</a></h3>
 <div id="heinlein-quote" class="quoteblock">
 <blockquote>
 <div class="paragraph">
@@ -2657,7 +2704,7 @@ the deprecation info (see hint in <a href="#189"><span class="should-keyword"><s
 </div>
 </div>
 <div class="sect3">
-<h4 id="pon-development-introduction"><a class="link" href="#pon-development-introduction">3.1.1. Introduction</a></h4>
+<h4 id="pon-development-introduction"><a class="link" href="#pon-development-introduction">4.1.1. Introduction</a></h4>
 <div class="paragraph">
 <p>This chapter is about coding, developing or anything related to using a
 programming language to solve a problem. A problem is defined as a resolution
@@ -2694,7 +2741,7 @@ a source of new bugs.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="248"><a class="link" href="#248">3.1.2. Definition: code quality</a></h4>
+<h4 id="248"><a class="link" href="#248">4.1.2. Definition: code quality</a></h4>
 <div id="wikipedia-quote-software-quality" class="quoteblock">
 <blockquote>
 <div class="ulist">
@@ -2721,7 +2768,7 @@ works as needed.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="244"><a class="link" href="#244">3.1.3. Coding rule: logical structured code</a></h4>
+<h4 id="244"><a class="link" href="#244">4.1.3. Coding rule: logical structured code</a></h4>
 <div class="paragraph">
 <p>Refers to “<em>How much effort</em>”.</p>
 </div>
@@ -2776,7 +2823,7 @@ under their conditions.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="245"><a class="link" href="#245">3.1.4. Coding rule: code and code changes are self-explanatory</a></h4>
+<h4 id="245"><a class="link" href="#245">4.1.4. Coding rule: code and code changes are self-explanatory</a></h4>
 <div class="paragraph">
 <p>Refers to “<em>without involving the previous developer</em>”.</p>
 </div>
@@ -2797,7 +2844,7 @@ tracking system</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="246"><a class="link" href="#246">3.1.5. Coding rule: solution design steps are template-based</a></h4>
+<h4 id="246"><a class="link" href="#246">4.1.5. Coding rule: solution design steps are template-based</a></h4>
 <div class="paragraph">
 <p>Refers to “<em>taking into account the lifetime, quality, security and business
 impact</em>”.</p>
@@ -2824,7 +2871,7 @@ following</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="247"><a class="link" href="#247">3.1.6. Coding rule: code quality is known</a></h4>
+<h4 id="247"><a class="link" href="#247">4.1.6. Coding rule: code quality is known</a></h4>
 <div class="paragraph">
 <p>Based on the quality as discussed in the <a href="#246">solution design</a> steps the code
 quality must be known.</p>
@@ -2837,9 +2884,9 @@ beforehand with the business, is known and documented.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="file-structure-and-naming"><a class="link" href="#file-structure-and-naming">3.2. File structure and naming</a></h3>
+<h3 id="file-structure-and-naming"><a class="link" href="#file-structure-and-naming">4.2. File structure and naming</a></h3>
 <div class="sect3">
-<h4 id="242"><a class="link" href="#242">3.2.1. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> add comment to file</a></h4>
+<h4 id="242"><a class="link" href="#242">4.2.1. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> add comment to file</a></h4>
 <div class="paragraph">
 <p>Each source file <a href="#245">is self explanatory</a> and must contain comments showing
 at least the following</p>
@@ -2856,22 +2903,22 @@ at least the following</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="243"><a class="link" href="#243">3.2.2. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> filenames are either CamelCase or snake_case</a></h4>
+<h4 id="243"><a class="link" href="#243">4.2.2. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> filenames are either CamelCase or snake_case</a></h4>
 <div class="paragraph">
 <p>Filenames</p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="version-control"><a class="link" href="#version-control">3.3. Version control</a></h3>
+<h3 id="version-control"><a class="link" href="#version-control">4.3. Version control</a></h3>
 
 </div>
 <div class="sect2">
-<h3 id="software-testing"><a class="link" href="#software-testing">3.4. Testing code</a></h3>
+<h3 id="software-testing"><a class="link" href="#software-testing">4.4. Testing code</a></h3>
 
 </div>
 <div class="sect2">
-<h3 id="development-environment"><a class="link" href="#development-environment">3.5. Development environment</a></h3>
+<h3 id="development-environment"><a class="link" href="#development-environment">4.5. Development environment</a></h3>
 <div class="paragraph">
 <p>Which tools are required for a developer to be at peak efficiency?</p>
 </div>
@@ -2978,7 +3025,7 @@ window.cookieconsent.initialise({
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-24 07:59:49 UTC
+Last updated 2020-04-24 08:35:43 UTC
 </div>
 </div>
 <style>
