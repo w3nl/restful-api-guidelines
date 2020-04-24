@@ -559,6 +559,14 @@
     {
       "id": "#250",
       "title": "STATUS-RFPMUST include guidelines in onboarding procedure"
+    },
+    {
+      "id": "#251",
+      "title": "SHOULD use two spaces for indentation"
+    },
+    {
+      "id": "#252",
+      "title": "MUST use automated linter based on approved style template"
     }
   ]
 }

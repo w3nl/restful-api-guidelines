@@ -1315,8 +1315,9 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <li><a href="#_pon_integration_and_development_guidelines">Pon Integration and Development Guidelines</a></li>
 <li><a href="#introduction">1. Introduction</a>
 <ul class="sectlevel2">
-<li><a href="#conventions-used-in-these-guidelines">1.1. Conventions used in these guidelines</a></li>
-<li><a href="#pon-specific-information">1.2. Pon specific information</a></li>
+<li><a href="#_attribution">1.1. Attribution</a></li>
+<li><a href="#conventions-used-in-these-guidelines">1.2. Conventions used in these guidelines</a></li>
+<li><a href="#pon-specific-information">1.3. Pon specific information</a></li>
 </ul>
 </li>
 <li><a href="#_generic">2. Generic</a>
@@ -1324,11 +1325,7 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <li><a href="#onboarding">2.1. Onboarding</a>
 <ul class="sectlevel3">
 <li><a href="#250">2.1.1. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> include guidelines in onboarding procedure</a></li>
-<li><a href="#249">2.1.2. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="should-keyword"><strong>SHOULD</strong></span> have pre-defined development environment(s)</a>
-<ul class="sectlevel4">
-<li><a href="#_patrons"><span class="patron">Patron(s) 🤍</span></a></li>
-</ul>
-</li>
+<li><a href="#249">2.1.2. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="should-keyword"><strong>SHOULD</strong></span> have pre-defined development environment(s)</a></li>
 </ul>
 </li>
 </ul>
@@ -1348,11 +1345,7 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <li><a href="#101">3.2.2. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> provide API specification</a></li>
 <li><a href="#234">3.2.3. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> only use durable and immutable remote references</a></li>
 <li><a href="#102">3.2.4. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="may-keyword"><strong>MAY</strong></span> provide API user manual</a></li>
-<li><a href="#103">3.2.5. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> write all resources using U.S. English</a>
-<ul class="sectlevel4">
-<li><a href="#_audience">Audience</a></li>
-</ul>
-</li>
+<li><a href="#103">3.2.5. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> write all resources using U.S. English</a></li>
 </ul>
 </li>
 <li><a href="#meta-information">3.3. Meta information</a>
@@ -1415,8 +1408,11 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 </ul>
 </li>
 <li><a href="#version-control">4.3. Version control</a></li>
-<li><a href="#software-testing">4.4. Testing code</a></li>
-<li><a href="#development-environment">4.5. Development environment</a></li>
+<li><a href="#software-testing">4.4. Testing code</a>
+<ul class="sectlevel3">
+<li><a href="#252">4.4.1. <span class="must-keyword"><strong>MUST</strong></span> use automated linter based on approved style template</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1454,7 +1450,13 @@ other teams’ APIs and our global architecture</p>
 <p>Ideally, all Pon APIs will look like the same author created them.</p>
 </div>
 <div class="sect2">
-<h3 id="conventions-used-in-these-guidelines"><a class="link" href="#conventions-used-in-these-guidelines">1.1. Conventions used in these guidelines</a></h3>
+<h3 id="_attribution"><a class="link" href="#_attribution">1.1. Attribution</a></h3>
+<div class="paragraph">
+<p>These guidelines are based on the <a href="https://github.com/zalando/restful-api-guidelines">Zalando restful api guidelines</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="conventions-used-in-these-guidelines"><a class="link" href="#conventions-used-in-these-guidelines">1.2. Conventions used in these guidelines</a></h3>
 <div class="paragraph">
 <p>The requirement level keywords "MUST", "MUST NOT", "REQUIRED", "SHALL",
 "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and
@@ -1464,7 +1466,7 @@ interpreted as described in <a href="https://www.ietf.org/rfc/rfc2119.txt">RFC
 </div>
 </div>
 <div class="sect2">
-<h3 id="pon-specific-information"><a class="link" href="#pon-specific-information">1.2. Pon specific information</a></h3>
+<h3 id="pon-specific-information"><a class="link" href="#pon-specific-information">1.3. Pon specific information</a></h3>
 <div class="paragraph">
 <p>The purpose of these guidelines is to define standards to successfully establish
 "consistent integration and development look and feel" quality. The integration
@@ -1477,7 +1479,7 @@ evolution via pull requests.</p>
 evolves, but teams can confidently follow and trust them.</p>
 </div>
 <div class="paragraph">
-<p>In case guidelines are changing, following rules apply:</p>
+<p>In case guidelines are changing, the following rules apply:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1495,7 +1497,7 @@ evolves, but teams can confidently follow and trust them.</p>
 <div class="paragraph">
 <p>Furthermore you should keep in mind that once an API becomes public externally
 available, it has to be re-reviewed and changed according to current guidelines
-- for sake of overall consistency.</p>
+- for the sake of overall consistency.</p>
 </div>
 </div>
 </div>
@@ -1516,7 +1518,7 @@ these guidelines.</p>
 <h4 id="249"><a class="link" href="#249">2.1.2. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="should-keyword"><strong>SHOULD</strong></span> have pre-defined development environment(s)</a></h4>
 <div class="paragraph">
 <p>There should be pre-defined development environments, including OS and IDE.
-These environments will ensure a smooth onboarding and will make groups of
+These environments will ensure a smooth onboarding and will make teams of
 developers more efficient.</p>
 </div>
 <div class="sect4">
@@ -2777,7 +2779,8 @@ works as needed.</p>
 complexity of the change.</p>
 </div>
 <div class="paragraph">
-<p>A logical structure, both for files and in the code itself, is essential.</p>
+<p>A logical structure, both for files and in the code itself, is essential. This
+also applies to the layout of the code itself, for example indents.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -2799,6 +2802,23 @@ easy to find code to be updated.</p>
 </tr>
 </table>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Code layout</div>
+<div class="paragraph">
+<p>Code layout may differ greatly between projects, but within the same project all
+files strictly adhere to the same code layout standards. Automated tools based
+on accepted code style standards are essential for enforcement.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 <div class="admonitionblock warning">
 <table>
 <tr>
@@ -2814,12 +2834,12 @@ will greatly reduce developer effort when applied correctly. But it is not the
 goal of software development; the goal is resolving challenges of the business
 under their conditions.</p>
 </div>
+<div class="paragraph">
+<p>DRY code is good, but it is always a choice.</p>
+</div>
 </td>
 </tr>
 </table>
-</div>
-<div class="paragraph">
-<p>DRY code is good, but it is always a choice.</p>
 </div>
 </div>
 <div class="sect3">
@@ -2915,28 +2935,81 @@ at least the following</p>
 </div>
 <div class="sect2">
 <h3 id="software-testing"><a class="link" href="#software-testing">4.4. Testing code</a></h3>
+<div class="sect3">
+<h4 id="252"><a class="link" href="#252">4.4.1. <span class="must-keyword"><strong>MUST</strong></span> use automated linter based on approved style template</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre>[[development-environment]]
+= Development environment
 
-</div>
-<div class="sect2">
-<h3 id="development-environment"><a class="link" href="#development-environment">4.5. Development environment</a></h3>
-<div class="paragraph">
-<p>Which tools are required for a developer to be at peak efficiency?</p>
-</div>
-<!-- Adds rule id as a postfix to all rule titles -->
-<script>
+Which tools are required for a developer to be at peak efficiency?
+
+:leveloffset: -1
+
+= Appendices
+
+:leveloffset: +1
+
+[[appendix-standard-style]]
+[appendix]
+= Pon Standard Style
+
+Based on &lt;&lt;standardJs&gt;&gt;
+
+[#251]
+== {SHOULD} use two spaces for indentation
+
+Using two spaces for indentation results in clear readable code without
+sacrificing too much screen real estate. Tabs should never be used.
+
+Based on rule(s): &lt;&lt;244, logical structured code&gt;&gt;
+
+
+
+[[references]]
+== References
+
+- [[standardJs]] standardJS https://standardjs.com/index.html
+
+
+[[appendix-changelog]]
+[appendix]
+= Changelog
+
+This change log only contains major changes made after XXXX 2020.
+
+Non-major changes are editorial-only changes or minor changes of existing
+guidelines, e.g. adding new error code. Major changes are changes that come with
+additional obligations, or even change an existing guideline obligation. The
+latter changes are additionally labeled with "Rule Change" here.
+
+To see a list of all changes, please have a look at the https://github.com/PonDigitalSolutions/restful-api-guidelines/commits/master[commit list in Github].
+
+[[rule-changes]]
+== Rule Changes
+
+* `2020-XX-XX:`
+
+
+:leveloffset: -1
+
+
+++++
+&lt;!-- Adds rule id as a postfix to all rule titles --&gt;
+&lt;script&gt;
 var ruleIdRegEx = /(\d)+/;
 var ruleheaders = document.getElementsByTagName("h4");
-for (var i = 0; i < ruleheaders.length; i++) {
+for (var i = 0; i &lt; ruleheaders.length; i++) {
     var header = ruleheaders[i];
-    if (header.id && header.id.match(ruleIdRegEx)) {
+    if (header.id &amp;&amp; header.id.match(ruleIdRegEx)) {
         var a = header.getElementsByTagName("a")[0]
         a.innerHTML += " [" + header.id + "]";
     }
 }
-</script>
+&lt;/script&gt;
 
-<!-- Add table of contents anchor and remove document title -->
-<script>
+&lt;!-- Add table of contents anchor and remove document title --&gt;
+&lt;script&gt;
 var toc = document.getElementById('toc');
 var div = document.createElement('div');
 div.id = 'table-of-contents';
@@ -2944,10 +3017,10 @@ toc.parentNode.replaceChild(div, toc);
 div.appendChild(toc);
 var ul = toc.childNodes[3];
 ul.removeChild(ul.childNodes[1]);
-</script>
+&lt;/script&gt;
 
-<!-- Adds sidebar navigation -->
-<script>
+&lt;!-- Adds sidebar navigation --&gt;
+&lt;script&gt;
 var header = document.getElementById('header');
 var nav = document.createElement('div');
 nav.id = 'toc';
@@ -2974,7 +3047,7 @@ ul.append(li);
 
 var link, li;
 var h2headers = document.getElementsByTagName('h3');
-for (var i = 1; i < h2headers.length; i++) {
+for (var i = 1; i &lt; h2headers.length; i++) {
     var a = h2headers[i].getElementsByTagName("a")[0];
     if (a !== undefined) {
         link = document.createElement('a');
@@ -2990,12 +3063,12 @@ document.body.classList.add('toc2');
 document.body.classList.add('toc-left');
 nav.append(ul);
 header.prepend(nav);
-</script>
+&lt;/script&gt;
 
-<!-- Cookies Consent -->
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
-<script>
+&lt;!-- Cookies Consent --&gt;
+&lt;link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" /&gt;
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
 window.addEventListener("load", function(){
 window.cookieconsent.initialise({
   "palette": {
@@ -3012,7 +3085,11 @@ window.cookieconsent.initialise({
     "message": "This web site uses cookies to analyze the general behavior of visitors."
   }
 })});
-</script>
+&lt;/script&gt;
+++++</pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -3025,7 +3102,7 @@ window.cookieconsent.initialise({
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-24 08:35:43 UTC
+Last updated 2020-04-24 12:46:55 UTC
 </div>
 </div>
 <style>
