@@ -1413,6 +1413,22 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <li><a href="#252">4.4.1. <span class="must-keyword"><strong>MUST</strong></span> use automated linter based on approved style template</a></li>
 </ul>
 </li>
+<li><a href="#development-environment">4.5. Development environment</a></li>
+</ul>
+</li>
+<li><a href="#_appendices">5. Appendices</a>
+<ul class="sectlevel2">
+<li><a href="#appendix-standard-style">Appendix A: Pon Standard Style</a>
+<ul class="sectlevel3">
+<li><a href="#251">5.A.1. <span class="should-keyword"><strong>SHOULD</strong></span> use two spaces for indentation</a></li>
+<li><a href="#references">5.A.2. References</a></li>
+</ul>
+</li>
+<li><a href="#appendix-changelog">Appendix B: Changelog</a>
+<ul class="sectlevel3">
+<li><a href="#rule-changes">5.B.1. Rule Changes</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -2937,79 +2953,86 @@ at least the following</p>
 <h3 id="software-testing"><a class="link" href="#software-testing">4.4. Testing code</a></h3>
 <div class="sect3">
 <h4 id="252"><a class="link" href="#252">4.4.1. <span class="must-keyword"><strong>MUST</strong></span> use automated linter based on approved style template</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre>[[development-environment]]
-= Development environment
-
-Which tools are required for a developer to be at peak efficiency?
-
-:leveloffset: -1
-
-= Appendices
-
-:leveloffset: +1
-
-[[appendix-standard-style]]
-[appendix]
-= Pon Standard Style
-
-Based on &lt;&lt;standardJs&gt;&gt;
-
-[#251]
-== {SHOULD} use two spaces for indentation
-
-Using two spaces for indentation results in clear readable code without
-sacrificing too much screen real estate. Tabs should never be used.
-
-Based on rule(s): &lt;&lt;244, logical structured code&gt;&gt;
-
-
-
-[[references]]
-== References
-
-- [[standardJs]] standardJS https://standardjs.com/index.html
-
-
-[[appendix-changelog]]
-[appendix]
-= Changelog
-
-This change log only contains major changes made after XXXX 2020.
-
-Non-major changes are editorial-only changes or minor changes of existing
+<div class="paragraph">
+<p>The linter configuration is selected from <a href="#solution-architecture-repository">the solution architecture repository</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="development-environment"><a class="link" href="#development-environment">4.5. Development environment</a></h3>
+<div class="paragraph">
+<p>Which tools are required for a developer to be at peak efficiency?</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_appendices"><a class="link" href="#_appendices">5. Appendices</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="appendix-standard-style"><a class="link" href="#appendix-standard-style">Appendix A: Pon Standard Style</a></h3>
+<div class="paragraph">
+<p>Based on <a href="#standardJs">[standardJs]</a></p>
+</div>
+<div class="sect3">
+<h4 id="251"><a class="link" href="#251">5.A.1. <span class="should-keyword"><strong>SHOULD</strong></span> use two spaces for indentation</a></h4>
+<div class="paragraph">
+<p>Using two spaces for indentation results in clear readable code without
+sacrificing too much screen real estate. Tabs should never be used.</p>
+</div>
+<div class="paragraph">
+<p>Based on rule(s): <a href="#244">logical structured code</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="references"><a class="link" href="#references">5.A.2. References</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p><a id="standardJs"></a> standardJS <a href="https://standardjs.com/index.html" class="bare">https://standardjs.com/index.html</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="appendix-changelog"><a class="link" href="#appendix-changelog">Appendix B: Changelog</a></h3>
+<div class="paragraph">
+<p>This change log only contains major changes made after XXXX 2020.</p>
+</div>
+<div class="paragraph">
+<p>Non-major changes are editorial-only changes or minor changes of existing
 guidelines, e.g. adding new error code. Major changes are changes that come with
 additional obligations, or even change an existing guideline obligation. The
-latter changes are additionally labeled with "Rule Change" here.
-
-To see a list of all changes, please have a look at the https://github.com/PonDigitalSolutions/restful-api-guidelines/commits/master[commit list in Github].
-
-[[rule-changes]]
-== Rule Changes
-
-* `2020-XX-XX:`
-
-
-:leveloffset: -1
-
-
-++++
-&lt;!-- Adds rule id as a postfix to all rule titles --&gt;
-&lt;script&gt;
+latter changes are additionally labeled with "Rule Change" here.</p>
+</div>
+<div class="paragraph">
+<p>To see a list of all changes, please have a look at the <a href="https://github.com/PonDigitalSolutions/restful-api-guidelines/commits/master">commit list in Github</a>.</p>
+</div>
+<div class="sect3">
+<h4 id="rule-changes"><a class="link" href="#rule-changes">5.B.1. Rule Changes</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p><code>2020-XX-XX:</code></p>
+</li>
+</ul>
+</div>
+<!-- Adds rule id as a postfix to all rule titles -->
+<script>
 var ruleIdRegEx = /(\d)+/;
 var ruleheaders = document.getElementsByTagName("h4");
-for (var i = 0; i &lt; ruleheaders.length; i++) {
+for (var i = 0; i < ruleheaders.length; i++) {
     var header = ruleheaders[i];
-    if (header.id &amp;&amp; header.id.match(ruleIdRegEx)) {
+    if (header.id && header.id.match(ruleIdRegEx)) {
         var a = header.getElementsByTagName("a")[0]
         a.innerHTML += " [" + header.id + "]";
     }
 }
-&lt;/script&gt;
+</script>
 
-&lt;!-- Add table of contents anchor and remove document title --&gt;
-&lt;script&gt;
+<!-- Add table of contents anchor and remove document title -->
+<script>
 var toc = document.getElementById('toc');
 var div = document.createElement('div');
 div.id = 'table-of-contents';
@@ -3017,10 +3040,10 @@ toc.parentNode.replaceChild(div, toc);
 div.appendChild(toc);
 var ul = toc.childNodes[3];
 ul.removeChild(ul.childNodes[1]);
-&lt;/script&gt;
+</script>
 
-&lt;!-- Adds sidebar navigation --&gt;
-&lt;script&gt;
+<!-- Adds sidebar navigation -->
+<script>
 var header = document.getElementById('header');
 var nav = document.createElement('div');
 nav.id = 'toc';
@@ -3047,7 +3070,7 @@ ul.append(li);
 
 var link, li;
 var h2headers = document.getElementsByTagName('h3');
-for (var i = 1; i &lt; h2headers.length; i++) {
+for (var i = 1; i < h2headers.length; i++) {
     var a = h2headers[i].getElementsByTagName("a")[0];
     if (a !== undefined) {
         link = document.createElement('a');
@@ -3063,12 +3086,12 @@ document.body.classList.add('toc2');
 document.body.classList.add('toc-left');
 nav.append(ul);
 header.prepend(nav);
-&lt;/script&gt;
+</script>
 
-&lt;!-- Cookies Consent --&gt;
-&lt;link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" /&gt;
-&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"&gt;&lt;/script&gt;
-&lt;script&gt;
+<!-- Cookies Consent -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+<script>
 window.addEventListener("load", function(){
 window.cookieconsent.initialise({
   "palette": {
@@ -3085,10 +3108,7 @@ window.cookieconsent.initialise({
     "message": "This web site uses cookies to analyze the general behavior of visitors."
   }
 })});
-&lt;/script&gt;
-++++</pre>
-</div>
-</div>
+</script>
 </div>
 </div>
 </div>
@@ -3102,7 +3122,7 @@ window.cookieconsent.initialise({
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-24 12:46:55 UTC
+Last updated 2020-04-24 13:15:12 UTC
 </div>
 </div>
 <style>
