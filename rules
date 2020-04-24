@@ -567,6 +567,14 @@
     {
       "id": "#252",
       "title": "MUST use automated linter based on approved style template"
+    },
+    {
+      "id": "#253",
+      "title": "SHOULD use special quotes only to reduce complexity"
+    },
+    {
+      "id": "#254",
+      "title": "== Coding rule: code is simple and concise "
     }
   ]
 }

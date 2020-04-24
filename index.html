@@ -1326,6 +1326,7 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <ul class="sectlevel3">
 <li><a href="#250">2.1.1. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> include guidelines in onboarding procedure</a></li>
 <li><a href="#249">2.1.2. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="should-keyword"><strong>SHOULD</strong></span> have pre-defined development environment(s)</a></li>
+<li><a href="#solution-architecture-repository">2.1.3. Solution architecture repository</a></li>
 </ul>
 </li>
 </ul>
@@ -1396,9 +1397,10 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <li><a href="#pon-development-introduction">4.1.1. Introduction</a></li>
 <li><a href="#248">4.1.2. Definition: code quality</a></li>
 <li><a href="#244">4.1.3. Coding rule: logical structured code</a></li>
-<li><a href="#245">4.1.4. Coding rule: code and code changes are self-explanatory</a></li>
-<li><a href="#246">4.1.5. Coding rule: solution design steps are template-based</a></li>
-<li><a href="#247">4.1.6. Coding rule: code quality is known</a></li>
+<li><a href="#254">4.1.4. Coding rule: code is simple and concise</a></li>
+<li><a href="#245">4.1.5. Coding rule: code and code changes are self-explanatory</a></li>
+<li><a href="#246">4.1.6. Coding rule: solution design steps are template-based</a></li>
+<li><a href="#247">4.1.7. Coding rule: code quality is known</a></li>
 </ul>
 </li>
 <li><a href="#file-structure-and-naming">4.2. File structure and naming</a>
@@ -1420,13 +1422,23 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <ul class="sectlevel2">
 <li><a href="#appendix-standard-style">Appendix A: Pon Standard Style</a>
 <ul class="sectlevel3">
-<li><a href="#251">5.A.1. <span class="should-keyword"><strong>SHOULD</strong></span> use two spaces for indentation</a></li>
-<li><a href="#references">5.A.2. References</a></li>
+<li><a href="#253">5.A.1. <span class="should-keyword"><strong>SHOULD</strong></span> use special quotes only to reduce complexity</a></li>
+<li><a href="#251">5.A.2. <span class="should-keyword"><strong>SHOULD</strong></span> use two spaces for indentation</a></li>
+<li><a href="#references">5.A.3. References</a></li>
 </ul>
 </li>
 <li><a href="#appendix-changelog">Appendix B: Changelog</a>
 <ul class="sectlevel3">
 <li><a href="#rule-changes">5.B.1. Rule Changes</a></li>
+</ul>
+</li>
+<li><a href="#bibliography">5.1. Bibliography</a>
+<ul class="sectlevel3">
+<li><a href="#blogs">Blogs</a></li>
+<li><a href="#openapi-specification">Open API specification</a></li>
+<li><a href="#publications-specifications-and-standards">Publications, specifications and standards</a></li>
+<li><a href="#dissertations">Dissertations</a></li>
+<li><a href="#books">Books</a></li>
 </ul>
 </li>
 </ul>
@@ -1542,10 +1554,19 @@ developers more efficient.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Zeger Knops (<a href="mailto:zeger.knops@pon.com">zeger.knops@pon.com</a>)</p>
+<p>Zeger Knops (<a href="mailto:zeger.knops@pon.com">zeger.knops@pon.com</a>)
+= Solution architecture</p>
 </li>
 </ul>
 </div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="solution-architecture-repository"><a class="link" href="#solution-architecture-repository">2.1.3. Solution architecture repository</a></h4>
+<div class="paragraph">
+<p>The Pon guilds supply a repository of approved tools, techniques and frameworks
+both to inspire and guide teams. It is essential this repository is consulted
+when desiging a solution architecture.</p>
 </div>
 </div>
 </div>
@@ -2752,7 +2773,8 @@ and the business impact<sup><a href="#246">246</a></sup> of the application.
 <div class="paragraph">
 <p>There is a clear relationship between the amount of bugs in the code and the
 development effort required, needlessly complex unlogical code will in itself be
-a source of new bugs.</p>
+a source of new bugs. Moreover clear documentation and requirements from the
+business are the only solid foundation for software development.</p>
 </div>
 <div class="paragraph">
 <p>The following chapters will further explain the intricacies of this rule.</p>
@@ -2829,7 +2851,8 @@ easy to find code to be updated.</p>
 <div class="paragraph">
 <p>Code layout may differ greatly between projects, but within the same project all
 files strictly adhere to the same code layout standards. Automated tools based
-on accepted code style standards are essential for enforcement.</p>
+on <a href="#solution-architecture-repository">accepted code style standards</a> are
+essential for enforcement.</p>
 </div>
 </td>
 </tr>
@@ -2859,13 +2882,44 @@ under their conditions.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="245"><a class="link" href="#245">4.1.4. Coding rule: code and code changes are self-explanatory</a></h4>
+<h4 id="254"><a class="link" href="#254">4.1.4. Coding rule: code is simple and concise</a></h4>
+<div class="paragraph">
+<p>Refers to “<em>How much effort</em>”.</p>
+</div>
+<div class="paragraph">
+<p>Code is simple and concise in order to increase the readability <a href="#praeng">[praeng]</a>.
+Increasing performance by sacrificing readability is only an option if the
+performance increase is in-line with the business requirements.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Simple and concise</div>
+<div class="paragraph">
+<p>Based on the experience level of the developer simple and concise can easily
+shift to unreadable and complex. Code should not be overly simplified in order
+for all to understand, it is up to the lead developer to guide and train the
+less experienced developers in writing and understanding simple and concise
+code.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="245"><a class="link" href="#245">4.1.5. Coding rule: code and code changes are self-explanatory</a></h4>
 <div class="paragraph">
 <p>Refers to “<em>without involving the previous developer</em>”.</p>
 </div>
 <div class="paragraph">
 <p>All code is sufficiently documented in order to reduce the effort<sup><a href="#244">244</a></sup>
-required for updates and changes.</p>
+required for updates and changes. Comments must explain the why, not the how
+<a href="#praeng">[praeng]</a>.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -2878,9 +2932,13 @@ tracking system</p>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>When readability is sacrificed for performance<sup><a href="#254">254</a></sup> it is reflected in
+the comments.</p>
+</div>
 </div>
 <div class="sect3">
-<h4 id="246"><a class="link" href="#246">4.1.5. Coding rule: solution design steps are template-based</a></h4>
+<h4 id="246"><a class="link" href="#246">4.1.6. Coding rule: solution design steps are template-based</a></h4>
 <div class="paragraph">
 <p>Refers to “<em>taking into account the lifetime, quality, security and business
 impact</em>”.</p>
@@ -2907,7 +2965,7 @@ following</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="247"><a class="link" href="#247">4.1.6. Coding rule: code quality is known</a></h4>
+<h4 id="247"><a class="link" href="#247">4.1.7. Coding rule: code quality is known</a></h4>
 <div class="paragraph">
 <p>Based on the quality as discussed in the <a href="#246">solution design</a> steps the code
 quality must be known.</p>
@@ -2972,20 +3030,29 @@ at least the following</p>
 <div class="sect2">
 <h3 id="appendix-standard-style"><a class="link" href="#appendix-standard-style">Appendix A: Pon Standard Style</a></h3>
 <div class="paragraph">
+<p>Pon standard style can be applied when linters are not available.</p>
+</div>
+<div class="paragraph">
 <p>Based on <a href="#standardJs">[standardJs]</a></p>
 </div>
 <div class="sect3">
-<h4 id="251"><a class="link" href="#251">5.A.1. <span class="should-keyword"><strong>SHOULD</strong></span> use two spaces for indentation</a></h4>
+<h4 id="253"><a class="link" href="#253">5.A.1. <span class="should-keyword"><strong>SHOULD</strong></span> use special quotes only to reduce complexity</a></h4>
+<div class="paragraph">
+<p><span class="small">Based on rule(s): <a href="#254">code is simple and concise</a></span></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="251"><a class="link" href="#251">5.A.2. <span class="should-keyword"><strong>SHOULD</strong></span> use two spaces for indentation</a></h4>
 <div class="paragraph">
 <p>Using two spaces for indentation results in clear readable code without
 sacrificing too much screen real estate. Tabs should never be used.</p>
 </div>
 <div class="paragraph">
-<p>Based on rule(s): <a href="#244">logical structured code</a></p>
+<p><span class="small">Based on rule(s): <a href="#244">logical structured code</a></span></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="references"><a class="link" href="#references">5.A.2. References</a></h4>
+<h4 id="references"><a class="link" href="#references">5.A.3. References</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -3015,6 +3082,133 @@ latter changes are additionally labeled with "Rule Change" here.</p>
 <ul>
 <li>
 <p><code>2020-XX-XX:</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="bibliography"><a class="link" href="#bibliography">5.1. Bibliography</a></h3>
+<div class="sect3">
+<h4 id="blogs"><a class="link" href="#blogs">Blogs</a></h4>
+<div class="ulist bibliography">
+<ul class="bibliography">
+<li>
+<p><strong><a href="http://restful-api-design.readthedocs.org/en/latest/">Lessons-learned blog: Thoughts on RESTful API Design</a></strong></p>
+</li>
+<li>
+<p><a id="praeng"></a>[praeng] <strong><a href="https://blog.pragmaticengineer.com/readable-code/">Pragmatic engineer blog: Readable Code</a></strong></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="openapi-specification"><a class="link" href="#openapi-specification">Open API specification</a></h4>
+<div class="ulist bibliography">
+<ul class="bibliography">
+<li>
+<p><strong><a href="https://github.com/OAI/OpenAPI-Specification/">Open API specification</a></strong></p>
+</li>
+<li>
+<p><strong><a href="https://openapi-map.apihandyman.io/">Open API specification mind map</a></strong></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="publications-specifications-and-standards"><a class="link" href="#publications-specifications-and-standards">Publications, specifications and standards</a></h4>
+<div class="ulist bibliography">
+<ul class="bibliography">
+<li>
+<p><strong><a href="https://tools.ietf.org/html/rfc3339">RFC 3339</a>:</strong> Date and Time on the Internet: Timestamps</p>
+</li>
+<li>
+<p><strong><a href="https://tools.ietf.org/html/rfc4122">RFC 4122</a>:</strong> A Universally Unique IDentifier (UUID) URN Namespace</p>
+</li>
+<li>
+<p><strong><a href="https://tools.ietf.org/html/rfc4627">RFC 4627</a>:</strong> The application/json Media Type for JavaScript Object Notation (JSON)</p>
+</li>
+<li>
+<p><strong><a href="https://tools.ietf.org/html/rfc8288">RFC 8288</a>:</strong> Web Linking</p>
+</li>
+<li>
+<p><strong><a href="https://tools.ietf.org/html/rfc6585">RFC 6585</a>:</strong> Additional HTTP Status Codes</p>
+</li>
+<li>
+<p><strong><a href="https://tools.ietf.org/html/rfc6902">RFC 6902</a>:</strong> JavaScript Object Notation (JSON) Patch</p>
+</li>
+<li>
+<p><strong><a href="https://tools.ietf.org/html/rfc7159">RFC 7159</a>:</strong> The JavaScript Object Notation (JSON) Data Interchange Format</p>
+</li>
+<li>
+<p><strong><a href="https://tools.ietf.org/html/rfc7230">RFC 7230</a>:</strong> Hypertext Transfer Protocol (HTTP/1.1): Message Syntax and Routing</p>
+</li>
+<li>
+<p><strong><a href="https://tools.ietf.org/html/rfc7231">RFC 7231</a>:</strong> Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content</p>
+</li>
+<li>
+<p><strong><a href="https://tools.ietf.org/html/rfc7232">RFC 7232</a>:</strong> Hypertext Transfer Protocol (HTTP/1.1): Conditional Requests</p>
+</li>
+<li>
+<p><strong><a href="https://tools.ietf.org/html/rfc7233">RFC 7233</a>:</strong> Hypertext Transfer Protocol (HTTP/1.1): Range Requests</p>
+</li>
+<li>
+<p><strong><a href="https://tools.ietf.org/html/rfc7234">RFC 7234</a>:</strong> Hypertext Transfer Protocol (HTTP/1.1): Caching</p>
+</li>
+<li>
+<p><strong><a href="https://tools.ietf.org/html/rfc7240">RFC 7240</a>:</strong> Prefer Header for HTTP</p>
+</li>
+<li>
+<p><strong><a href="https://tools.ietf.org/html/rfc7396">RFC 7396</a>:</strong> JSON Merge Patch</p>
+</li>
+<li>
+<p><strong><a href="https://tools.ietf.org/html/rfc7807">RFC 7807</a>:</strong> Problem Details for HTTP APIs</p>
+</li>
+<li>
+<p><strong><a href="https://tools.ietf.org/html/rfc4648">RFC 4648</a>:</strong> The Base16, Base32, and Base64 Data Encodings</p>
+</li>
+<li>
+<p><strong><a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>:</strong> Date and time format</p>
+</li>
+<li>
+<p><strong><a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 alpha-2</a>:</strong> Two letter country codes</p>
+</li>
+<li>
+<p><strong><a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a>:</strong> Two letter language codes</p>
+</li>
+<li>
+<p><strong><a href="https://en.wikipedia.org/wiki/ISO_4217">ISO 4217</a>:</strong> Currency codes</p>
+</li>
+<li>
+<p><strong><a href="https://tools.ietf.org/html/bcp47">BCP 47</a>:</strong> Tags for Identifying Languages</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="dissertations"><a class="link" href="#dissertations">Dissertations</a></h4>
+<div class="ulist bibliography">
+<ul class="bibliography">
+<li>
+<p><strong><a href="http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm">Roy Thomas
+Fielding - Architectural Styles and the Design of Network-Based Software
+Architectures</a>:</strong> This is the text which defines what REST is.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="books"><a class="link" href="#books">Books</a></h4>
+<div class="ulist bibliography">
+<ul class="bibliography">
+<li>
+<p><strong><a href="http://www.amazon.de/REST-Practice-Hypermedia-Systems-Architecture/dp/0596805829">REST in Practice: Hypermedia and Systems Architecture</a></strong></p>
+</li>
+<li>
+<p><strong><a href="https://leanpub.com/build-apis-you-wont-hate">Build APIs You Won&#8217;t Hate</a></strong></p>
+</li>
+<li>
+<p><strong><a href="http://www.infoq.com/minibooks/emag-web-api">InfoQ eBook - Web APIs: From Start to Finish</a></strong></p>
 </li>
 </ul>
 </div>
@@ -3122,7 +3316,7 @@ window.cookieconsent.initialise({
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-24 13:15:12 UTC
+Last updated 2020-04-24 14:42:48 UTC
 </div>
 </div>
 <style>
