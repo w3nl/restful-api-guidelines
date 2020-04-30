@@ -562,7 +562,7 @@
     },
     {
       "id": "#251",
-      "title": "MUST use two spaces for indentation "
+      "title": "MUST use predefined spacing for indentation "
     },
     {
       "id": "#252",
@@ -583,6 +583,10 @@
     {
       "id": "#256",
       "title": "MUST not have unused variables"
+    },
+    {
+      "id": "#257",
+      "title": "MUST never use tabs for indentation"
     }
   ]
 }
