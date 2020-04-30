@@ -1394,13 +1394,14 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <ul class="sectlevel2">
 <li><a href="#development-guidelines">4.1. General development guidelines</a>
 <ul class="sectlevel3">
-<li><a href="#pon-development-introduction">4.1.1. Introduction</a></li>
-<li><a href="#248">4.1.2. Definition: code quality</a></li>
-<li><a href="#244">4.1.3. Coding rule: logical structured code</a></li>
-<li><a href="#254">4.1.4. Coding rule: code is simple and concise</a></li>
-<li><a href="#245">4.1.5. Coding rule: code and code changes are self-explanatory</a></li>
-<li><a href="#246">4.1.6. Coding rule: solution design steps are template-based</a></li>
-<li><a href="#247">4.1.7. Coding rule: code quality is known</a></li>
+<li><a href="#development-introduction">4.1.1. Introduction</a></li>
+<li><a href="#development-rules-definitions">4.1.2. Rules and definitions</a></li>
+<li><a href="#248">4.1.3. Definition: code quality</a></li>
+<li><a href="#244">4.1.4. Coding rule: logical structured code</a></li>
+<li><a href="#254">4.1.5. Coding rule: code is simple and concise</a></li>
+<li><a href="#245">4.1.6. Coding rule: code and code changes are self-explanatory</a></li>
+<li><a href="#246">4.1.7. Coding rule: solution design steps are template-based</a></li>
+<li><a href="#247">4.1.8. Coding rule: code quality is known</a></li>
 </ul>
 </li>
 <li><a href="#file-structure-and-naming">4.2. File structure and naming</a>
@@ -1426,9 +1427,10 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <ul class="sectlevel2">
 <li><a href="#appendix-standard-style">Appendix A: Pon Standard Style</a>
 <ul class="sectlevel3">
-<li><a href="#253">5.A.1. <span class="should-keyword"><strong>SHOULD</strong></span> use special quotes only to reduce complexity</a></li>
+<li><a href="#253">5.A.1. <span class="must-keyword"><strong>MUST</strong></span> use special quotes only to reduce complexity</a></li>
 <li><a href="#251">5.A.2. <span class="must-keyword"><strong>MUST</strong></span> use two spaces for indentation</a></li>
-<li><a href="#references">5.A.3. References</a></li>
+<li><a href="#256">5.A.3. <span class="must-keyword"><strong>MUST</strong></span> not have unused variables</a></li>
+<li><a href="#references">5.A.4. References</a></li>
 </ul>
 </li>
 <li><a href="#appendix-changelog">Appendix B: Changelog</a>
@@ -2747,7 +2749,7 @@ the deprecation info (see hint in <a href="#189"><span class="should-keyword"><s
 </div>
 </div>
 <div class="sect3">
-<h4 id="pon-development-introduction"><a class="link" href="#pon-development-introduction">4.1.1. Introduction</a></h4>
+<h4 id="development-introduction"><a class="link" href="#development-introduction">4.1.1. Introduction</a></h4>
 <div class="paragraph">
 <p>This chapter is about coding, developing or anything related to using a
 programming language to solve a problem. A problem is defined as a resolution
@@ -2785,7 +2787,13 @@ business are the only solid foundation for software development.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="248"><a class="link" href="#248">4.1.2. Definition: code quality</a></h4>
+<h4 id="development-rules-definitions"><a class="link" href="#development-rules-definitions">4.1.2. Rules and definitions</a></h4>
+<div class="paragraph">
+<p>Rules and definition used in the development guidelines.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="248"><a class="link" href="#248">4.1.3. Definition: code quality</a></h4>
 <div id="wikipedia-quote-software-quality" class="quoteblock">
 <blockquote>
 <div class="ulist">
@@ -2812,7 +2820,7 @@ works as needed.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="244"><a class="link" href="#244">4.1.3. Coding rule: logical structured code</a></h4>
+<h4 id="244"><a class="link" href="#244">4.1.4. Coding rule: logical structured code</a></h4>
 <div class="paragraph">
 <p>Refers to “<em>How much effort</em>”.</p>
 </div>
@@ -2886,7 +2894,7 @@ under their conditions.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="254"><a class="link" href="#254">4.1.4. Coding rule: code is simple and concise</a></h4>
+<h4 id="254"><a class="link" href="#254">4.1.5. Coding rule: code is simple and concise</a></h4>
 <div class="paragraph">
 <p>Refers to “<em>How much effort</em>”.</p>
 </div>
@@ -2916,7 +2924,7 @@ code.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="245"><a class="link" href="#245">4.1.5. Coding rule: code and code changes are self-explanatory</a></h4>
+<h4 id="245"><a class="link" href="#245">4.1.6. Coding rule: code and code changes are self-explanatory</a></h4>
 <div class="paragraph">
 <p>Refers to “<em>without involving the previous developer</em>”.</p>
 </div>
@@ -2942,7 +2950,7 @@ the comments.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="246"><a class="link" href="#246">4.1.6. Coding rule: solution design steps are template-based</a></h4>
+<h4 id="246"><a class="link" href="#246">4.1.7. Coding rule: solution design steps are template-based</a></h4>
 <div class="paragraph">
 <p>Refers to “<em>taking into account the lifetime, quality, security and business
 impact</em>”.</p>
@@ -2969,7 +2977,7 @@ following</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="247"><a class="link" href="#247">4.1.7. Coding rule: code quality is known</a></h4>
+<h4 id="247"><a class="link" href="#247">4.1.8. Coding rule: code quality is known</a></h4>
 <div class="paragraph">
 <p>Based on the quality as discussed in the <a href="#246">solution design</a> steps the code
 quality must be known.</p>
@@ -3067,7 +3075,7 @@ described in <a href="#245">Coding rule: code and code changes are self-explanat
 <p>Based on <a href="#standardJs">[standardJs]</a>, <a href="#googleStyleguideJs">[googleStyleguideJs]</a></p>
 </div>
 <div class="sect3">
-<h4 id="253"><a class="link" href="#253">5.A.1. <span class="should-keyword"><strong>SHOULD</strong></span> use special quotes only to reduce complexity</a></h4>
+<h4 id="253"><a class="link" href="#253">5.A.1. <span class="must-keyword"><strong>MUST</strong></span> use special quotes only to reduce complexity</a></h4>
 <div class="paragraph">
 <p>In most programming languages several options are available for the quoting of
 text, in the following examples Javascript style quoting is used which is
@@ -3080,40 +3088,66 @@ to make the code more simple and concise?</p>
 <div class="sect4">
 <h5 id="_example_1"><a class="link" href="#_example_1">Example 1</a></h5>
 <div class="paragraph">
-<p><code>text = "The quick brown fox jumped over the lazy dog"</code></p>
+<p><span style="font-weight: bold; font-family: Consolas, Liberation Mono, Courier, monospace">
+text = "The quick brown fox jumped over the lazy dog"
+</span></p>
 </div>
 <div class="paragraph">
 <p>Although the code is correct the double quotes have have no additional function,
 the following code is more concise by using single quotes:</p>
 </div>
 <div class="paragraph">
-<p><code>text = 'The quick brown fox jumped over the lazy dog'</code></p>
+<p><span style="font-weight: bold; font-family: Consolas, Liberation Mono, Courier, monospace">
+text = 'The quick brown fox jumped over the lazy dog'
+</span></p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="_example_2"><a class="link" href="#_example_2">Example 2</a></h5>
 <div class="paragraph">
-<p><code>text = "The quick brown \"fox\" jumped over the lazy dog"</code></p>
+<p><span style="font-weight: bold; font-family: Consolas, Liberation Mono, Courier, monospace">
+text = "The quick brown \"fox\" jumped over the lazy dog"
+</span></p>
 </div>
 <div class="paragraph">
 <p>The code is correct, but readability is improved by switching to single quotes:</p>
 </div>
 <div class="paragraph">
-<p><code>text = 'The quick brown "fox" jumped over the lazy dog'</code></p>
+<p><span style="font-weight: bold; font-family: Consolas, Liberation Mono, Courier, monospace">
+text = 'The quick brown "fox" jumped over the lazy dog'
+</span></p>
 </div>
-<div class="paragraph">
-<p><span class="small">Based on rule(s): <a href="#254">code is simple and concise</a></span></p>
 </div>
+<div class="sect4">
+<h5 id="_languages"><a class="link" href="#_languages">Languages</a></h5>
+<table class="tableblock frame-none grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="assets/lang-javascript.svg" alt="Javascript" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="assets/lang-php.svg" alt="PHP" width="24" height="24"></span></p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect4">
 <h5 id="_references"><a class="link" href="#_references">References</a></h5>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#googleStyleguideJs">[googleStyleguideJs]</a> <a href="https://google.github.io/styleguide/jsguide.html#features-strings-use-single-quotes">Use single quotes</a></p>
+<p><a href="#googleStyleguideJs">[googleStyleguideJs]</a>, <a href="https://google.github.io/styleguide/jsguide.html#features-strings-use-single-quotes">Use single quotes</a></p>
 </li>
 <li>
-<p><a href="#standardJs">[standardJs]</a> Use single quotes for strings</p>
+<p><a href="#standardJs">[standardJs]</a>, Use single quotes for strings</p>
+</li>
+<li>
+<p><a href="#development-rules-definitions">Rules and definitions</a>, <a href="#244">Coding rule: logical structured code</a></p>
+</li>
+<li>
+<p><a href="#development-rules-definitions">Rules and definitions</a>, <a href="#254">Coding rule: code is simple and concise</a></p>
 </li>
 </ul>
 </div>
@@ -3125,11 +3159,8 @@ the following code is more concise by using single quotes:</p>
 <p>Using two spaces for indentation results in clear readable code without
 sacrificing too much screen real estate. Tabs are never to be used.</p>
 </div>
-<div class="paragraph">
-<p><span class="small">Based on rule(s): <a href="#244">logical structured code</a></span></p>
-</div>
 <div class="sect4">
-<h5 id="_languages"><a class="link" href="#_languages">Languages</a></h5>
+<h5 id="_languages_2"><a class="link" href="#_languages_2">Languages</a></h5>
 <table class="tableblock frame-none grid-all fit-content">
 <colgroup>
 <col>
@@ -3148,17 +3179,53 @@ sacrificing too much screen real estate. Tabs are never to be used.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#googleStyleguidJs">[googleStyleguidJs]</a> <a href="https://google.github.io/styleguide/jsguide.html#whitespace-characters">Whitespace characters (2)</a></p>
+<p><a href="#googleStyleguideJs">[googleStyleguideJs]</a>, <a href="https://google.github.io/styleguide/jsguide.html#whitespace-characters">Whitespace characters (2)</a></p>
 </li>
 <li>
-<p><a href="#standardJs">[standardJs]</a> Use 2 spaces for indentation</p>
+<p><a href="#standardJs">[standardJs]</a>, Use 2 spaces for indentation</p>
+</li>
+<li>
+<p><a href="#development-rules-definitions">Rules and definitions</a>, <a href="#244">Coding rule: logical structured code</a></p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="references"><a class="link" href="#references">5.A.3. References</a></h4>
+<h4 id="256"><a class="link" href="#256">5.A.3. <span class="must-keyword"><strong>MUST</strong></span> not have unused variables</a></h4>
+<div class="paragraph">
+<p>All variables are in use, unused variables have no function and are cluttering
+the code.</p>
+</div>
+<div class="sect4">
+<h5 id="_languages_3"><a class="link" href="#_languages_3">Languages</a></h5>
+<table class="tableblock frame-none grid-all fit-content">
+<colgroup>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">∀</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_references_3"><a class="link" href="#_references_3">References</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#standardJs">[standardJs]</a>, No unused variables</p>
+</li>
+<li>
+<p><a href="#development-rules-definitions">Rules and definitions</a>, <a href="#244">Coding rule: logical structured code</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="references"><a class="link" href="#references">5.A.4. References</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -3425,7 +3492,7 @@ window.cookieconsent.initialise({
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-30 11:06:26 UTC
+Last updated 2020-04-30 11:27:36 UTC
 </div>
 </div>
 <style>
