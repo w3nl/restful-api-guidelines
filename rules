@@ -562,7 +562,7 @@
     },
     {
       "id": "#251",
-      "title": "SHOULD use two spaces for indentation"
+      "title": "MUST use two spaces for indentation "
     },
     {
       "id": "#252",
