@@ -3011,20 +3011,26 @@ at least the following</p>
 <h3 id="version-control"><a class="link" href="#version-control">4.3. Version control</a></h3>
 <div class="sect3">
 <h4 id="255"><a class="link" href="#255">4.3.1. <span class="must-keyword"><strong>MUST</strong></span> use review guidelines for version control</a></h4>
+<div class="paragraph">
+<p>All code must be reviewed according to documented and approved guidelines.
+Relates to <a href="#244">Coding rule: logical structured code</a>.</p>
+</div>
 <div class="sect4">
-<h5 id="_review_guidelines_pon_bike"><a class="link" href="#_review_guidelines_pon_bike">Review guidelines, Pon.bike</a></h5>
+<h5 id="_review_guidelines"><a class="link" href="#_review_guidelines">Review guidelines</a></h5>
 <div class="ulist">
 <ul>
 <li>
-<p>Start reviewing only if the author approved the PR.</p>
+<p>Start reviewing only if the author approved the pull request (PR).</p>
 </li>
 <li>
-<p>A review will always result in an approved or declined PR. Decline when a PR
-contains breaking changes that MUST BE fixed. The author must re-create the PR
-when the changes are fixed.</p>
+<p>A review will always result in either an approved or declined PR.</p>
 </li>
 <li>
-<p>Write comments in a clear, conscise, constructive and unambiguous manner as
+<p>A declined PR must be recreated, preferably by the author, when issues have
+been addressed.</p>
+</li>
+<li>
+<p>Write comments in a clear, concise, constructive and unambiguous manner as
 described in <a href="#245">Coding rule: code and code changes are self-explanatory</a>.</p>
 </li>
 </ul>
@@ -3378,7 +3384,7 @@ window.cookieconsent.initialise({
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-30 09:33:16 UTC
+Last updated 2020-04-30 09:43:30 UTC
 </div>
 </div>
 <style>
