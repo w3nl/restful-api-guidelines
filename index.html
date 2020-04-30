@@ -1409,7 +1409,11 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <li><a href="#243">4.2.2. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> filenames are either CamelCase or snake_case</a></li>
 </ul>
 </li>
-<li><a href="#version-control">4.3. Version control</a></li>
+<li><a href="#version-control">4.3. Version control</a>
+<ul class="sectlevel3">
+<li><a href="#255">4.3.1. <span class="must-keyword"><strong>MUST</strong></span> use review guidelines for version control</a></li>
+</ul>
+</li>
 <li><a href="#software-testing">4.4. Testing code</a>
 <ul class="sectlevel3">
 <li><a href="#252">4.4.1. <span class="must-keyword"><strong>MUST</strong></span> use automated linter based on approved style template</a></li>
@@ -3005,7 +3009,28 @@ at least the following</p>
 </div>
 <div class="sect2">
 <h3 id="version-control"><a class="link" href="#version-control">4.3. Version control</a></h3>
-
+<div class="sect3">
+<h4 id="255"><a class="link" href="#255">4.3.1. <span class="must-keyword"><strong>MUST</strong></span> use review guidelines for version control</a></h4>
+<div class="sect4">
+<h5 id="_review_guidelines_pon_bike"><a class="link" href="#_review_guidelines_pon_bike">Review guidelines, Pon.bike</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Start reviewing only if the author approved the PR.</p>
+</li>
+<li>
+<p>A review will always result in an approved or declined PR. Decline when a PR
+contains breaking changes that MUST BE fixed. The author must re-create the PR
+when the changes are fixed.</p>
+</li>
+<li>
+<p>Write comments in a clear, conscise, constructive and unambiguous manner as
+described in <a href="#245">Coding rule: code and code changes are self-explanatory</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="software-testing"><a class="link" href="#software-testing">4.4. Testing code</a></h3>
@@ -3034,6 +3059,9 @@ at least the following</p>
 </div>
 <div class="paragraph">
 <p>Based on <a href="#standardJs">[standardJs]</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://google.github.io/styleguide/jsguide.html" class="bare">https://google.github.io/styleguide/jsguide.html</a></p>
 </div>
 <div class="sect3">
 <h4 id="253"><a class="link" href="#253">5.A.1. <span class="should-keyword"><strong>SHOULD</strong></span> use special quotes only to reduce complexity</a></h4>
@@ -3350,7 +3378,7 @@ window.cookieconsent.initialise({
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-24 14:57:37 UTC
+Last updated 2020-04-30 09:33:16 UTC
 </div>
 </div>
 <style>

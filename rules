@@ -575,6 +575,10 @@
     {
       "id": "#254",
       "title": "== Coding rule: code is simple and concise "
+    },
+    {
+      "id": "#255",
+      "title": "MUST use review guidelines for version control"
     }
   ]
 }
