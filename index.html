@@ -1421,7 +1421,12 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <li><a href="#252">4.4.1. <span class="must-keyword"><strong>MUST</strong></span> use automated linter based on approved style template</a></li>
 </ul>
 </li>
-<li><a href="#development-environment">4.5. Development environment</a></li>
+<li><a href="#software-monitoring">4.5. Monitoring &amp; logging</a>
+<ul class="sectlevel3">
+<li><a href="#259">4.5.1. <span class="should-keyword"><strong>SHOULD</strong></span> use dedicated logging library and logging levels</a></li>
+</ul>
+</li>
+<li><a href="#development-environment">4.6. Development environment</a></li>
 </ul>
 </li>
 <li><a href="#_appendices">5. Appendices</a>
@@ -3083,7 +3088,27 @@ described in <a href="#245">Coding rule: code and code changes are self-explanat
 </div>
 </div>
 <div class="sect2">
-<h3 id="development-environment"><a class="link" href="#development-environment">4.5. Development environment</a></h3>
+<h3 id="software-monitoring"><a class="link" href="#software-monitoring">4.5. Monitoring &amp; logging</a></h3>
+<div class="paragraph">
+<p>Logging and monitoring is essential for software, they business should always be
+able to confirm software is functioning correctly.</p>
+</div>
+<div class="sect3">
+<h4 id="259"><a class="link" href="#259">4.5.1. <span class="should-keyword"><strong>SHOULD</strong></span> use dedicated logging library and logging levels</a></h4>
+<div class="paragraph">
+<p>Logging directly to the console or command line is not recommended; it reduces
+the effectivess of debugging, monitoring and checking the operational status of
+the software. It increases the security risk because it is challenging to detect
+if senstive data is being logged.</p>
+</div>
+<div class="paragraph">
+<p>To effectively use the library logging levels (DEBUG, ERROR, NOTICE) should be
+used.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="development-environment"><a class="link" href="#development-environment">4.6. Development environment</a></h3>
 <div class="paragraph">
 <p>Which tools are required for a developer to be at peak efficiency?</p>
 </div>
@@ -3553,7 +3578,7 @@ window.cookieconsent.initialise({
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-30 15:52:01 UTC
+Last updated 2020-05-08 13:34:58 UTC
 </div>
 </div>
 <style>

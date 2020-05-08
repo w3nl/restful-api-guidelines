@@ -591,6 +591,10 @@
     {
       "id": "#258",
       "title": "== Coding rule: do not repeat yourself (DRY)"
+    },
+    {
+      "id": "#259",
+      "title": "SHOULD use dedicated logging library and logging levels"
     }
   ]
 }
