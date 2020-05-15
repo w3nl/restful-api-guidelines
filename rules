@@ -270,11 +270,11 @@
     },
     {
       "id": "#173",
-      "title": "MUST use the common money object"
+      "title": "STATUS-RFPMUST use the common money object"
     },
     {
       "id": "#174",
-      "title": "MUST use common field names and semantics"
+      "title": "STATUS-RFPMUST use common field names and semantics"
     },
     {
       "id": "#176",
@@ -322,23 +322,23 @@
     },
     {
       "id": "#187",
-      "title": "MUST reflect deprecation in API specifications"
+      "title": "STATUS-RFPMUST reflect deprecation in API specifications"
     },
     {
       "id": "#188",
-      "title": "MUST monitor usage of deprecated API scheduled for sunset"
+      "title": "STATUS-RFPMUST monitor usage of deprecated API scheduled for sunset"
     },
     {
       "id": "#189",
-      "title": "SHOULD add `Deprecation` and `Sunset` header to responses"
+      "title": "STATUS-RFPSHOULD add `Deprecation` and `Sunset` header to responses"
     },
     {
       "id": "#190",
-      "title": "SHOULD add monitoring for `Deprecation` and `Sunset` header"
+      "title": "STATUS-RFPSHOULD add monitoring for `Deprecation` and `Sunset` header"
     },
     {
       "id": "#191",
-      "title": "MUST not start using deprecated APIs"
+      "title": "STATUS-RFPMUST not start using deprecated APIs"
     },
     {
       "id": "#192",
@@ -595,6 +595,14 @@
     {
       "id": "#259",
       "title": "SHOULD use dedicated logging library and logging levels"
+    },
+    {
+      "id": "#260",
+      "title": "STATUS-RFPMUST include project wide license file"
+    },
+    {
+      "id": "#261",
+      "title": "STATUS-RFPMUST include copyright notice in each source file"
     }
   ]
 }
