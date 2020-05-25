@@ -1607,23 +1607,8 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <li><a href="#257">5.C.2. <span class="must-keyword"><strong>MUST</strong></span> never use tabs for indentation</a></li>
 <li><a href="#251">5.C.3. <span class="must-keyword"><strong>MUST</strong></span> use predefined spacing for indentation</a></li>
 <li><a href="#256">5.C.4. <span class="must-keyword"><strong>MUST</strong></span> not have unused variables</a></li>
-<li><a href="#references">5.C.5. References</a></li>
-</ul>
-</li>
-<li><a href="#appendix-standard-style-magento">Appendix D: Pon Standard Style - Magento</a></li>
-<li><a href="#appendix-standard-style-wordpress">Appendix E: Pon Standard Style - Wordpress</a></li>
-<li><a href="#appendix-changelog">Appendix F: Changelog</a>
-<ul class="sectlevel3">
-<li><a href="#rule-changes">5.F.1. Rule Changes</a></li>
-</ul>
-</li>
-<li><a href="#bibliography">5.1. Bibliography</a>
-<ul class="sectlevel3">
-<li><a href="#blogs">Blogs</a></li>
-<li><a href="#openapi-specification">Open API specification</a></li>
-<li><a href="#publications-specifications-and-standards">Publications, specifications and standards</a></li>
-<li><a href="#dissertations">Dissertations</a></li>
-<li><a href="#books">Books</a></li>
+<li><a href="#262">5.C.5. <span class="should-keyword"><strong>SHOULD</strong></span> use &lt; or &gt; instead of &#8656; or &gt;=</a></li>
+<li><a href="#263">5.C.6. <span class="should-keyword"><strong>SHOULD</strong></span> use != instead of &gt; or &lt; when only a single value results in false</a></li>
 </ul>
 </li>
 </ul>
@@ -9116,6 +9101,9 @@ will greatly reduce developer effort when applied correctly. But it is not the
 goal of software development; the goal is resolving challenges of the business
 under their conditions.</p>
 </div>
+<div class="paragraph">
+<p>Ref: <a href="https://gtramontina.com/posts/do-repeat-yourself.html" class="bare">https://gtramontina.com/posts/do-repeat-yourself.html</a></p>
+</div>
 </td>
 </tr>
 </table>
@@ -9474,282 +9462,257 @@ the code.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="references"><a class="link" href="#references">5.C.5. References</a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p><a id="standardJs"></a> standardJS <a href="https://standardjs.com/index.html" class="bare">https://standardjs.com/index.html</a></p>
-</li>
-<li>
-<p><a id="googleStyleguideJs"></a> Google Javascript styleguide <a href="https://google.github.io/styleguide/jsguide.html" class="bare">https://google.github.io/styleguide/jsguide.html</a></p>
-</li>
-<li>
-<p><a id="phpStandards"></a> PHP Standards Recommendations <a href="https://www.php-fig.org/psr/" class="bare">https://www.php-fig.org/psr/</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="appendix-standard-style-magento"><a class="link" href="#appendix-standard-style-magento">Appendix D: Pon Standard Style - Magento</a></h3>
+<h4 id="262"><a class="link" href="#262">5.C.5. <span class="should-keyword"><strong>SHOULD</strong></span> use &lt; or &gt; instead of &#8656; or &gt;=</a></h4>
 <div class="paragraph">
-<p><span class="patron">Patron(s) 🤍</span> ?</p>
+<p>Using &lt; is preferred over using &#8656;, using &gt; is preferred over using &gt;=. It
+improves readability and performance of code.</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="appendix-standard-style-wordpress"><a class="link" href="#appendix-standard-style-wordpress">Appendix E: Pon Standard Style - Wordpress</a></h3>
+<div class="sect4">
+<h5 id="_languages_5"><a class="link" href="#_languages_5">Languages</a></h5>
 <div class="paragraph">
-<p><span class="patron">Patron(s) 🤍</span> Roy van der Loo</p>
+<p>∀</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="appendix-changelog"><a class="link" href="#appendix-changelog">Appendix F: Changelog</a></h3>
+</div>
+<div class="sect3">
+<h4 id="263"><a class="link" href="#263">5.C.6. <span class="should-keyword"><strong>SHOULD</strong></span> use != instead of &gt; or &lt; when only a single value results in false</a></h4>
 <div class="paragraph">
-<p>This change log only contains major changes made after XXXX 2020.</p>
+<p>If a return value always results in true except for a single value using != is
+preferred over using &gt; or &gt;=.</p>
+</div>
+<div class="sect4">
+<h5 id="_example_1_2"><a class="link" href="#_example_1_2">Example 1</a></h5>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">text = <span class="string"><span class="delimiter">&quot;</span><span class="content">NL,DE,FR</span><span class="delimiter">&quot;</span></span>;
+
+<span class="keyword">if</span> (text.indexOf(<span class="string"><span class="delimiter">'</span><span class="content">BE</span><span class="delimiter">'</span></span>) &gt;= <span class="integer">0</span>)</code></pre>
+</div>
 </div>
 <div class="paragraph">
-<p>Non-major changes are editorial-only changes or minor changes of existing
-guidelines, e.g. adding new error code. Major changes are changes that come with
+<p>The code is correct, but readability is reduced by using the &gt;=, especially since
+the return of the indexOf function is counterintuitive, a more readable solution
+is:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript">text = <span class="string"><span class="delimiter">&quot;</span><span class="content">NL,DE,FR</span><span class="delimiter">&quot;</span></span>;
+
+<span class="keyword">if</span> (text.indexOf(<span class="string"><span class="delimiter">'</span><span class="content">BE</span><span class="delimiter">'</span></span>) != -<span class="integer">1</span>)
+---
+
+=== Languages
+
+{LANG-ALL-ICON}
+
+
+[[references]]
+== References
+
+- [[standardJs]] standardJS https:<span class="comment">//standardjs.com/index.html</span>
+- [[googleStyleguideJs]] Google Javascript styleguide https:<span class="comment">//google.github.io/styleguide/jsguide.html</span>
+- [[phpStandards]] PHP Standards Recommendations https:<span class="comment">//www.php-fig.org/psr/</span>
+
+
+
+
+[[appendix-standard-style-magento]]
+[appendix]
+= Pon Standard Style - Magento
+
+{PATRON} ?
+[[appendix-standard-style-wordpress]]
+[appendix]
+= Pon Standard Style - Wordpress
+
+{PATRON} Roy van der Loo
+[[appendix-changelog]]
+[appendix]
+= Changelog
+
+This change log only contains major changes made after XXXX <span class="integer">2020</span>.
+
+Non-major changes are editorial-only changes or minor changes of existing
+guidelines, e.g. adding <span class="keyword">new</span> error code. Major changes are changes that come <span class="keyword">with</span>
 additional obligations, or even change an existing guideline obligation. The
-latter changes are additionally labeled with "Rule Change" here.</p>
-</div>
-<div class="paragraph">
-<p>To see a list of all changes, please have a look at the <a href="https://github.com/PonDigitalSolutions/restful-api-guidelines/commits/master">commit list in Github</a>.</p>
-</div>
-<div class="sect3">
-<h4 id="rule-changes"><a class="link" href="#rule-changes">5.F.1. Rule Changes</a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p><code>2020-XX-XX:</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="bibliography"><a class="link" href="#bibliography">5.1. Bibliography</a></h3>
-<div class="sect3">
-<h4 id="blogs"><a class="link" href="#blogs">Blogs</a></h4>
-<div class="ulist bibliography">
-<ul class="bibliography">
-<li>
-<p><strong><a href="http://restful-api-design.readthedocs.org/en/latest/">Lessons-learned blog: Thoughts on RESTful API Design</a></strong></p>
-</li>
-<li>
-<p><a id="praeng"></a>[praeng] <strong><a href="https://blog.pragmaticengineer.com/readable-code/">Pragmatic engineer blog: Readable Code</a></strong></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="openapi-specification"><a class="link" href="#openapi-specification">Open API specification</a></h4>
-<div class="ulist bibliography">
-<ul class="bibliography">
-<li>
-<p><strong><a href="https://github.com/OAI/OpenAPI-Specification/">Open API specification</a></strong></p>
-</li>
-<li>
-<p><strong><a href="https://openapi-map.apihandyman.io/">Open API specification mind map</a></strong></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="publications-specifications-and-standards"><a class="link" href="#publications-specifications-and-standards">Publications, specifications and standards</a></h4>
-<div class="ulist bibliography">
-<ul class="bibliography">
-<li>
-<p><strong><a href="https://tools.ietf.org/html/rfc3339">RFC 3339</a>:</strong> Date and Time on the Internet: Timestamps</p>
-</li>
-<li>
-<p><strong><a href="https://tools.ietf.org/html/rfc4122">RFC 4122</a>:</strong> A Universally Unique IDentifier (UUID) URN Namespace</p>
-</li>
-<li>
-<p><strong><a href="https://tools.ietf.org/html/rfc4627">RFC 4627</a>:</strong> The application/json Media Type for JavaScript Object Notation (JSON)</p>
-</li>
-<li>
-<p><strong><a href="https://tools.ietf.org/html/rfc8288">RFC 8288</a>:</strong> Web Linking</p>
-</li>
-<li>
-<p><strong><a href="https://tools.ietf.org/html/rfc6585">RFC 6585</a>:</strong> Additional HTTP Status Codes</p>
-</li>
-<li>
-<p><strong><a href="https://tools.ietf.org/html/rfc6902">RFC 6902</a>:</strong> JavaScript Object Notation (JSON) Patch</p>
-</li>
-<li>
-<p><strong><a href="https://tools.ietf.org/html/rfc7159">RFC 7159</a>:</strong> The JavaScript Object Notation (JSON) Data Interchange Format</p>
-</li>
-<li>
-<p><strong><a href="https://tools.ietf.org/html/rfc7230">RFC 7230</a>:</strong> Hypertext Transfer Protocol (HTTP/1.1): Message Syntax and Routing</p>
-</li>
-<li>
-<p><strong><a href="https://tools.ietf.org/html/rfc7231">RFC 7231</a>:</strong> Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content</p>
-</li>
-<li>
-<p><strong><a href="https://tools.ietf.org/html/rfc7232">RFC 7232</a>:</strong> Hypertext Transfer Protocol (HTTP/1.1): Conditional Requests</p>
-</li>
-<li>
-<p><strong><a href="https://tools.ietf.org/html/rfc7233">RFC 7233</a>:</strong> Hypertext Transfer Protocol (HTTP/1.1): Range Requests</p>
-</li>
-<li>
-<p><strong><a href="https://tools.ietf.org/html/rfc7234">RFC 7234</a>:</strong> Hypertext Transfer Protocol (HTTP/1.1): Caching</p>
-</li>
-<li>
-<p><strong><a href="https://tools.ietf.org/html/rfc7240">RFC 7240</a>:</strong> Prefer Header for HTTP</p>
-</li>
-<li>
-<p><strong><a href="https://tools.ietf.org/html/rfc7396">RFC 7396</a>:</strong> JSON Merge Patch</p>
-</li>
-<li>
-<p><strong><a href="https://tools.ietf.org/html/rfc7807">RFC 7807</a>:</strong> Problem Details for HTTP APIs</p>
-</li>
-<li>
-<p><strong><a href="https://tools.ietf.org/html/rfc4648">RFC 4648</a>:</strong> The Base16, Base32, and Base64 Data Encodings</p>
-</li>
-<li>
-<p><strong><a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>:</strong> Date and time format</p>
-</li>
-<li>
-<p><strong><a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 alpha-2</a>:</strong> Two letter country codes</p>
-</li>
-<li>
-<p><strong><a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a>:</strong> Two letter language codes</p>
-</li>
-<li>
-<p><strong><a href="https://en.wikipedia.org/wiki/ISO_4217">ISO 4217</a>:</strong> Currency codes</p>
-</li>
-<li>
-<p><strong><a href="https://tools.ietf.org/html/bcp47">BCP 47</a>:</strong> Tags for Identifying Languages</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="dissertations"><a class="link" href="#dissertations">Dissertations</a></h4>
-<div class="ulist bibliography">
-<ul class="bibliography">
-<li>
-<p><strong><a href="http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm">Roy Thomas
-Fielding - Architectural Styles and the Design of Network-Based Software
-Architectures</a>:</strong> This is the text which defines what REST is.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="books"><a class="link" href="#books">Books</a></h4>
-<div class="ulist bibliography">
-<ul class="bibliography">
-<li>
-<p><strong><a href="http://www.amazon.de/REST-Practice-Hypermedia-Systems-Architecture/dp/0596805829">REST in Practice: Hypermedia and Systems Architecture</a></strong></p>
-</li>
-<li>
-<p><strong><a href="https://leanpub.com/build-apis-you-wont-hate">Build APIs You Won&#8217;t Hate</a></strong></p>
-</li>
-<li>
-<p><strong><a href="http://www.infoq.com/minibooks/emag-web-api">InfoQ eBook - Web APIs: From Start to Finish</a></strong></p>
-</li>
-</ul>
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+latter changes are additionally labeled <span class="keyword">with</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">Rule Change</span><span class="delimiter">&quot;</span></span> here.
 
-<!-- Adds rule id as a postfix to all rule titles -->
-<script>
-var ruleIdRegEx = /(\d)+/;
-var ruleheaders = document.getElementsByTagName("h4");
-for (var i = 0; i < ruleheaders.length; i++) {
-    var header = ruleheaders[i];
-    if (header.id && header.id.match(ruleIdRegEx)) {
-        var a = header.getElementsByTagName("a")[0]
-        a.innerHTML += " [" + header.id + "]";
+To see a list of all changes, please have a look at the https:<span class="comment">//github.com/PonDigitalSolutions/restful-api-guidelines/commits/master[commit list in Github].</span>
+
+[[rule-changes]]
+== Rule Changes
+
+* <span class="error">`</span><span class="integer">2020</span>-XX-XX:<span class="error">`</span>
+
+
+[[bibliography]]
+= Bibliography
+
+[bibliography]
+[[blogs]]
+== Blogs
+
+* *http:<span class="comment">//restful-api-design.readthedocs.org/en/latest/[Lessons-learned blog: Thoughts on RESTful API Design]*</span>
+* [[[praeng]]] *https:<span class="comment">//blog.pragmaticengineer.com/readable-code/[Pragmatic engineer blog: Readable Code]*</span>
+
+[bibliography]
+[[openapi-specification]]
+== Open API specification
+
+* *https:<span class="comment">//github.com/OAI/OpenAPI-Specification/[Open API specification]*</span>
+* *https:<span class="comment">//openapi-map.apihandyman.io/[Open API specification mind map]*</span>
+
+[bibliography]
+[[publications-specifications-and-standards]]
+== Publications, specifications and standards
+
+* *{RFC-<span class="integer">3339</span>}[RFC <span class="integer">3339</span>]:* Date and Time on the Internet: Timestamps
+* *{RFC-<span class="integer">4122</span>}[RFC <span class="integer">4122</span>]:* A Universally Unique IDentifier (UUID) URN Namespace
+* *{RFC-<span class="integer">4627</span>}[RFC <span class="integer">4627</span>]:* The application/json Media Type <span class="keyword">for</span> JavaScript Object Notation (JSON)
+* *{RFC-<span class="integer">8288</span>}[RFC <span class="integer">8288</span>]:* Web Linking
+* *{RFC-<span class="integer">6585</span>}[RFC <span class="integer">6585</span>]:* Additional HTTP Status Codes
+* *{RFC-<span class="integer">6902</span>}[RFC <span class="integer">6902</span>]:* JavaScript Object Notation (JSON) Patch
+* *{RFC-<span class="integer">7159</span>}[RFC <span class="integer">7159</span>]:* The JavaScript Object Notation (JSON) Data Interchange Format
+* *{RFC-<span class="integer">7230</span>}[RFC <span class="integer">7230</span>]:* Hypertext Transfer Protocol (HTTP/<span class="float">1.1</span>): Message Syntax and Routing
+* *{RFC-<span class="integer">7231</span>}[RFC <span class="integer">7231</span>]:* Hypertext Transfer Protocol (HTTP/<span class="float">1.1</span>): Semantics and Content
+* *{RFC-<span class="integer">7232</span>}[RFC <span class="integer">7232</span>]:* Hypertext Transfer Protocol (HTTP/<span class="float">1.1</span>): Conditional Requests
+* *{RFC-<span class="integer">7233</span>}[RFC <span class="integer">7233</span>]:* Hypertext Transfer Protocol (HTTP/<span class="float">1.1</span>): Range Requests
+* *{RFC-<span class="integer">7234</span>}[RFC <span class="integer">7234</span>]:* Hypertext Transfer Protocol (HTTP/<span class="float">1.1</span>): Caching
+* *{RFC-<span class="integer">7240</span>}[RFC <span class="integer">7240</span>]:* Prefer Header <span class="keyword">for</span> HTTP
+* *{RFC-<span class="integer">7396</span>}[RFC <span class="integer">7396</span>]:* JSON Merge Patch
+* *{RFC-<span class="integer">7807</span>}[RFC <span class="integer">7807</span>]:* Problem Details <span class="keyword">for</span> HTTP APIs
+* *{RFC-<span class="integer">4648</span>}[RFC <span class="integer">4648</span>]:* The Base16, Base32, and Base64 Data Encodings
+
+* *{ISO-<span class="integer">8601</span>}[ISO <span class="integer">8601</span>]:* Date and time format
+* *{ISO-<span class="integer">3166</span>-<span class="integer">1</span>-a2}[ISO <span class="integer">3166</span>-<span class="integer">1</span> alpha-<span class="integer">2</span>]:* Two letter country codes
+* *{ISO-<span class="integer">639</span>-<span class="integer">1</span>}[ISO <span class="integer">639</span>-<span class="integer">1</span>]:* Two letter language codes
+* *{ISO-<span class="integer">4217</span>}[ISO <span class="integer">4217</span>]:* Currency codes
+* *{BCP47}[BCP <span class="integer">47</span>]:* Tags <span class="keyword">for</span> Identifying Languages
+
+[bibliography]
+[[dissertations]]
+== Dissertations
+
+* *http:<span class="comment">//www.ics.uci.edu/~fielding/pubs/dissertation/top.htm[Roy Thomas</span>
+  Fielding - Architectural Styles and the Design of Network-Based Software
+  Architectures]:* This is the text which defines what REST is.
+
+[bibliography]
+[[books]]
+== Books
+
+* *http:<span class="comment">//www.amazon.de/REST-Practice-Hypermedia-Systems-Architecture/dp/0596805829[REST in Practice: Hypermedia and Systems Architecture]*</span>
+* *https:<span class="comment">//leanpub.com/build-apis-you-wont-hate[Build APIs You Won't Hate]*</span>
+* *http:<span class="comment">//www.infoq.com/minibooks/emag-web-api[InfoQ eBook - Web APIs: From Start to Finish]*</span>
+
+
+
+:leveloffset: -<span class="integer">1</span>
+
+
+++++
+<span class="tag">&lt;script</span> <span class="attribute-name">src</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/script&gt;</span>
+
+&lt;!-- Adds rule id as a postfix to all rule titles --&gt;
+<span class="tag">&lt;script&gt;</span>
+<span class="inline"><span class="keyword">var</span> ruleIdRegEx = <span class="regexp"><span class="delimiter">/</span><span class="content">(</span><span class="char">\d</span><span class="content">)+</span><span class="delimiter">/</span></span>;
+<span class="keyword">var</span> ruleheaders = document.getElementsByTagName(<span class="string"><span class="delimiter">&quot;</span><span class="content">h4</span><span class="delimiter">&quot;</span></span>);
+<span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="integer">0</span>; i &lt; ruleheaders.length; i++) {
+    <span class="keyword">var</span> header = ruleheaders[i];
+    <span class="keyword">if</span> (header.id &amp;&amp; header.id.match(ruleIdRegEx)) {
+        <span class="keyword">var</span> a = header.getElementsByTagName(<span class="string"><span class="delimiter">&quot;</span><span class="content">a</span><span class="delimiter">&quot;</span></span>)[<span class="integer">0</span>]
+        a.innerHTML += <span class="string"><span class="delimiter">&quot;</span><span class="content"> [</span><span class="delimiter">&quot;</span></span> + header.id + <span class="string"><span class="delimiter">&quot;</span><span class="content">]</span><span class="delimiter">&quot;</span></span>;
     }
-}
-</script>
+}</span>
+<span class="tag">&lt;/script&gt;</span>
 
-<!-- Add table of contents anchor and remove document title -->
-<script>
-var toc = document.getElementById('toc');
-var div = document.createElement('div');
-div.id = 'table-of-contents';
+&lt;!-- Add table of contents anchor and remove document title --&gt;
+<span class="tag">&lt;script&gt;</span>
+<span class="inline"><span class="keyword">var</span> toc = document.getElementById(<span class="string"><span class="delimiter">'</span><span class="content">toc</span><span class="delimiter">'</span></span>);
+<span class="keyword">var</span> div = document.createElement(<span class="string"><span class="delimiter">'</span><span class="content">div</span><span class="delimiter">'</span></span>);
+div.id = <span class="string"><span class="delimiter">'</span><span class="content">table-of-contents</span><span class="delimiter">'</span></span>;
 toc.parentNode.replaceChild(div, toc);
 div.appendChild(toc);
-var ul = toc.childNodes[3];
-ul.removeChild(ul.childNodes[1]);
-</script>
+<span class="keyword">var</span> ul = toc.childNodes[<span class="integer">3</span>];
+ul.removeChild(ul.childNodes[<span class="integer">1</span>]);</span>
+<span class="tag">&lt;/script&gt;</span>
 
-<!-- Adds sidebar navigation -->
-<script>
-var header = document.getElementById('header');
-var nav = document.createElement('div');
-nav.id = 'toc';
-nav.classList.add('toc2');
-var title = document.createElement('div');
-title.id = 'toctitle';
+&lt;!-- Adds sidebar navigation --&gt;
+<span class="tag">&lt;script&gt;</span>
+<span class="inline"><span class="keyword">var</span> header = document.getElementById(<span class="string"><span class="delimiter">'</span><span class="content">header</span><span class="delimiter">'</span></span>);
+<span class="keyword">var</span> nav = document.createElement(<span class="string"><span class="delimiter">'</span><span class="content">div</span><span class="delimiter">'</span></span>);
+nav.id = <span class="string"><span class="delimiter">'</span><span class="content">toc</span><span class="delimiter">'</span></span>;
+nav.classList.add(<span class="string"><span class="delimiter">'</span><span class="content">toc2</span><span class="delimiter">'</span></span>);
+<span class="keyword">var</span> title = document.createElement(<span class="string"><span class="delimiter">'</span><span class="content">div</span><span class="delimiter">'</span></span>);
+title.id = <span class="string"><span class="delimiter">'</span><span class="content">toctitle</span><span class="delimiter">'</span></span>;
 
-var link = document.createElement('a');
-link.innerText = 'Integration / Development Guidelines';
-link.href = '#';
+<span class="keyword">var</span> link = document.createElement(<span class="string"><span class="delimiter">'</span><span class="content">a</span><span class="delimiter">'</span></span>);
+link.innerText = <span class="string"><span class="delimiter">'</span><span class="content">Integration / Development Guidelines</span><span class="delimiter">'</span></span>;
+link.href = <span class="string"><span class="delimiter">'</span><span class="content">#</span><span class="delimiter">'</span></span>;
 
 title.append(link);
 nav.append(title);
 
-var ul = document.createElement('ul');
-ul.classList.add('sectlevel1');
+<span class="keyword">var</span> ul = document.createElement(<span class="string"><span class="delimiter">'</span><span class="content">ul</span><span class="delimiter">'</span></span>);
+ul.classList.add(<span class="string"><span class="delimiter">'</span><span class="content">sectlevel1</span><span class="delimiter">'</span></span>);
 
-var link = document.createElement('a');
-link.innerHTML = 'Table of Contents';
-link.href = '#table-of-contents';
-li = document.createElement('li');
+<span class="keyword">var</span> link = document.createElement(<span class="string"><span class="delimiter">'</span><span class="content">a</span><span class="delimiter">'</span></span>);
+link.innerHTML = <span class="string"><span class="delimiter">'</span><span class="content">Table of Contents</span><span class="delimiter">'</span></span>;
+link.href = <span class="string"><span class="delimiter">'</span><span class="content">#table-of-contents</span><span class="delimiter">'</span></span>;
+li = document.createElement(<span class="string"><span class="delimiter">'</span><span class="content">li</span><span class="delimiter">'</span></span>);
 li.append(link);
 ul.append(li);
 
-var link, li;
-var h2headers = document.getElementsByTagName('h3');
-for (var i = 1; i < h2headers.length; i++) {
-    var a = h2headers[i].getElementsByTagName("a")[0];
-    if (a !== undefined) {
-        link = document.createElement('a');
+<span class="keyword">var</span> link, li;
+<span class="keyword">var</span> h2headers = document.getElementsByTagName(<span class="string"><span class="delimiter">'</span><span class="content">h3</span><span class="delimiter">'</span></span>);
+<span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="integer">1</span>; i &lt; h2headers.length; i++) {
+    <span class="keyword">var</span> a = h2headers[i].getElementsByTagName(<span class="string"><span class="delimiter">&quot;</span><span class="content">a</span><span class="delimiter">&quot;</span></span>)[<span class="integer">0</span>];
+    <span class="keyword">if</span> (a !== <span class="predefined-constant">undefined</span>) {
+        link = document.createElement(<span class="string"><span class="delimiter">'</span><span class="content">a</span><span class="delimiter">'</span></span>);
         link.innerHTML = a.innerHTML;
         link.href = a.hash;
-        li = document.createElement('li');
+        li = document.createElement(<span class="string"><span class="delimiter">'</span><span class="content">li</span><span class="delimiter">'</span></span>);
         li.append(link);
         ul.append(li);
     }
 }
 
-document.body.classList.add('toc2');
-document.body.classList.add('toc-left');
+document.body.classList.add(<span class="string"><span class="delimiter">'</span><span class="content">toc2</span><span class="delimiter">'</span></span>);
+document.body.classList.add(<span class="string"><span class="delimiter">'</span><span class="content">toc-left</span><span class="delimiter">'</span></span>);
 nav.append(ul);
 
-$('ul.sectlevel1').clone().insertAfter($('#toctitle'));
-//$('#toc ul.sectlevel3').hide();
+<span class="predefined">$</span>(<span class="string"><span class="delimiter">'</span><span class="content">ul.sectlevel1</span><span class="delimiter">'</span></span>).clone().insertAfter(<span class="predefined">$</span>(<span class="string"><span class="delimiter">'</span><span class="content">#toctitle</span><span class="delimiter">'</span></span>));
+<span class="comment">//$('#toc ul.sectlevel3').hide();</span>
 
-header.prepend(nav);
-</script>
+header.prepend(nav);</span>
+<span class="tag">&lt;/script&gt;</span>
 
-<!-- Cookies Consent -->
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+&lt;!-- Cookies Consent --&gt;
+&lt;link rel=<span class="string"><span class="delimiter">&quot;</span><span class="content">stylesheet</span><span class="delimiter">&quot;</span></span> type=<span class="string"><span class="delimiter">&quot;</span><span class="content">text/css</span><span class="delimiter">&quot;</span></span> href=<span class="string"><span class="delimiter">&quot;</span><span class="content">https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css</span><span class="delimiter">&quot;</span></span> /&gt;
+<span class="tag">&lt;script</span> <span class="attribute-name">src</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/script&gt;</span>
 
-<script>
-window.addEventListener("load", function(){
+<span class="tag">&lt;script&gt;</span>
+<span class="inline">window.addEventListener(<span class="string"><span class="delimiter">&quot;</span><span class="content">load</span><span class="delimiter">&quot;</span></span>, <span class="keyword">function</span>(){
 window.cookieconsent.initialise({
-  "palette": {
-    "popup": {
-      "background": "#eaf7f7",
-      "text": "#5c7291"
+  <span class="key"><span class="delimiter">&quot;</span><span class="content">palette</span><span class="delimiter">&quot;</span></span>: {
+    <span class="key"><span class="delimiter">&quot;</span><span class="content">popup</span><span class="delimiter">&quot;</span></span>: {
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">background</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">#eaf7f7</span><span class="delimiter">&quot;</span></span>,
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">text</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">#5c7291</span><span class="delimiter">&quot;</span></span>
     },
-    "button": {
-      "background": "#56cbdb",
-      "text": "#ffffff"
+    <span class="key"><span class="delimiter">&quot;</span><span class="content">button</span><span class="delimiter">&quot;</span></span>: {
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">background</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">#56cbdb</span><span class="delimiter">&quot;</span></span>,
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">text</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">#ffffff</span><span class="delimiter">&quot;</span></span>
     }
   },
-  "content": {
-    "message": "This web site uses cookies to analyze the general behavior of visitors."
+  <span class="key"><span class="delimiter">&quot;</span><span class="content">content</span><span class="delimiter">&quot;</span></span>: {
+    <span class="key"><span class="delimiter">&quot;</span><span class="content">message</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">This web site uses cookies to analyze the general behavior of visitors.</span><span class="delimiter">&quot;</span></span>
   }
-})});
-</script>
+})});</span>
+<span class="tag">&lt;/script&gt;</span>
+++++</code></pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -9766,7 +9729,7 @@ window.cookieconsent.initialise({
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-05-15 15:15:00 UTC
+Last updated 2020-05-25 13:21:43 UTC
 </div>
 </div>
 <style>

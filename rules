@@ -603,6 +603,14 @@
     {
       "id": "#261",
       "title": "STATUS-RFPMUST include copyright notice in each source file"
+    },
+    {
+      "id": "#262",
+      "title": "SHOULD use < or > instead of <= or >="
+    },
+    {
+      "id": "#263",
+      "title": "SHOULD use != instead of > or < when only a single value results in false"
     }
   ]
 }
