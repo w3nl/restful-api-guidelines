@@ -606,7 +606,7 @@
     },
     {
       "id": "#262",
-      "title": "SHOULD use < or > instead of <= or >="
+      "title": "SHOULD use < or > instead of +<=+ or >="
     },
     {
       "id": "#263",
