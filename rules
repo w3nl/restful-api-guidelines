@@ -611,6 +611,10 @@
     {
       "id": "#263",
       "title": "SHOULD use != instead of > or < when only a single value results in false"
+    },
+    {
+      "id": "#264",
+      "title": "== Coding rule: cyclomatic complexity is low"
     }
   ]
 }

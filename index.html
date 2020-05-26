@@ -1573,6 +1573,7 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <li><a href="#245">4.1.7. Coding rule: code and code changes are self-explanatory</a></li>
 <li><a href="#246">4.1.8. Coding rule: solution design steps are template-based</a></li>
 <li><a href="#247">4.1.9. Coding rule: code quality is known</a></li>
+<li><a href="#264">4.1.10. Coding rule: cyclomatic complexity is low</a></li>
 </ul>
 </li>
 <li><a href="#file-structure-and-naming">4.2. File structure and naming</a>
@@ -9191,6 +9192,35 @@ scoring 100/100 on quality. This rule states that the quality, as agreed upon
 beforehand with the business, is known and documented.</p>
 </div>
 </div>
+<div class="sect3">
+<h4 id="264"><a class="link" href="#264">4.1.10. Coding rule: cyclomatic complexity is low</a></h4>
+<div class="paragraph">
+<p>Refers to “<em>How much effort</em>”.</p>
+</div>
+<div id="wikipedia-quote-cyclomatic-complexity" class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>The cyclomatic complexity of a section of source code is the number of linearly
+independent paths within it—where "linearly independent" means that each path
+has at least one edge that is not in one of the other paths. For instance, if
+the source code contained no control flow statements (conditionals or decision
+points), the complexity would be 1, since there would be only a single path
+through the code. If the code had one single-condition IF statement, there would
+be two paths through the code: one where the IF statement evaluates to TRUE and
+another one where it evaluates to FALSE, so the complexity would be 2. Two
+nested single-condition IFs, or one IF with two conditions, would produce a
+complexity of 3.</p>
+</div>
+</blockquote>
+<div class="attribution">
+&#8212; <a href="https://en.wikipedia.org/wiki/Cyclomatic_complexity">Wikipedia</a>
+</div>
+</div>
+<div class="paragraph">
+<p>Only use an <em>else</em> statement if required. Prefer a switch statement over
+multiple if-then-else constructs.</p>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="file-structure-and-naming"><a class="link" href="#file-structure-and-naming">4.2. File structure and naming</a></h3>
@@ -9819,7 +9849,7 @@ window.cookieconsent.initialise({
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-05-25 13:31:27 UTC
+Last updated 2020-05-26 14:50:59 UTC
 </div>
 </div>
 <style>
