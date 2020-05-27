@@ -13,10 +13,6 @@
       "title": "STATUS-RFPMAY provide API user manual"
     },
     {
-      "id": "#103",
-      "title": "STATUS-RFPMUST write all resources using U.S. English"
-    },
-    {
       "id": "#104",
       "title": "STATUS-RFPMUST secure endpoints"
     },
@@ -63,38 +59,6 @@
     {
       "id": "#116",
       "title": "STATUS-RFPMAY use semantic versioning"
-    },
-    {
-      "id": "#118",
-      "title": "MUST property names must be ASCII snake_case (and never camelCase): `^[a-z_][a-z_0-9]*$`"
-    },
-    {
-      "id": "#120",
-      "title": "SHOULD pluralize array names"
-    },
-    {
-      "id": "#122",
-      "title": "MUST not use `null` for boolean properties"
-    },
-    {
-      "id": "#123",
-      "title": "MUST use same semantics for `null` and absent properties"
-    },
-    {
-      "id": "#124",
-      "title": "SHOULD not use `null` for empty arrays"
-    },
-    {
-      "id": "#125",
-      "title": "SHOULD represent enumerations as strings"
-    },
-    {
-      "id": "#126",
-      "title": "SHOULD define dates properties compliant with RFC 3339"
-    },
-    {
-      "id": "#127",
-      "title": "SHOULD define time durations and intervals properties conform to ISO 8601"
     },
     {
       "id": "#129",
@@ -169,34 +133,6 @@
       "title": "SHOULD limit number of sub-resource levels"
     },
     {
-      "id": "#148",
-      "title": "MUST use HTTP methods correctly"
-    },
-    {
-      "id": "#149",
-      "title": "MUST fulfill common method properties"
-    },
-    {
-      "id": "#150",
-      "title": "MUST use standard HTTP status codes"
-    },
-    {
-      "id": "#151",
-      "title": "MUST specify success and error responses"
-    },
-    {
-      "id": "#152",
-      "title": "MUST use code 207 for batch or bulk requests"
-    },
-    {
-      "id": "#153",
-      "title": "MUST use code 429 with headers for rate limits"
-    },
-    {
-      "id": "#154",
-      "title": "MUST define collection format of header and query parameters"
-    },
-    {
       "id": "#155",
       "title": "SHOULD reduce bandwidth needs and improve responsiveness"
     },
@@ -211,18 +147,6 @@
     {
       "id": "#158",
       "title": "SHOULD allow optional embedding of sub-resources"
-    },
-    {
-      "id": "#159",
-      "title": "MUST support pagination"
-    },
-    {
-      "id": "#160",
-      "title": "SHOULD prefer cursor-based pagination, avoid offset-based pagination"
-    },
-    {
-      "id": "#161",
-      "title": "SHOULD use pagination links where applicable"
     },
     {
       "id": "#162",
@@ -245,44 +169,12 @@
       "title": "MUST not use link headers with JSON entities"
     },
     {
-      "id": "#167",
-      "title": "MUST use JSON to encode structured data"
-    },
-    {
-      "id": "#168",
-      "title": "MAY use non JSON media types for binary data or alternative content representations"
-    },
-    {
-      "id": "#169",
-      "title": "MUST use standard date and time formats"
-    },
-    {
-      "id": "#170",
-      "title": "SHOULD use standards for country, language and currency codes"
-    },
-    {
-      "id": "#171",
-      "title": "MUST define format for number and integer types"
-    },
-    {
-      "id": "#172",
-      "title": "SHOULD prefer standard media type name `application/json`"
-    },
-    {
       "id": "#173",
       "title": "STATUS-RFPMUST use the common money object"
     },
     {
       "id": "#174",
       "title": "STATUS-RFPMUST use common field names and semantics"
-    },
-    {
-      "id": "#176",
-      "title": "MUST use problem JSON"
-    },
-    {
-      "id": "#177",
-      "title": "MUST not expose stack traces"
     },
     {
       "id": "#178",
@@ -433,10 +325,6 @@
       "title": "STATUS-RFPMAY provide API identifiers"
     },
     {
-      "id": "#216",
-      "title": "SHOULD define maps using `additionalProperties`"
-    },
-    {
       "id": "#217",
       "title": "MUST use full, absolute URI"
     },
@@ -447,10 +335,6 @@
     {
       "id": "#219",
       "title": "STATUS-RFPSHOULD provide API audience"
-    },
-    {
-      "id": "#220",
-      "title": "MUST use most specific HTTP status codes"
     },
     {
       "id": "#223",
@@ -465,10 +349,6 @@
       "title": "STATUS-RFPMAY follow naming convention for permissions (scopes)"
     },
     {
-      "id": "#226",
-      "title": "MUST document implicit filtering"
-    },
-    {
       "id": "#227",
       "title": "MUST document cachable `GET`, `HEAD`, and `POST` endpoints"
     },
@@ -477,16 +357,8 @@
       "title": "MUST use URL-friendly resource identifiers"
     },
     {
-      "id": "#229",
-      "title": "SHOULD consider to design `POST` and `PATCH` idempotent"
-    },
-    {
       "id": "#230",
       "title": "MAY consider to support `Idempotency-Key` header"
-    },
-    {
-      "id": "#231",
-      "title": "Should use secondary key for idempotent `POST` design"
     },
     {
       "id": "#233",
@@ -497,124 +369,8 @@
       "title": "STATUS-RFPMUST only use durable and immutable remote references"
     },
     {
-      "id": "#235",
-      "title": "SHOULD name date/time properties with `_at` suffix"
-    },
-    {
-      "id": "#236",
-      "title": "SHOULD design simple query languages using query parameters"
-    },
-    {
-      "id": "#237",
-      "title": "SHOULD design complex query languages using JSON"
-    },
-    {
-      "id": "#238",
-      "title": "SHOULD use standardized property formats"
-    },
-    {
-      "id": "#239",
-      "title": "SHOULD encode embedded binary data in `base64url`"
-    },
-    {
-      "id": "#240",
-      "title": "MUST declare enum values using UPPER_SNAKE_CASE format"
-    },
-    {
       "id": "#241",
       "title": "MAY expose compound keys as resource identifiers"
-    },
-    {
-      "id": "#242",
-      "title": "STATUS-RFPMUST add comment to file"
-    },
-    {
-      "id": "#243",
-      "title": "STATUS-RFPMUST filenames are either CamelCase or snake_case"
-    },
-    {
-      "id": "#244",
-      "title": "== Coding rule: logical structured code"
-    },
-    {
-      "id": "#245",
-      "title": "== Coding rule: code and code changes are self-explanatory"
-    },
-    {
-      "id": "#246",
-      "title": "== Coding rule: solution design steps are template-based"
-    },
-    {
-      "id": "#247",
-      "title": "== Coding rule: code quality is known"
-    },
-    {
-      "id": "#248",
-      "title": "== Definition: code quality"
-    },
-    {
-      "id": "#249",
-      "title": "STATUS-RFPSHOULD have pre-defined development environment(s)"
-    },
-    {
-      "id": "#250",
-      "title": "STATUS-RFPMUST include guidelines in onboarding procedure"
-    },
-    {
-      "id": "#251",
-      "title": "MUST use predefined spacing for indentation "
-    },
-    {
-      "id": "#252",
-      "title": "MUST use automated linter based on approved style template"
-    },
-    {
-      "id": "#253",
-      "title": "MUST use special quotes only to reduce complexity"
-    },
-    {
-      "id": "#254",
-      "title": "== Coding rule: code is simple and concise "
-    },
-    {
-      "id": "#255",
-      "title": "MUST use review guidelines for version control"
-    },
-    {
-      "id": "#256",
-      "title": "MUST not have unused variables"
-    },
-    {
-      "id": "#257",
-      "title": "MUST never use tabs for indentation"
-    },
-    {
-      "id": "#258",
-      "title": "== Coding rule: do not repeat yourself (DRY)"
-    },
-    {
-      "id": "#259",
-      "title": "SHOULD use dedicated logging library and logging levels"
-    },
-    {
-      "id": "#260",
-      "title": "STATUS-RFPMUST include project wide license file"
-    },
-    {
-      "id": "#261",
-      "title": "STATUS-RFPMUST include copyright notice in each source file"
-    },
-    {
-      "id": "#262",
-      "title": "SHOULD use < or > instead of +<=+ or >="
-    },
-    {
-      "id": "#263",
-      "title": "SHOULD use != instead of > or < when only a single value results in false"
-    },
-    {
-      "id": "#264",
-      "title": "== Coding rule: cyclomatic complexity is low"
     }
   ]
 }
