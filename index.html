@@ -1670,24 +1670,37 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <li><a href="#_references_3">4.C.3.2. References</a></li>
 </ul>
 </li>
-<li><a href="#256">4.C.4. <span class="must-keyword"><strong>MUST</strong></span> not have unused variables</a>
+<li><a href="#265">4.C.4. <span class="should-keyword"><strong>SHOULD</strong></span> check return types of non-void functions</a>
 <ul class="sectlevel4">
 <li><a href="#_languages_4">4.C.4.1. Languages</a></li>
-<li><a href="#_references_4">4.C.4.2. References</a></li>
 </ul>
 </li>
-<li><a href="#262">4.C.5. <span class="should-keyword"><strong>SHOULD</strong></span> use &lt; or &gt; instead of &lt;= or &gt;=</a>
-<ul class="sectlevel4">
-<li><a href="#_languages_5">4.C.5.1. Languages</a></li>
-</ul>
-</li>
-<li><a href="#263">4.C.6. <span class="should-keyword"><strong>SHOULD</strong></span> use != instead of &gt; or &lt; when only a single value results in false</a>
+<li><a href="#_references_4">4.C.5. References</a></li>
+<li><a href="#266">4.C.6. <span class="should-keyword"><strong>SHOULD</strong></span> check the validity of parameters inside each function</a>
 <ul class="sectlevel4">
 <li><a href="#_example_1_2">4.C.6.1. Example 1</a></li>
-<li><a href="#_languages_6">4.C.6.2. Languages</a></li>
+<li><a href="#_languages_5">4.C.6.2. Languages</a></li>
+<li><a href="#_references_5">4.C.6.3. References</a></li>
 </ul>
 </li>
-<li><a href="#references">4.C.7. References</a></li>
+<li><a href="#256">4.C.7. <span class="must-keyword"><strong>MUST</strong></span> not have unused variables</a>
+<ul class="sectlevel4">
+<li><a href="#_languages_6">4.C.7.1. Languages</a></li>
+<li><a href="#_references_6">4.C.7.2. References</a></li>
+</ul>
+</li>
+<li><a href="#262">4.C.8. <span class="should-keyword"><strong>SHOULD</strong></span> use &lt; or &gt; instead of &lt;= or &gt;=</a>
+<ul class="sectlevel4">
+<li><a href="#_languages_7">4.C.8.1. Languages</a></li>
+</ul>
+</li>
+<li><a href="#263">4.C.9. <span class="should-keyword"><strong>SHOULD</strong></span> use != instead of &gt; or &lt; when only a single value results in false</a>
+<ul class="sectlevel4">
+<li><a href="#_example_1_3">4.C.9.1. Example 1</a></li>
+<li><a href="#_languages_8">4.C.9.2. Languages</a></li>
+</ul>
+</li>
+<li><a href="#references">4.C.10. References</a></li>
 </ul>
 </li>
 <li><a href="#appendix-standard-style-go">Appendix D: Pon Standard Style - Go</a></li>
@@ -6848,6 +6861,9 @@ to confirm the processing.</p>
 <li>
 <p><a id="praeng"></a>[praeng] <strong><a href="https://blog.pragmaticengineer.com/readable-code/">Pragmatic engineer blog: Readable Code</a></strong></p>
 </li>
+<li>
+<p><a id="nasa-safety-code"></a>[nasa-safety-code] <strong><a href="http://pixelscommander.com/wp-content/uploads/2014/12/P10.pdf">The Power of Ten – Rules for Developing Safety Critical Code</a></strong></p>
+</li>
 </ul>
 </div>
 </div>
@@ -7465,9 +7481,30 @@ essential for enforcement.</p>
 <p>Refers to “<em>How much effort</em>”.</p>
 </div>
 <div class="paragraph">
-<p>Code is simple and concise in order to increase the readability <a href="#praeng">[praeng]</a>.
-Increasing performance by sacrificing readability is only an option if the
-performance increase is in-line with the business requirements.</p>
+<p>Code is simple and concise in order to increase the readability <a href="#praeng">[praeng]</a>, rule
+4 <a href="#nasa-safety-code">[nasa-safety-code]</a>. Increasing performance by sacrificing readability is
+only an option if the performance increase is in-line with the business
+requirements.</p>
+</div>
+<div id="nasa-safety-code-rule-4" class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Rule: No function should be longer than what can be printed on a single sheet of
+paper in a standard reference format with one line per statement and one line
+per declaration. Typically, this means no more than about 60 lines of code per
+function.</p>
+</div>
+<div class="paragraph">
+<p>Rationale: Each function should be a logical unit in the code that is
+understandable and verifiable as a unit. It is much harder to understand a
+logical unit that spans multiple screens on a computer display or multiple pages
+when printed. Excessively long functions are often a sign of poorly structured
+code.</p>
+</div>
+</blockquote>
+<div class="attribution">
+&#8212; <a href="#nasa-safety-code">[nasa-safety-code]</a> rule 4
+</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -7608,6 +7645,10 @@ beforehand with the business, is known and documented.</p>
 <h4 id="264"><a class="link" href="#264">4.1.10. Coding rule: cyclomatic complexity is low</a></h4>
 <div class="paragraph">
 <p>Refers to “<em>How much effort</em>”.</p>
+</div>
+<div class="paragraph">
+<p>Keep the number of conditional statements to a minimum; rule 1 of
+<a href="#nasa-safety-code">[nasa-safety-code]</a>.</p>
 </div>
 <div id="wikipedia-quote-cyclomatic-complexity" class="quoteblock">
 <blockquote>
@@ -7890,10 +7931,12 @@ indent for all languages involved.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="256"><a class="link" href="#256">4.C.4. <span class="must-keyword"><strong>MUST</strong></span> not have unused variables</a></h4>
+<h4 id="265"><a class="link" href="#265">4.C.4. <span class="should-keyword"><strong>SHOULD</strong></span> check return types of non-void functions</a></h4>
 <div class="paragraph">
-<p>All variables are in use, unused variables have no function and are cluttering
-the code.</p>
+<p>Return values of functions should not be ignored, especially if error return
+values must be propagated up the function call chain. By checking return types
+exception justification is enforced, which will result in increased code
+stability.</p>
 </div>
 <div class="sect4">
 <h5 id="_languages_4"><a class="link" href="#_languages_4">4.C.4.1. Languages</a></h5>
@@ -7901,8 +7944,97 @@ the code.</p>
 <p>∀</p>
 </div>
 </div>
+</div>
+<div class="sect3">
+<h4 id="_references_4"><a class="link" href="#_references_4">4.C.5. References</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#nasa-safety-code">[nasa-safety-code]</a>, Rule 7</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="266"><a class="link" href="#266">4.C.6. <span class="should-keyword"><strong>SHOULD</strong></span> check the validity of parameters inside each function</a></h4>
+<div class="paragraph">
+<p>Input parameters should not be assumed to be valid; by checking the validity
+code stability is increased.</p>
+</div>
 <div class="sect4">
-<h5 id="_references_4"><a class="link" href="#_references_4">4.C.4.2. References</a></h5>
+<h5 id="_example_1_2"><a class="link" href="#_example_1_2">4.C.6.1. Example 1</a></h5>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td>
+  <td class="code"><pre><span class="comment">// Lodash - startsWith.js  - https://github.com/lodash/lodash</span>
+<span class="keyword">function</span> <span class="function">startsWith</span>(string, target, position) {
+  const { length } = string
+  position = position == <span class="predefined-constant">null</span> ? <span class="integer">0</span> : position
+  <span class="keyword">if</span> (position &lt; <span class="integer">0</span>) {
+    position = <span class="integer">0</span>
+  }
+  <span class="keyword">else</span> <span class="keyword">if</span> (position &gt; length) {
+    position = length
+  }
+  target = <span class="error">`</span><span class="predefined">$</span>{target}<span class="error">`</span>
+  <span class="keyword">return</span> string.slice(position, position + target.length) == target
+}</pre></td>
+</tr></table></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note the majority of the code in example 1 is about checking the input
+parameters.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_languages_5"><a class="link" href="#_languages_5">4.C.6.2. Languages</a></h5>
+<div class="paragraph">
+<p>∀</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_references_5"><a class="link" href="#_references_5">4.C.6.3. References</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#nasa-safety-code">[nasa-safety-code]</a>, Rule 7</p>
+</li>
+<li>
+<p><a href="http://en.wikipedia.org/wiki/Robustness_principle">The Robustness Principle</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="256"><a class="link" href="#256">4.C.7. <span class="must-keyword"><strong>MUST</strong></span> not have unused variables</a></h4>
+<div class="paragraph">
+<p>All variables are in use, unused variables have no function and are cluttering
+the code.</p>
+</div>
+<div class="sect4">
+<h5 id="_languages_6"><a class="link" href="#_languages_6">4.C.7.1. Languages</a></h5>
+<div class="paragraph">
+<p>∀</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_references_6"><a class="link" href="#_references_6">4.C.7.2. References</a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -7916,26 +8048,26 @@ the code.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="262"><a class="link" href="#262">4.C.5. <span class="should-keyword"><strong>SHOULD</strong></span> use &lt; or &gt; instead of &lt;= or &gt;=</a></h4>
+<h4 id="262"><a class="link" href="#262">4.C.8. <span class="should-keyword"><strong>SHOULD</strong></span> use &lt; or &gt; instead of &lt;= or &gt;=</a></h4>
 <div class="paragraph">
 <p>Using &lt; is preferred over using &lt;=, using &gt; is preferred over using &gt;=. It
 improves readability and performance of code.</p>
 </div>
 <div class="sect4">
-<h5 id="_languages_5"><a class="link" href="#_languages_5">4.C.5.1. Languages</a></h5>
+<h5 id="_languages_7"><a class="link" href="#_languages_7">4.C.8.1. Languages</a></h5>
 <div class="paragraph">
 <p>∀</p>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="263"><a class="link" href="#263">4.C.6. <span class="should-keyword"><strong>SHOULD</strong></span> use != instead of &gt; or &lt; when only a single value results in false</a></h4>
+<h4 id="263"><a class="link" href="#263">4.C.9. <span class="should-keyword"><strong>SHOULD</strong></span> use != instead of &gt; or &lt; when only a single value results in false</a></h4>
 <div class="paragraph">
 <p>If a return value always results in true except for a single value using != is
 preferred over using &gt; or &gt;=.</p>
 </div>
 <div class="sect4">
-<h5 id="_example_1_2"><a class="link" href="#_example_1_2">4.C.6.1. Example 1</a></h5>
+<h5 id="_example_1_3"><a class="link" href="#_example_1_3">4.C.9.1. Example 1</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="javascript">text = <span class="string"><span class="delimiter">&quot;</span><span class="content">NL,DE,FR</span><span class="delimiter">&quot;</span></span>;
@@ -7957,14 +8089,14 @@ is:</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_languages_6"><a class="link" href="#_languages_6">4.C.6.2. Languages</a></h5>
+<h5 id="_languages_8"><a class="link" href="#_languages_8">4.C.9.2. Languages</a></h5>
 <div class="paragraph">
 <p>∀</p>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="references"><a class="link" href="#references">4.C.7. References</a></h4>
+<h4 id="references"><a class="link" href="#references">4.C.10. References</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -10191,6 +10323,9 @@ latter changes are additionally labeled with "Rule Change" here.</p>
 <li>
 <p><a id="praeng"></a>[praeng] <strong><a href="https://blog.pragmaticengineer.com/readable-code/">Pragmatic engineer blog: Readable Code</a></strong></p>
 </li>
+<li>
+<p><a id="nasa-safety-code"></a>[nasa-safety-code] <strong><a href="http://pixelscommander.com/wp-content/uploads/2014/12/P10.pdf">The Power of Ten – Rules for Developing Safety Critical Code</a></strong></p>
+</li>
 </ul>
 </div>
 </div>
@@ -10446,7 +10581,7 @@ window.cookieconsent.initialise({
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-05-27 14:40:14 UTC
+Last updated 2020-05-27 15:29:45 UTC
 </div>
 </div>
 <style>
