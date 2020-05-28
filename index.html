@@ -7965,35 +7965,19 @@ code stability is increased.</p>
 <h5 id="_example_1_2"><a class="link" href="#_example_1_2">4.C.6.1. Example 1</a></h5>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-</pre></td>
-  <td class="code"><pre><span class="comment">// Lodash - startsWith.js  - https://github.com/lodash/lodash</span>
-<span class="keyword">function</span> <span class="function">startsWith</span>(string, target, position) {
-  const { length } = string
-  position = position == <span class="predefined-constant">null</span> ? <span class="integer">0</span> : position
-  <span class="keyword">if</span> (position &lt; <span class="integer">0</span>) {
-    position = <span class="integer">0</span>
-  }
-  <span class="keyword">else</span> <span class="keyword">if</span> (position &gt; length) {
-    position = length
-  }
-  target = <span class="error">`</span><span class="predefined">$</span>{target}<span class="error">`</span>
-  <span class="keyword">return</span> string.slice(position, position + target.length) == target
-}</pre></td>
-</tr></table></code></pre>
+<pre class="CodeRay highlight"><code data-lang="javascript"><span class="line-numbers"> 1</span><span class="comment">// Lodash - startsWith.js  - https://github.com/lodash/lodash</span>
+<span class="line-numbers"> 2</span><span class="keyword">function</span> <span class="function">startsWith</span>(string, target, position) {
+<span class="line-numbers"> 3</span>  const { length } = string
+<span class="line-numbers"> 4</span>  position = position == <span class="predefined-constant">null</span> ? <span class="integer">0</span> : position
+<span class="line-numbers"> 5</span>  <span class="keyword">if</span> (position &lt; <span class="integer">0</span>) {
+<span class="line-numbers"> 6</span>    position = <span class="integer">0</span>
+<span class="line-numbers"> 7</span>  }
+<span class="line-numbers"> 8</span>  <span class="keyword">else</span> <span class="keyword">if</span> (position &gt; length) {
+<span class="line-numbers"> 9</span>    position = length
+<span class="line-numbers">10</span>  }
+<span class="line-numbers">11</span>  target = <span class="error">`</span><span class="predefined">$</span>{target}<span class="error">`</span>
+<span class="line-numbers">12</span>  <span class="keyword">return</span> string.slice(position, position + target.length) == target
+<span class="line-numbers">13</span>}</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -10460,11 +10444,13 @@ var ruleIdRegEx = /(\d){3}/;
 
 <!-- Add last modified to header -->
 <script>
-$('#footer-text')
-  .clone()
-  .attr('id', 'last-modified')
-  .attr( 'class', 'last-modified')
-  .insertAfter('#_pon_integration_and_development_guidelines');
+$(function() {
+  $('#footer-text')
+    .clone()
+    .attr('id', 'last-modified')
+    .attr( 'class', 'last-modified')
+    .insertAfter('#_pon_integration_and_development_guidelines');
+}
 </script>
 
 <!-- Add table of contents anchor and remove document title -->
@@ -10581,7 +10567,7 @@ window.cookieconsent.initialise({
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-05-27 15:29:45 UTC
+Last updated 2020-05-28 07:21:17 UTC
 </div>
 </div>
 <style>
