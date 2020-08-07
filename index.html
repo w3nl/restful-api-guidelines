@@ -1307,7 +1307,7 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 </div>
 </div>
 <div class="paragraph">
-<p>Other formats: <a href="pon-guidelines.pdf">PDF</a>, <a href="pon-guidelines.epub">EPUB3</a></p>
+<p>Other formats: <a href="pon-guidelines.pdf">PDF</a></p>
 </div>
 <div id="toc" class="toc">
 <div id="toctitle" class="title">Table of Contents</div>
@@ -1315,11 +1315,20 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <li><a href="#_pon_integration_and_development_guidelines">Pon Integration and Development Guidelines</a></li>
 <li><a href="#introduction">1. Introduction</a>
 <ul class="sectlevel2">
-<li><a href="#_attribution">1.1. Attribution</a></li>
-<li><a href="#conventions-used-in-these-guidelines">1.2. Conventions used in these guidelines</a></li>
-<li><a href="#pon-specific-information">1.3. Pon specific information</a>
+<li><a href="#_software_engineering">1.1. Software engineering</a>
 <ul class="sectlevel3">
-<li><a href="#guidelines-and-standards">1.3.1. Guideline or standard</a></li>
+<li><a href="#_software_requirements">1.1.1. Software requirements</a></li>
+<li><a href="#_software_architecture_and_design">1.1.2. Software architecture and design</a></li>
+<li><a href="#_software_development">1.1.3. Software development</a></li>
+<li><a href="#_software_testing">1.1.4. Software testing</a></li>
+<li><a href="#_software_maintenance_and_support">1.1.5. Software maintenance and support</a></li>
+</ul>
+</li>
+<li><a href="#_attribution">1.2. Attribution</a></li>
+<li><a href="#conventions-used-in-these-guidelines">1.3. Conventions used in these guidelines</a></li>
+<li><a href="#pon-specific-information">1.4. Pon specific information</a>
+<ul class="sectlevel3">
+<li><a href="#guidelines-and-standards">1.4.1. Guideline or standard</a></li>
 </ul>
 </li>
 </ul>
@@ -1337,7 +1346,7 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 </ul>
 </li>
 <li><a href="#monitoring">2.2. Monitoring</a></li>
-<li><a href="#security">2.3. Security</a></li>
+<li><a href="#security-development">2.3. Security</a></li>
 <li><a href="#privacy">2.4. Privacy</a></li>
 <li><a href="#documentation">2.5. Documentation</a>
 <ul class="sectlevel3">
@@ -1587,14 +1596,6 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <li><a href="#214">3.18.21. <span class="must-keyword"><strong>MUST</strong></span> prepare event consumers for duplicate events</a></li>
 </ul>
 </li>
-<li><a href="#bibliography">3.19. Bibliography</a>
-<ul class="sectlevel3">
-<li><a href="#openapi-specification">Open API specification</a></li>
-<li><a href="#publications-specifications-and-standards">Publications, specifications and standards</a></li>
-<li><a href="#dissertations">Dissertations</a></li>
-<li><a href="#books">Books</a></li>
-</ul>
-</li>
 <li><a href="#appendix-tooling">Appendix A: Tooling</a>
 <ul class="sectlevel3">
 <li><a href="#api-first-integrations">3.A.1. API first integrations</a></li>
@@ -1826,6 +1827,8 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 </li>
 <li><a href="#bibliography">7.1. Bibliography</a>
 <ul class="sectlevel3">
+<li><a href="#generic-bib">Generic</a></li>
+<li><a href="#coding-standards">Coding standards</a></li>
 <li><a href="#openapi-specification">Open API specification</a></li>
 <li><a href="#publications-specifications-and-standards">Publications, specifications and standards</a></li>
 <li><a href="#dissertations">Dissertations</a></li>
@@ -1841,53 +1844,139 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <div class="sect1">
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
+<div id="heinlein-quote" class="quoteblock">
+<blockquote>
 <div class="paragraph">
-<p>Pon&#8217;s software architecture centers around decoupled microservices that provide
-functionality via APIs. Small engineering teams own, deploy and operate these
-microservices. Our APIs most purely express what our systems do, and are
-therefore highly valuable business assets.</p>
+<p>Progress is made by lazy persons looking for more efficient ways to do things.</p>
+</div>
+</blockquote>
+<div class="attribution">
+&#8212; paraphrased; Robert A. Heinlein
+</div>
 </div>
 <div class="paragraph">
-<p>With this in mind, we’ve adopted "API First" as one of our key engineering
-principles. Microservices development begins with API definition outside the
-code and ideally involves ample peer-review feedback to achieve high-quality
-APIs. API First encompasses a set of quality-related standards and fosters a
-peer review culture including a lightweight review procedure. We encourage our
-teams to follow them to ensure that our APIs:</p>
+<p>Software and software ecosystems are resolutions for business challenges, which
+in effect will result in a firm reliance of the business on the software and
+corresponding integrations. Moreover, our entrepreneurial mindset will be
+driving updates, changes, and additions to the software; software is very rarely
+"done" or "finished."</p>
+</div>
+<div class="paragraph">
+<p>The business challenges and corresponding software updates are where these
+guidelines come in. How can we, to a certain degree, guide the software
+development to ensure the software is stable, does what it should do, secure and
+is updateable with reasonable effort.</p>
+</div>
+<div class="paragraph">
+<p>These guidelines and standards do not prescribe the "perfect" way to build
+software and software integrations since there is no "perfect" way. However, the
+consistency and structure of the code and integrations are specified.
+Summarized: solve the same problem with the same solution.</p>
+</div>
+<div class="paragraph">
+<p>This document will enable the business to make informed decisions about software
+development: quantify the software&#8217;s quality and robustness in an automated,
+consistent manner; be aware of the quality and robustness and decide upon the
+required level.</p>
+</div>
+<div class="paragraph">
+<p>In the following chapters software refers both to software and software
+integrations.</p>
+</div>
+<div class="sect2">
+<h3 id="_software_engineering"><a class="link" href="#_software_engineering">1.1. Software engineering</a></h3>
+<div class="paragraph">
+<p>In the mid-1960s the field of software engineering emerged, building software
+is about more than just writing instructions for a computer. In order for the
+business to actually be able to use the software, the following points are
+addressed in these guidelines
+[<a href="https://en.wikipedia.org/wiki/Software_engineering">Wikipedia</a>]:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>are easy to understand and learn</p>
+<p>Software requirements</p>
 </li>
 <li>
-<p>are general and abstracted from specific implementation and use cases</p>
+<p>Software architecture and design</p>
 </li>
 <li>
-<p>are robust and easy to use</p>
+<p>Software development</p>
 </li>
 <li>
-<p>have a common look and feel</p>
+<p>Software testing</p>
 </li>
 <li>
-<p>follow a consistent RESTful style and syntax</p>
-</li>
-<li>
-<p>are consistent with other teams’ APIs and our global architecture</p>
+<p>Software maintenance</p>
 </li>
 </ul>
 </div>
+<div class="sect3">
+<h4 id="_software_requirements"><a class="link" href="#_software_requirements">1.1.1. Software requirements</a></h4>
 <div class="paragraph">
-<p>Ideally, all Pon APIs will look like the same author created them.</p>
+<p>Establish the needs of the business to be resolved by software. This involves
+gathering the requirements and specifying the goals of the software to be met
+[<a href="https://en.wikipedia.org/wiki/Software_requirements">Wikipedia</a>].</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_software_architecture_and_design"><a class="link" href="#_software_architecture_and_design">1.1.2. Software architecture and design</a></h4>
+<div class="paragraph">
+<p>Architecture and design are where the Art of Building Software comes in, the
+architecture and design are the foundation of the software. This document will
+provide guidance towards selecting the architecture and creating the design.
+There are some specific don&#8217;ts and do&#8217;s however it is up to the architect to
+create the optimal design by taking all business requirements into consideration
+[<a href="https://en.wikipedia.org/wiki/Software_design">Wikipedia</a>].</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_software_development"><a class="link" href="#_software_development">1.1.3. Software development</a></h4>
+<div class="paragraph">
+<p>How much effort is required for another developer of comparable experience to
+pick up where the previous developer left off to fix, enhance or build upon the
+source code - without involving the former developer and taking into account the
+lifetime, quality, security and the business impact of the application.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_software_testing"><a class="link" href="#_software_testing">1.1.4. Software testing</a></h4>
+<div class="paragraph">
+<p>The proof of the pudding is in the eating, a good cook will sample the dish
+before serving the guests. The software is build upon requirements and it is up
+to the software engineers to indicate the proven level of adherence to these
+requirements; preferably in an automated manner. It is up to the business to
+decide on the level of awareness regarding the software quality based on
+testing.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_software_maintenance_and_support"><a class="link" href="#_software_maintenance_and_support">1.1.5. Software maintenance and support</a></h4>
+<div class="paragraph">
+<p>When the latest version of the software has been deployed there are two,
+continiously ongoing, tasks. Firstly: bug fixing, updates and new features; this
+requires the software to be flexible, adaptable and logically structured. Note
+there is an overlap with software development: clean quality code will require a
+lower effort to adjust or fix as opposed to ill structured low quality code.</p>
+</div>
+<div class="paragraph">
+<p>Secondly: the level of availability and performance of the software; this
+requires the software to be monitorable and able to report about its own
+wellbeing. Note there is overlap with software testing, a test to check if the
+software is adhering to a requirement can be reused in the live environment to
+check if the software is operational and responding within a predefined
+timeframe.</p>
+</div>
+</div>
 </div>
 <div class="sect2">
-<h3 id="_attribution"><a class="link" href="#_attribution">1.1. Attribution</a></h3>
+<h3 id="_attribution"><a class="link" href="#_attribution">1.2. Attribution</a></h3>
 <div class="paragraph">
-<p>These guidelines are based on the <a href="https://github.com/zalando/restful-api-guidelines">Zalando restful api guidelines</a>.</p>
+<p>These guidelines are based on the <a href="https://github.com/zalando/restful-api-guidelines">Zalando restful API guidelines</a>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="conventions-used-in-these-guidelines"><a class="link" href="#conventions-used-in-these-guidelines">1.2. Conventions used in these guidelines</a></h3>
+<h3 id="conventions-used-in-these-guidelines"><a class="link" href="#conventions-used-in-these-guidelines">1.3. Conventions used in these guidelines</a></h3>
 <div class="paragraph">
 <p>The requirement level keywords "MUST", "MUST NOT", "REQUIRED", "SHALL",
 "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and
@@ -1897,7 +1986,7 @@ interpreted as described in <a href="https://www.ietf.org/rfc/rfc2119.txt">RFC
 </div>
 </div>
 <div class="sect2">
-<h3 id="pon-specific-information"><a class="link" href="#pon-specific-information">1.3. Pon specific information</a></h3>
+<h3 id="pon-specific-information"><a class="link" href="#pon-specific-information">1.4. Pon specific information</a></h3>
 <div class="paragraph">
 <p>The purpose of these guidelines is to define standards to successfully establish
 "consistent integration and development look and feel" quality. The integration
@@ -1931,15 +2020,15 @@ available, it has to be re-reviewed and changed according to current guidelines
 - for the sake of overall consistency.</p>
 </div>
 <div class="sect3">
-<h4 id="guidelines-and-standards"><a class="link" href="#guidelines-and-standards">1.3.1. Guideline or standard</a></h4>
+<h4 id="guidelines-and-standards"><a class="link" href="#guidelines-and-standards">1.4.1. Guideline or standard</a></h4>
 <div class="paragraph">
 <p>If a rule is a Pon standard is indicated by an additional "S" being added to the
-rule number and a green left margin.</p>
+rule number and green left margin.</p>
 </div>
 <div class="paragraph">
-<p><div class="rule-standard">
+<p>&lt;div class="rule-standard"&gt;
 Example standard
-</div></p>
+&lt;/div&gt;</p>
 </div>
 </div>
 </div>
@@ -1979,7 +2068,7 @@ Example standard
 </div>
 </div>
 <div class="sect2">
-<h3 id="security"><a class="link" href="#security">2.3. Security</a></h3>
+<h3 id="security-development"><a class="link" href="#security-development">2.3. Security</a></h3>
 <div class="paragraph">
 <p>This section descibes the generic guidelines for security.</p>
 </div>
@@ -2042,6 +2131,45 @@ developers more efficient.</p>
 = Solution architecture</p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>Pon&#8217;s software architecture centers around decoupled microservices that provide
+functionality via APIs. Small engineering teams own, deploy and operate these
+microservices. Our APIs most purely express what our systems do, and are
+therefore highly valuable business assets.</p>
+</div>
+<div class="paragraph">
+<p>With this in mind, we’ve adopted "API First" as one of our key engineering
+principles. Microservices development begins with an API definition outside the
+code and ideally involves ample peer-review feedback to achieve high-quality
+APIs. API First encompasses a set of quality-related standards and fosters a
+peer-review culture, including a lightweight review procedure. We encourage our
+teams to follow them to ensure that our APIs:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>are easy to understand and learn</p>
+</li>
+<li>
+<p>are general and abstracted from specific implementation and use cases</p>
+</li>
+<li>
+<p>are robust and easy to use</p>
+</li>
+<li>
+<p>have a common look and feel</p>
+</li>
+<li>
+<p>follow a consistent RESTful style and syntax</p>
+</li>
+<li>
+<p>are consistent with other teams’ APIs and our global architecture</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Ideally, all Pon APIs will look like the same author created them.</p>
 </div>
 </div>
 </div>
@@ -5087,7 +5215,7 @@ corresponding <a href="http://www.iana.org/assignments/link-relations">link rela
 <a href="#last"><code>last</code></a>, or <a href="#self"><code>self</code></a>.</p>
 </div>
 <div class="paragraph">
-<p>See <a href="#simple-hypertext-control-fields">[simple-hypertext-control-fields]</a> and <a href="#161"><span class="should-keyword"><strong>SHOULD</strong></span> use pagination links where applicable</a> for examples and more
+<p>See simple-hypertext-control-fields and <a href="#161"><span class="should-keyword"><strong>SHOULD</strong></span> use pagination links where applicable</a> for examples and more
 information.</p>
 </div>
 </div>
@@ -6786,7 +6914,7 @@ emitted, or, is changing the type of an undefined field. Both of these
 are prevented by not using <code>additionalProperties</code>.</p>
 </div>
 <div class="paragraph">
-<p>See also rule <a href="#111">[111]</a> in the <a href="#compatibility">Compatibility</a> section for further guidelines
+<p>See also rule 111 in the <a href="#compatibility">Compatibility</a> section for further guidelines
 on the use of <code>additionalProperties</code>.</p>
 </div>
 </div>
@@ -6899,166 +7027,6 @@ leads to two identical events in the event bus which have to be
 processed by the consumers. Similar conditions can appear on consumer
 side: an event has been processed successfully, but the consumer fails
 to confirm the processing.</p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="bibliography"><a class="link" href="#bibliography">3.19. Bibliography</a></h3>
-<div class="paragraph">
-<p>[[generic-bib]
-== Generic</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong><a href="http://restful-api-design.readthedocs.org/en/latest/">Lessons-learned blog: Thoughts on RESTful API Design</a></strong></p>
-</li>
-<li>
-<p>[<a id="praeng"></a>] <strong><a href="https://blog.pragmaticengineer.com/readable-code/">Pragmatic engineer blog: Readable Code</a></strong></p>
-</li>
-<li>
-<p>[<a id="accidental-doppelganger"></a>] <strong><a href="https://www.informit.com/articles/article.aspx?p=1313447" class="bare">https://www.informit.com/articles/article.aspx?p=1313447</a></strong></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>[[coding standards]]
-== Coding standards</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>[<a id="nasa-safety-code"></a>] <strong><a href="http://pixelscommander.com/wp-content/uploads/2014/12/P10.pdf">The Power of Ten – Rules for Developing Safety Critical Code</a></strong></p>
-</li>
-<li>
-<p>[<a id="gnu-coding-standards"></a>] <strong><a href="http://www.gnu.org/prep/standards/standards.html">GNU Coding Standards</a></strong></p>
-</li>
-<li>
-<p>[<a id="standardJs"></a>] <strong><a href="https://standardjs.com/index.html">standardJS</a></strong></p>
-</li>
-<li>
-<p>[<a id="googleStyleguideJs"></a>] <strong><a href="https://google.github.io/styleguide/jsguide.html">Google Javascript styleguide</a></strong></p>
-</li>
-<li>
-<p>[<a id="googleStyleguideCpp"></a>] <strong><a href="https://google.github.io/styleguide/cppguide.html">Google CPP styleguide</a></strong></p>
-</li>
-<li>
-<p>[<a id="phpStandards"></a>] <strong><a href="https://www.php-fig.org/psr/">PHP Standards Recommendations</a></strong></p>
-</li>
-</ul>
-</div>
-<div class="sect3">
-<h4 id="openapi-specification"><a class="link" href="#openapi-specification">Open API specification</a></h4>
-<div class="ulist bibliography">
-<ul class="bibliography">
-<li>
-<p><strong><a href="https://github.com/OAI/OpenAPI-Specification/">Open API specification</a></strong></p>
-</li>
-<li>
-<p><strong><a href="https://openapi-map.apihandyman.io/">Open API specification mind map</a></strong></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="publications-specifications-and-standards"><a class="link" href="#publications-specifications-and-standards">Publications, specifications and standards</a></h4>
-<div class="ulist bibliography">
-<ul class="bibliography">
-<li>
-<p><strong><a href="https://tools.ietf.org/html/rfc3339">RFC 3339</a>:</strong> Date and Time on the Internet: Timestamps</p>
-</li>
-<li>
-<p><strong><a href="https://tools.ietf.org/html/rfc4122">RFC 4122</a>:</strong> A Universally Unique IDentifier (UUID) URN Namespace</p>
-</li>
-<li>
-<p><strong><a href="https://tools.ietf.org/html/rfc4627">RFC 4627</a>:</strong> The application/json Media Type for JavaScript Object Notation (JSON)</p>
-</li>
-<li>
-<p><strong><a href="https://tools.ietf.org/html/rfc8288">RFC 8288</a>:</strong> Web Linking</p>
-</li>
-<li>
-<p><strong><a href="https://tools.ietf.org/html/rfc6585">RFC 6585</a>:</strong> Additional HTTP Status Codes</p>
-</li>
-<li>
-<p><strong><a href="https://tools.ietf.org/html/rfc6902">RFC 6902</a>:</strong> JavaScript Object Notation (JSON) Patch</p>
-</li>
-<li>
-<p><strong><a href="https://tools.ietf.org/html/rfc7159">RFC 7159</a>:</strong> The JavaScript Object Notation (JSON) Data Interchange Format</p>
-</li>
-<li>
-<p><strong><a href="https://tools.ietf.org/html/rfc7230">RFC 7230</a>:</strong> Hypertext Transfer Protocol (HTTP/1.1): Message Syntax and Routing</p>
-</li>
-<li>
-<p><strong><a href="https://tools.ietf.org/html/rfc7231">RFC 7231</a>:</strong> Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content</p>
-</li>
-<li>
-<p><strong><a href="https://tools.ietf.org/html/rfc7232">RFC 7232</a>:</strong> Hypertext Transfer Protocol (HTTP/1.1): Conditional Requests</p>
-</li>
-<li>
-<p><strong><a href="https://tools.ietf.org/html/rfc7233">RFC 7233</a>:</strong> Hypertext Transfer Protocol (HTTP/1.1): Range Requests</p>
-</li>
-<li>
-<p><strong><a href="https://tools.ietf.org/html/rfc7234">RFC 7234</a>:</strong> Hypertext Transfer Protocol (HTTP/1.1): Caching</p>
-</li>
-<li>
-<p><strong><a href="https://tools.ietf.org/html/rfc7240">RFC 7240</a>:</strong> Prefer Header for HTTP</p>
-</li>
-<li>
-<p><strong><a href="https://tools.ietf.org/html/rfc7396">RFC 7396</a>:</strong> JSON Merge Patch</p>
-</li>
-<li>
-<p><strong><a href="https://tools.ietf.org/html/rfc7807">RFC 7807</a>:</strong> Problem Details for HTTP APIs</p>
-</li>
-<li>
-<p><strong><a href="https://tools.ietf.org/html/rfc4648">RFC 4648</a>:</strong> The Base16, Base32, and Base64 Data Encodings</p>
-</li>
-<li>
-<p><strong><a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>:</strong> Date and time format</p>
-</li>
-<li>
-<p><strong><a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 alpha-2</a>:</strong> Two letter country codes</p>
-</li>
-<li>
-<p><strong><a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a>:</strong> Two letter language codes</p>
-</li>
-<li>
-<p><strong><a href="https://en.wikipedia.org/wiki/ISO_4217">ISO 4217</a>:</strong> Currency codes</p>
-</li>
-<li>
-<p><strong><a href="https://tools.ietf.org/html/bcp47">BCP 47</a>:</strong> Tags for Identifying Languages</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="dissertations"><a class="link" href="#dissertations">Dissertations</a></h4>
-<div class="ulist bibliography">
-<ul class="bibliography">
-<li>
-<p><strong><a href="http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm">Roy Thomas
-Fielding - Architectural Styles and the Design of Network-Based Software
-Architectures</a>:</strong> This is the text which defines what REST is.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="books"><a class="link" href="#books">Books</a></h4>
-<div class="ulist bibliography">
-<ul class="bibliography">
-<li>
-<p><strong><a href="http://www.amazon.de/REST-Practice-Hypermedia-Systems-Architecture/dp/0596805829">REST in Practice: Hypermedia and Systems Architecture</a></strong></p>
-</li>
-<li>
-<p><strong><a href="https://leanpub.com/build-apis-you-wont-hate">Build APIs You Won&#8217;t Hate</a></strong></p>
-</li>
-<li>
-<p><strong><a href="http://www.infoq.com/minibooks/emag-web-api">InfoQ eBook - Web APIs: From Start to Finish</a></strong></p>
-</li>
-<li>
-<p><a id="pragmatic-programmer"></a>[pragmatic-programmer] <strong><a href="https://pragprog.com/book/tpp20/the-pragmatic-programmer-20th-anniversary-edition">The pragmatic programmer, 20th anniversary edition</a></strong></p>
-</li>
-</ul>
 </div>
 </div>
 </div>
@@ -7425,14 +7393,15 @@ not perfectly in sync, the locking could potentially fail</p>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="development-guidelines"><a class="link" href="#development-guidelines">4.1. General development guidelines</a></h3>
-<div id="heinlein-quote" class="quoteblock">
+<div id="fowler-quote-01" class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p>Progress is made by lazy men looking for easier ways to do things.</p>
+<p>Any fool can write code that a computer can understand. Good programmers write
+code that humans can understand.</p>
 </div>
 </blockquote>
 <div class="attribution">
-&#8212; Robert A. Heinlein
+&#8212; M. Fowler (1999)
 </div>
 </div>
 <div class="sect3">
@@ -7450,7 +7419,8 @@ we use it to provide the checks needed during testing.</p>
 </div>
 </blockquote>
 <div class="attribution">
-&#8212; <a href="#pragmatic-programmer">[pragmatic-programmer]</a> p61
+&#8212; Pragmatic Programmer<br>
+<cite>Page 61</cite>
 </div>
 </div>
 <div class="paragraph">
@@ -7471,7 +7441,7 @@ of thumb</p>
 <td class="content">
 How much effort is required<sup><a href="#244">244</a></sup> for another developer of
 comparable experience to pick up where the previous developer left off to fix,
-enhance or build upon the source code - without involving the previous
+enhance or build upon the source code - without involving the former
 developer<sup><a href="#245">245</a></sup> and taking into account the lifetime, quality, security
 and the business impact<sup><a href="#246">246</a></sup> of the application.
 </td>
@@ -7501,8 +7471,8 @@ business are the only solid foundation for software development.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Software functional quality reflects how well it complies with or conforms to a
-given design, based on functional requirements or specifications.  That
+<p>Software functional quality reflects how well it complies with or conforms to
+a given design, based on functional requirements or specifications.  That
 attribute can also be described as the fitness for purpose of a piece of
 software or how it compares to competitors in the marketplace as a worthwhile
 product. It is the degree to which the correct software was produced.</p>
@@ -7601,7 +7571,8 @@ code.</p>
 </div>
 </blockquote>
 <div class="attribution">
-&#8212; <a href="#nasa-safety-code">[nasa-safety-code]</a> rule 4
+&#8212; Nasa coding rules<br>
+<cite>Rule 4</cite>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -7663,7 +7634,8 @@ representation within a system.</p>
 </div>
 </blockquote>
 <div class="attribution">
-&#8212; <a href="#pragmatic-programmer">[pragmatic-programmer]</a> p62
+&#8212; Pragmatic Programmer<br>
+<cite>Page 62</cite>
 </div>
 </div>
 <div class="paragraph">
@@ -8704,8 +8676,8 @@ to <a href="https://tools.ietf.org/html/rfc7231">RFC 7231</a>:</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#post"><code>POST</code></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="must-keyword">&#x2717;</span> No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="should-keyword">&#x26a0;&#xFE0F;</span> No, but <a href="#229"><span class="should-keyword"><strong>SHOULD</strong></span> consider to design <code>POST</code> and <code>PATCH</code> idempotent</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="should-keyword">&#x26a0;&#xFE0F;</span> May, but only if specific
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="should-keyword">&#x26a0;</span> No, but <a href="#229"><span class="should-keyword"><strong>SHOULD</strong></span> consider to design <code>POST</code> and <code>PATCH</code> idempotent</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="should-keyword">&#x26a0;</span> May, but only if specific
 <a href="#post"><code>POST</code></a> endpoint is <a href="#safe">safe</a>. <strong>Hint:</strong> not supported by most caches.</p></td>
 </tr>
 <tr>
@@ -8717,7 +8689,7 @@ to <a href="https://tools.ietf.org/html/rfc7231">RFC 7231</a>:</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#patch"><code>PATCH</code></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="must-keyword">&#x2717;</span> No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="should-keyword">&#x26a0;&#xFE0F;</span> No, but <a href="#229"><span class="should-keyword"><strong>SHOULD</strong></span> consider to design <code>POST</code> and <code>PATCH</code> idempotent</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="should-keyword">&#x26a0;</span> No, but <a href="#229"><span class="should-keyword"><strong>SHOULD</strong></span> consider to design <code>POST</code> and <code>PATCH</code> idempotent</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="must-keyword">&#x2717;</span> No</p></td>
 </tr>
 <tr>
@@ -10287,7 +10259,7 @@ unknown.</p>
 <p>Open API 3.x allows to mark properties as <code>required</code> and as <code>nullable</code> to
 specify whether properties may be absent (<code>{}</code>) or <code>null</code> (<code>{"example":null}</code>).
 If a property is defined to be not <code>required</code> and <code>nullable</code> (see
-<a href="#required-nullable-row-2">2nd row in Table below</a>), this rule demands
+2nd row in Table below), this rule demands
 that both cases must be handled in the exact same manner by specification.</p>
 </div>
 <div class="paragraph">
@@ -10320,7 +10292,7 @@ valid:</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="may-keyword">&#x2714;</span> Yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="may-keyword">&#x2714;</span> Yes <a id="required-nullable-row-2"></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="may-keyword">&#x2714;</span> Yes</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td>
@@ -10497,48 +10469,46 @@ latter changes are additionally labeled with "Rule Change" here.</p>
 </div>
 <div class="sect2">
 <h3 id="bibliography"><a class="link" href="#bibliography">7.1. Bibliography</a></h3>
-<div class="paragraph">
-<p>[[generic-bib]
-== Generic</p>
-</div>
-<div class="ulist">
-<ul>
+<div class="sect3">
+<h4 id="generic-bib"><a class="link" href="#generic-bib">Generic</a></h4>
+<div class="ulist bibliography">
+<ul class="bibliography">
 <li>
 <p><strong><a href="http://restful-api-design.readthedocs.org/en/latest/">Lessons-learned blog: Thoughts on RESTful API Design</a></strong></p>
 </li>
 <li>
-<p>[<a id="praeng"></a>] <strong><a href="https://blog.pragmaticengineer.com/readable-code/">Pragmatic engineer blog: Readable Code</a></strong></p>
+<p><a id="praeng"></a>[praeng] <strong><a href="https://blog.pragmaticengineer.com/readable-code/">Pragmatic engineer blog: Readable Code</a></strong></p>
 </li>
 <li>
-<p>[<a id="accidental-doppelganger"></a>] <strong><a href="https://www.informit.com/articles/article.aspx?p=1313447" class="bare">https://www.informit.com/articles/article.aspx?p=1313447</a></strong></p>
+<p><a id="accidental-doppelganger"></a>[accidental-doppelganger] <strong><a href="https://www.informit.com/articles/article.aspx?p=1313447" class="bare">https://www.informit.com/articles/article.aspx?p=1313447</a></strong></p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>[[coding standards]]
-== Coding standards</p>
 </div>
-<div class="ulist">
-<ul>
+<div class="sect3">
+<h4 id="coding-standards"><a class="link" href="#coding-standards">Coding standards</a></h4>
+<div class="ulist bibliography">
+<ul class="bibliography">
 <li>
-<p>[<a id="nasa-safety-code"></a>] <strong><a href="http://pixelscommander.com/wp-content/uploads/2014/12/P10.pdf">The Power of Ten – Rules for Developing Safety Critical Code</a></strong></p>
+<p><a id="nasa-safety-code"></a>[nasa-safety-code] <strong><a href="http://pixelscommander.com/wp-content/uploads/2014/12/P10.pdf">The Power of Ten – Rules for Developing Safety Critical Code</a></strong></p>
 </li>
 <li>
-<p>[<a id="gnu-coding-standards"></a>] <strong><a href="http://www.gnu.org/prep/standards/standards.html">GNU Coding Standards</a></strong></p>
+<p><a id="gnu-coding-standards"></a>[gnu-coding-standards] <strong><a href="http://www.gnu.org/prep/standards/standards.html">GNU Coding Standards</a></strong></p>
 </li>
 <li>
-<p>[<a id="standardJs"></a>] <strong><a href="https://standardjs.com/index.html">standardJS</a></strong></p>
+<p><a id="standardJs"></a>[standardJs] <strong><a href="https://standardjs.com/index.html">standardJS</a></strong></p>
 </li>
 <li>
-<p>[<a id="googleStyleguideJs"></a>] <strong><a href="https://google.github.io/styleguide/jsguide.html">Google Javascript styleguide</a></strong></p>
+<p><a id="googleStyleguideJs"></a>[googleStyleguideJs] <strong><a href="https://google.github.io/styleguide/jsguide.html">Google Javascript styleguide</a></strong></p>
 </li>
 <li>
-<p>[<a id="googleStyleguideCpp"></a>] <strong><a href="https://google.github.io/styleguide/cppguide.html">Google CPP styleguide</a></strong></p>
+<p><a id="googleStyleguideCpp"></a>[googleStyleguideCpp] <strong><a href="https://google.github.io/styleguide/cppguide.html">Google CPP styleguide</a></strong></p>
 </li>
 <li>
-<p>[<a id="phpStandards"></a>] <strong><a href="https://www.php-fig.org/psr/">PHP Standards Recommendations</a></strong></p>
+<p><a id="phpStandards"></a>[phpStandards] <strong><a href="https://www.php-fig.org/psr/">PHP Standards Recommendations</a></strong></p>
 </li>
 </ul>
+</div>
 </div>
 <div class="sect3">
 <h4 id="openapi-specification"><a class="link" href="#openapi-specification">Open API specification</a></h4>
@@ -10647,6 +10617,9 @@ Architectures</a>:</strong> This is the text which defines what REST is.</p>
 </li>
 <li>
 <p><strong><a href="http://www.infoq.com/minibooks/emag-web-api">InfoQ eBook - Web APIs: From Start to Finish</a></strong></p>
+</li>
+<li>
+<p><a id="fowler-refactoring"></a>[fowler-refactoring] <strong><a href="https://martinfowler.com/books/refactoring.html">Refactoring, Improving the Design of Existing Code, 2nd edition</a></strong></p>
 </li>
 <li>
 <p><a id="pragmatic-programmer"></a>[pragmatic-programmer] <strong><a href="https://pragprog.com/book/tpp20/the-pragmatic-programmer-20th-anniversary-edition">The pragmatic programmer, 20th anniversary edition</a></strong></p>
@@ -10760,9 +10733,10 @@ document.body.classList.add('toc2');
 document.body.classList.add('toc-left');
 nav.append(ul);
 
-$('ul.sectlevel1').clone().insertAfter($('#toctitle'));
+//$('ul.sectlevel1').clone().insertAfter($('#toctitle'));
 //$('#toc ul.sectlevel3').hide();
 
+// Add the left menu bar
 header.prepend(nav);
 </script>
 
@@ -10804,7 +10778,7 @@ window.cookieconsent.initialise({
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-06-10 09:01:28 UTC
+Last updated 2020-08-07 11:57:53 UTC
 </div>
 </div>
 <style>
