@@ -1289,6 +1289,10 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 
 .literalblock pre, .literalblock pre[class], .listingblock pre, .listingblock pre[class] { padding: .5em !important; }
 
+.rule-standard { border-left: 10px solid green; padding-left: 10px; }
+
+.last-modified { font-size: 10px; font-weight: 600; float: right; }
+
 #toc a { color: #364149; }
 
 </style>
@@ -1305,6 +1309,9 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <div class="content">
 <img src="assets/pon-logo.png" alt="Pon Logo">
 </div>
+</div>
+<div class="paragraph">
+<p>Document source files: <a href="https://github.com/PonDigitalSolutions/restful-api-guidelines">Github</a></p>
 </div>
 <div class="paragraph">
 <p>Other formats: <a href="pon-guidelines.pdf">PDF</a></p>
@@ -1324,11 +1331,14 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <li><a href="#_software_maintenance_and_support">1.1.5. Software maintenance and support</a></li>
 </ul>
 </li>
-<li><a href="#_attribution">1.2. Attribution</a></li>
-<li><a href="#conventions-used-in-these-guidelines">1.3. Conventions used in these guidelines</a></li>
-<li><a href="#pon-specific-information">1.4. Pon specific information</a>
+<li><a href="#_document_management">1.2. Document management</a></li>
+<li><a href="#_attribution">1.3. Attribution</a></li>
+<li><a href="#conventions-used-in-these-guidelines">1.4. Conventions used in these guidelines</a></li>
+<li><a href="#pon-specific-information">1.5. Pon specific information</a>
 <ul class="sectlevel3">
-<li><a href="#guidelines-and-standards">1.4.1. Guideline or standard</a></li>
+<li><a href="#_automated_code_style_checking_linting">1.5.1. Automated code style checking (linting)</a></li>
+<li><a href="#guidelines-and-standards">1.5.2. Guideline or standard</a></li>
+<li><a href="#271S">1.5.3. <span class="must-keyword"><strong>MUST</strong></span> comply to standards and guidelines</a></li>
 </ul>
 </li>
 </ul>
@@ -1918,6 +1928,10 @@ addressed in these guidelines
 gathering the requirements and specifying the goals of the software to be met
 [<a href="https://en.wikipedia.org/wiki/Software_requirements">Wikipedia</a>].</p>
 </div>
+<div class="paragraph">
+<p>Next to the business requirements this document contains the minimal standards
+for software; including software license and source code management.</p>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_software_architecture_and_design"><a class="link" href="#_software_architecture_and_design">1.1.2. Software architecture and design</a></h4>
@@ -1954,10 +1968,10 @@ testing.</p>
 <h4 id="_software_maintenance_and_support"><a class="link" href="#_software_maintenance_and_support">1.1.5. Software maintenance and support</a></h4>
 <div class="paragraph">
 <p>When the latest version of the software has been deployed there are two,
-continiously ongoing, tasks. Firstly: bug fixing, updates and new features; this
+continuously ongoing, tasks. Firstly: bug fixing, updates and new features; this
 requires the software to be flexible, adaptable and logically structured. Note
 there is an overlap with software development: clean quality code will require a
-lower effort to adjust or fix as opposed to ill structured low quality code.</p>
+lower effort to adjust or fix as opposed to ill-structured low-quality code.</p>
 </div>
 <div class="paragraph">
 <p>Secondly: the level of availability and performance of the software; this
@@ -1970,7 +1984,15 @@ timeframe.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_attribution"><a class="link" href="#_attribution">1.2. Attribution</a></h3>
+<h3 id="_document_management"><a class="link" href="#_document_management">1.2. Document management</a></h3>
+<div class="paragraph">
+<p>This document is managed using Git. Git allows for controlled change approval,
+versioning and tracking of updates and changes. Moreover it is an open system
+allowing for community change suggestions.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_attribution"><a class="link" href="#_attribution">1.3. Attribution</a></h3>
 <div class="paragraph">
 <p>These guidelines are based on the
 <a href="https://github.com/zalando/restful-api-guidelines">Zalando restful API
@@ -1978,7 +2000,7 @@ guidelines</a>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="conventions-used-in-these-guidelines"><a class="link" href="#conventions-used-in-these-guidelines">1.3. Conventions used in these guidelines</a></h3>
+<h3 id="conventions-used-in-these-guidelines"><a class="link" href="#conventions-used-in-these-guidelines">1.4. Conventions used in these guidelines</a></h3>
 <div class="paragraph">
 <p>The requirement level keywords "MUST", "MUST NOT", "REQUIRED", "SHALL",
 "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and
@@ -1986,15 +2008,35 @@ guidelines</a>.</p>
 interpreted as described in <a href="https://www.ietf.org/rfc/rfc2119.txt">RFC
 2119</a>.</p>
 </div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">Standards</div>
+<div class="paragraph">
+<p>MUST is by default a standard and not a guideline.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 </div>
 <div class="sect2">
-<h3 id="pon-specific-information"><a class="link" href="#pon-specific-information">1.4. Pon specific information</a></h3>
+<h3 id="pon-specific-information"><a class="link" href="#pon-specific-information">1.5. Pon specific information</a></h3>
+<div class="paragraph">
+<p>These guidelines apply to all software owned by Pon, build by Pon or build for
+Pon; more specifically where the IP is owned by Pon. Note this excludes SaaS
+solutions.</p>
+</div>
 <div class="paragraph">
 <p>The purpose of these guidelines is to define standards to successfully establish
 "consistent integration and development look and feel" quality. The integration
-guild drafted and owns this document. Teams are responsible to fulfill these
-guidelines during API development and are encouraged to contribute to guideline
-evolution via pull requests.</p>
+and development guilds drafted and own this document. Teams are responsible to
+fulfill these guidelines during development and are encouraged to contribute to
+guideline evolution via pull requests.</p>
 </div>
 <div class="paragraph">
 <p>These guidelines will, to some extent, remain work in progress as our work
@@ -2006,7 +2048,8 @@ evolves, but teams can confidently follow and trust them.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>existing APIs don&#8217;t have to be changed, but we recommend it</p>
+<p>existing software and software integrations don&#8217;t have to be changed, but we
+recommend it</p>
 </li>
 <li>
 <p>clients of existing APIs have to cope with these APIs based on outdated rules</p>
@@ -2022,15 +2065,22 @@ available, it has to be re-reviewed and changed according to current guidelines
 - for the sake of overall consistency.</p>
 </div>
 <div class="sect3">
-<h4 id="guidelines-and-standards"><a class="link" href="#guidelines-and-standards">1.4.1. Guideline or standard</a></h4>
+<h4 id="_automated_code_style_checking_linting"><a class="link" href="#_automated_code_style_checking_linting">1.5.1. Automated code style checking (linting)</a></h4>
+
+</div>
+<div class="sect3">
+<h4 id="guidelines-and-standards"><a class="link" href="#guidelines-and-standards">1.5.2. Guideline or standard</a></h4>
 <div class="paragraph">
 <p>If a rule is a Pon standard is indicated by an additional "S" being added to the
 rule number and green left margin.</p>
 </div>
+</div>
+<div class="sect3">
+<h4 id="271S"><a class="link" href="#271S">1.5.3. <span class="must-keyword"><strong>MUST</strong></span> comply to standards and guidelines</a></h4>
 <div class="paragraph">
-<p>&lt;div class="rule-standard"&gt;
-Example standard
-&lt;/div&gt;</p>
+<p>Contracts relating to software development must indicate the signing party has
+taken knowledge of the guidelines and agrees to comply to the standards as
+indicated in this document.</p>
 </div>
 </div>
 </div>
@@ -2141,7 +2191,7 @@ microservices. Our APIs most purely express what our systems do, and are
 therefore highly valuable business assets.</p>
 </div>
 <div class="paragraph">
-<p>With this in mind, we’ve adopted "API First" as one of our key engineering
+<p>With this in mind, we’ve adopted "API First" as one of our key engineerings
 principles. Microservices development begins with an API definition outside the
 code and ideally involves ample peer-review feedback to achieve high-quality
 APIs. API First encompasses a set of quality-related standards and fosters a
@@ -2180,14 +2230,14 @@ teams to follow them to ensure that our APIs:</p>
 <div class="paragraph">
 <p>The Pon guilds supply a repository of approved tools, techniques and frameworks
 both to inspire and guide teams. It is essential this repository is consulted
-when desiging a solution architecture.</p>
+when designing a solution architecture.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="103"><a class="link" href="#103">2.6.4. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> write all resources using U.S. English</a></h4>
 <div class="paragraph">
-<p>All resources, APIs, documentation, commments etc. must be written in U.S.
-English.</p>
+<p>All resources, APIs, documentation, comments etc. must be written in the U.S.
+English language</p>
 </div>
 </div>
 </div>
@@ -10780,7 +10830,7 @@ window.cookieconsent.initialise({
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-08-07 12:04:45 UTC
+Last updated 2020-08-07 14:43:48 UTC
 </div>
 </div>
 <style>
