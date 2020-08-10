@@ -121,6 +121,9 @@ text = 'The quick brown "fox" jumped over the lazy dog'
 
 {LANG-JAVASCRIPT-ICON} {LANG-TYPESCRIPT-ICON} {LANG-PHP-ICON}
 
+An exception for rule 253 is Golang because of it's specific implementation for quotations. Double quotes in Go are by default used for strings. These are interpreted string literals and support special characters like escape characters. Back quotes are used for raw string literals and any character can be used between the quotes. Special characters are ignored except for the verbs of the fmt package. 
+Single quotes are not used for strings in Go. They represent a rune and are of type int32.   
+
 === References
 
 * <<googleStyleguideJs>>, link:https://google.github.io/styleguide/jsguide.html#features-strings-use-single-quotes[Use single quotes]
