@@ -1737,27 +1737,27 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 </li>
 <li><a href="#appendix-standard-style-go">Appendix D: Pon Standard Style - Go</a>
 <ul class="sectlevel3">
-<li><a href="#1000">4.D.1. <span class="must-keyword"><strong>MUST</strong></span> for linting we use golint</a></li>
-<li><a href="#1001">4.D.2. <span class="should-keyword"><strong>SHOULD</strong></span> go Vet is used to check go code for correctness in the development process</a></li>
-<li><a href="#1002">4.D.3. <span class="must-keyword"><strong>MUST</strong></span> go Vet is used to check go code for correctness in the build pipeline</a></li>
-<li><a href="#1003">4.D.4. <span class="must-keyword"><strong>MUST</strong></span> use tabs for indentation in Go</a></li>
-<li><a href="#1004">4.D.5. <span class="must-keyword"><strong>MUST</strong></span> use gofmt in the IDE for automatic formatting</a></li>
-<li><a href="#1005">4.D.6. {SHALL} every function is commented</a></li>
-<li><a href="#1006">4.D.7. <span class="must-keyword"><strong>MUST</strong></span> single line multiple declarations are not used</a>
+<li><a href="#270">4.D.1. <span class="must-keyword"><strong>MUST</strong></span> for linting we use golint</a></li>
+<li><a href="#271">4.D.2. <span class="should-keyword"><strong>SHOULD</strong></span> go Vet is used to check go code for correctness in the development process</a></li>
+<li><a href="#273">4.D.3. <span class="must-keyword"><strong>MUST</strong></span> go Vet is used to check go code for correctness in the build pipeline</a></li>
+<li><a href="#274">4.D.4. <span class="must-keyword"><strong>MUST</strong></span> use tabs for indentation in Go</a></li>
+<li><a href="#275">4.D.5. <span class="must-keyword"><strong>MUST</strong></span> use gofmt in the IDE for automatic formatting</a></li>
+<li><a href="#276">4.D.6. {SHALL} every function is commented</a></li>
+<li><a href="#277">4.D.7. <span class="must-keyword"><strong>MUST</strong></span> single line multiple declarations are not used</a>
 <ul class="sectlevel4">
 <li><a href="#_example_1_invalid_declaration">4.D.7.1. Example 1 Invalid declaration</a></li>
 <li><a href="#_example_2_valid_declaration">4.D.7.2. Example 2 Valid declaration</a></li>
 </ul>
 </li>
-<li><a href="#1007">4.D.8. <span class="must-keyword"><strong>MUST</strong></span> we do not try and catch exceptions. Errors are values and we handle errors</a></li>
-<li><a href="#1008">4.D.9. <span class="must-keyword"><strong>MUST</strong></span> errors are handle only once.</a>
+<li><a href="#278">4.D.8. <span class="must-keyword"><strong>MUST</strong></span> we do not try and catch exceptions. Errors are values and we handle errors</a></li>
+<li><a href="#279">4.D.9. <span class="must-keyword"><strong>MUST</strong></span> errors are handle only once.</a>
 <ul class="sectlevel4">
 <li><a href="#_dont_do">4.D.9.1. Don&#8217;t do</a></li>
 <li><a href="#_better">4.D.9.2. Better</a></li>
 <li><a href="#_we_can_also_include_the_stacktrace_in_the_logging">4.D.9.3. We can also include the stacktrace in the logging</a></li>
 </ul>
 </li>
-<li><a href="#1009">4.D.10. <span class="should-keyword"><strong>SHOULD</strong></span> add context to errors when they are meaningless in the context of the (final) receiver.</a>
+<li><a href="#280">4.D.10. <span class="should-keyword"><strong>SHOULD</strong></span> add context to errors when they are meaningless in the context of the (final) receiver.</a>
 <ul class="sectlevel4">
 <li><a href="#_passing_through_context_of_the_error_with_fmt_errorf">4.D.10.1. Passing through context of the error with fmt.Errorf()</a></li>
 <li><a href="#_better_passing_through_context_of_the_error_with_errors_wrap_from_the_github_compkgerrors_package">4.D.10.2. Better &#8594; Passing through context of the error with errors.Wrap() from the "github.com/pkg/errors" package</a></li>
@@ -8361,41 +8361,41 @@ is:</p>
 <p><a href="mailto:dennis.verweij@pon.com">dennis.verweij@pon.com</a></p>
 </div>
 <div class="sect3">
-<h4 id="1000"><a class="link" href="#1000">4.D.1. <span class="must-keyword"><strong>MUST</strong></span> for linting we use golint</a></h4>
+<h4 id="270"><a class="link" href="#270">4.D.1. <span class="must-keyword"><strong>MUST</strong></span> for linting we use golint</a></h4>
 
 </div>
 <div class="sect3">
-<h4 id="1001"><a class="link" href="#1001">4.D.2. <span class="should-keyword"><strong>SHOULD</strong></span> go Vet is used to check go code for correctness in the development process</a></h4>
+<h4 id="271"><a class="link" href="#271">4.D.2. <span class="should-keyword"><strong>SHOULD</strong></span> go Vet is used to check go code for correctness in the development process</a></h4>
 <div class="paragraph">
 <p>We preferably configure our IDE to run go Vet on every save operation.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="1002"><a class="link" href="#1002">4.D.3. <span class="must-keyword"><strong>MUST</strong></span> go Vet is used to check go code for correctness in the build pipeline</a></h4>
+<h4 id="273"><a class="link" href="#273">4.D.3. <span class="must-keyword"><strong>MUST</strong></span> go Vet is used to check go code for correctness in the build pipeline</a></h4>
 <div class="paragraph">
 <p>No code may be build without a code check.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="1003"><a class="link" href="#1003">4.D.4. <span class="must-keyword"><strong>MUST</strong></span> use tabs for indentation in Go</a></h4>
+<h4 id="274"><a class="link" href="#274">4.D.4. <span class="must-keyword"><strong>MUST</strong></span> use tabs for indentation in Go</a></h4>
 <div class="paragraph">
 <p>Unlike the development guidelines for other languages in Go we use tabs for indentation. To improve formatting of code we use gofmt to automatically format go code in de IDE.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="1004"><a class="link" href="#1004">4.D.5. <span class="must-keyword"><strong>MUST</strong></span> use gofmt in the IDE for automatic formatting</a></h4>
+<h4 id="275"><a class="link" href="#275">4.D.5. <span class="must-keyword"><strong>MUST</strong></span> use gofmt in the IDE for automatic formatting</a></h4>
 <div class="paragraph">
 <p>In Go you don&#8217;t worry about formatting yourself and use gofmt for automatic formating. Gofmt directions are leading.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="1005"><a class="link" href="#1005">4.D.6. {SHALL} every function is commented</a></h4>
+<h4 id="276"><a class="link" href="#276">4.D.6. {SHALL} every function is commented</a></h4>
 <div class="paragraph">
 <p>In Go exported functions must be commented and is enforced by linting. Comments on unexported functions are not enforced by linting, but improve readablity of the code.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="1006"><a class="link" href="#1006">4.D.7. <span class="must-keyword"><strong>MUST</strong></span> single line multiple declarations are not used</a></h4>
+<h4 id="277"><a class="link" href="#277">4.D.7. <span class="must-keyword"><strong>MUST</strong></span> single line multiple declarations are not used</a></h4>
 <div class="paragraph">
 <p>For readability only one variable is declared in a single line</p>
 </div>
@@ -8419,13 +8419,13 @@ is:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="1007"><a class="link" href="#1007">4.D.8. <span class="must-keyword"><strong>MUST</strong></span> we do not try and catch exceptions. Errors are values and we handle errors</a></h4>
+<h4 id="278"><a class="link" href="#278">4.D.8. <span class="must-keyword"><strong>MUST</strong></span> we do not try and catch exceptions. Errors are values and we handle errors</a></h4>
 <div class="paragraph">
 <p>In some languages try/catch statements are used. Go does not have that method and we do not try to mimic it. Instead we handle the errors and the errors are just values. You need to assess the value and act upon it.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="1008"><a class="link" href="#1008">4.D.9. <span class="must-keyword"><strong>MUST</strong></span> errors are handle only once.</a></h4>
+<h4 id="279"><a class="link" href="#279">4.D.9. <span class="must-keyword"><strong>MUST</strong></span> errors are handle only once.</a></h4>
 <div class="paragraph">
 <p>We handle errors only once.</p>
 </div>
@@ -8505,7 +8505,7 @@ is:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="1009"><a class="link" href="#1009">4.D.10. <span class="should-keyword"><strong>SHOULD</strong></span> add context to errors when they are meaningless in the context of the (final) receiver.</a></h4>
+<h4 id="280"><a class="link" href="#280">4.D.10. <span class="should-keyword"><strong>SHOULD</strong></span> add context to errors when they are meaningless in the context of the (final) receiver.</a></h4>
 <div class="paragraph">
 <p>When errors are passed it might eventualy be unclear what the origin of the error is. You can pass context to it, but be carefull with fmt.Errorf(), because that will override the initial error with just a string.</p>
 </div>
@@ -11078,7 +11078,7 @@ window.cookieconsent.initialise({
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-08-10 07:28:48 UTC
+Last updated 2020-08-10 15:21:46 UTC
 </div>
 </div>
 <style>
