@@ -8067,6 +8067,10 @@ the following code is more concise by using single quotes:</p>
 <div class="paragraph">
 <p><span class="image"><img src="assets/lang-javascript.svg" alt="Javascript" width="24" height="24"></span> <span class="image"><img src="assets/lang-typescript.svg" alt="Typescript" width="24" height="24"></span> <span class="image"><img src="assets/lang-php.svg" alt="PHP" width="24" height="24"></span></p>
 </div>
+<div class="paragraph">
+<p>An exception for rule 253 is Golang because of it&#8217;s specific implementation for quotations. Double quotes in Go are by default used for strings. These are interpreted string literals and support special characters like escape characters. Back quotes are used for raw string literals and any character can be used between the quotes. Special characters are ignored except for the verbs of the fmt package.
+Single quotes are not used for strings in Go. They represent a rune and are of type int32.</p>
+</div>
 </div>
 <div class="sect4">
 <h5 id="_references_2"><a class="link" href="#_references_2">4.C.3.4. References</a></h5>
@@ -10833,7 +10837,7 @@ window.cookieconsent.initialise({
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-08-07 14:50:03 UTC
+Last updated 2020-08-10 06:16:50 UTC
 </div>
 </div>
 <style>
