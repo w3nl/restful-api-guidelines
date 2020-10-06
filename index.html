@@ -1419,11 +1419,21 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <li><a href="#integration-solution-design">3.2. Solution design</a>
 <ul class="sectlevel3">
 <li><a href="#_microservices">3.2.1. Microservices</a></li>
-<li><a href="#_loosely_coupled">3.2.2. Loosely coupled</a></li>
-<li><a href="#_security">3.2.3. Security</a></li>
-<li><a href="#_monitoring">3.2.4. Monitoring</a></li>
-<li><a href="#_documentation">3.2.5. Documentation</a></li>
-<li><a href="#_security_2">3.2.6. Security</a></li>
+<li><a href="#_connectivity">3.2.2. Connectivity</a>
+<ul class="sectlevel4">
+<li><a href="#281">3.2.2.1. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> have self-healing connectivity</a></li>
+<li><a href="#283">3.2.2.2. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="should-keyword"><strong>SHOULD</strong></span> have increasing reconnection intervals</a></li>
+</ul>
+</li>
+<li><a href="#_loosely_coupled">3.2.3. Loosely coupled</a></li>
+<li><a href="#_security">3.2.4. Security</a></li>
+<li><a href="#_monitoring">3.2.5. Monitoring</a>
+<ul class="sectlevel4">
+<li><a href="#282">3.2.5.1. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> setup monitoring and alerting connections</a></li>
+</ul>
+</li>
+<li><a href="#_documentation">3.2.6. Documentation</a></li>
+<li><a href="#_security_2">3.2.7. Security</a></li>
 </ul>
 </li>
 <li><a href="#integration-generic">3.3. Generic</a>
@@ -2638,23 +2648,53 @@ internal reviews.</p>
 
 </div>
 <div class="sect3">
-<h4 id="_loosely_coupled"><a class="link" href="#_loosely_coupled">3.2.2. Loosely coupled</a></h4>
+<h4 id="_connectivity"><a class="link" href="#_connectivity">3.2.2. Connectivity</a></h4>
+<div class="sect4">
+<h5 id="281"><a class="link" href="#281">3.2.2.1. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> have self-healing connectivity</a></h5>
+<div class="paragraph">
+<p>External connections (e.g. SFTP, Database, SAP or Email) need to be
+<a href="#282">monitored</a> and automatically reset and restored when connection issues
+occur. The frequency for these reconnections and after how many retries to send
+an alert needs to be agreed upon with the business.</p>
+</div>
+<div class="paragraph">
+<p>However, if no such agreements are in place, we set as default to retry once
+every minute and send an alert when reconnection has failed for an hour. After
+the alert has been sent, reconnection attempts must continue until successful.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="283"><a class="link" href="#283">3.2.2.2. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="should-keyword"><strong>SHOULD</strong></span> have increasing reconnection intervals</a></h5>
+<div class="paragraph">
+<p>When reconnection strategies are deployed they should have increasing
+reconnecction intervals. For example: 1s, 2s, 4s etc.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_loosely_coupled"><a class="link" href="#_loosely_coupled">3.2.3. Loosely coupled</a></h4>
 
 </div>
 <div class="sect3">
-<h4 id="_security"><a class="link" href="#_security">3.2.3. Security</a></h4>
+<h4 id="_security"><a class="link" href="#_security">3.2.4. Security</a></h4>
 
 </div>
 <div class="sect3">
-<h4 id="_monitoring"><a class="link" href="#_monitoring">3.2.4. Monitoring</a></h4>
+<h4 id="_monitoring"><a class="link" href="#_monitoring">3.2.5. Monitoring</a></h4>
+<div class="sect4">
+<h5 id="282"><a class="link" href="#282">3.2.5.1. <span class="status-rfp-keyword"><strong>(RFP)</strong></span> <span class="must-keyword"><strong>MUST</strong></span> setup monitoring and alerting connections</a></h5>
+<div class="paragraph">
+<p>All connections must be monitored and alerting has to be setup based on the
+monitoring.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_documentation"><a class="link" href="#_documentation">3.2.6. Documentation</a></h4>
 
 </div>
 <div class="sect3">
-<h4 id="_documentation"><a class="link" href="#_documentation">3.2.5. Documentation</a></h4>
-
-</div>
-<div class="sect3">
-<h4 id="_security_2"><a class="link" href="#_security_2">3.2.6. Security</a></h4>
+<h4 id="_security_2"><a class="link" href="#_security_2">3.2.7. Security</a></h4>
 
 </div>
 </div>
@@ -10934,7 +10974,7 @@ window.cookieconsent.initialise({
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-10-06 12:10:33 UTC
+Last updated 2020-10-06 12:27:00 UTC
 </div>
 </div>
 <style>
