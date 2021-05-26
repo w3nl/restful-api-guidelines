@@ -44,7 +44,7 @@ No code may be build without a code check. This is done by default when rule <<2
 Unlike the development guidelines for other languages in Go we use tabs for indentation. To improve formatting of code we use gofmt to automatically format go code in de IDE. 
 
 [#287]
-== {MUST} use gofmt in the IDE for automatic formatting 
+== {MUST} use gofmt in the IDE and CI pipeline for automatic formatting 
 In Go you don't worry about formatting yourself and use gofmt for automatic formating. Gofmt directions are leading. 
 
 [#288]
