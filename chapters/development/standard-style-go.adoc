@@ -45,7 +45,7 @@ Unlike the development guidelines for other languages in Go we use tabs for inde
 
 [#287]
 == {MUST} use gofmt in the IDE and CI pipeline for automatic formatting 
-In Go you don't worry about formatting yourself and use gofmt for automatic formating. Gofmt directions are leading. 
+In Go you don't worry about formatting yourself and use gofmt for automatic formating. Gofmt directions are leading. GOFMT must part of the CI pipeline and is best used in the IDE on the "save" action. 
 
 [#288]
 == {SHALL} every function is commented
