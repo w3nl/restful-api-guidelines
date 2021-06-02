@@ -70,6 +70,60 @@ var found bool
 var required bool
 ----
 
+[#300]
+== {MUST} global variables are not used
+Global variables can cause al kinds of bugs in your code and result in poor readability and difficult debugging. It is hard to keep track of where the value is modified and will cause race conditions when used in combination with concurrency. 
+
+=== Exception
+There is only one valid reason to use global vars and that is for rule <<299,299>> when it concerns unitialized variables, but only when they are never initialized and modified.
+
+[#298]
+== {MUST} variables and constants have explicitly declared types
+When declaring a variable or a constant the type is explicitly declared. This avoids problems with int, int64 etc.
+
+=== Invalid declaration
+
+[source,go]
+----
+const constant1 = "value of the constant"
+----
+=== Valid declaration
+
+[source,go]
+----
+const constant1 string = "value of the constant"
+----
+
+[#299]
+== {SHOULD} use unitialized variables to check for zero-values
+An uninitialized variable has the zero value for the declared type. This can be used to check if a variable is zero valued in an absolute and readable manner. These unitialized variabled can be used as global vars to avoid recursion. This is an exception to rule 
+
+=== Avoid
+
+[source,go]
+----
+if value == "" {
+    // do something
+}
+----
+
+=== Desired check
+
+[source,go]
+----
+var empty string // this will always be a zero valued string and could be global
+var zero int // this will always be a zero valued int and could be global
+
+if someStringVariable == empty {
+    // do something
+}
+if someIntegerVariable == zero {
+    // do something
+}
+----
+
+
+
 [#278]
 == {MUST} we do not try and catch exceptions. Errors are values and we handle errors
 In some languages try/catch statements are used. Go does not have that method and we do not try to mimic it. Instead we handle the errors and the errors are just values. You need to assess the value and act upon it. 
