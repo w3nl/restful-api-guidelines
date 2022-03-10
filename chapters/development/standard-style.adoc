@@ -7,6 +7,8 @@ Pon standard style can be applied when linters are not available.
 Based on <<standardJs>>, <<googleStyleguideJs>>, <<phpStandards>>,
 <<nasa-safety-code>> and <<gnu-coding-standards>>.
 
+JavaScript: *https://github.com/pondevelopment/ponstandard/packages/1290139[PonStandard]*
+
 [#267]
 == {MUST} encapsulate body of if or else
 
