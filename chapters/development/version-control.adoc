@@ -3,6 +3,9 @@
 
 
 [#255]
+== {MUST} use enterprise account
+All code that is intellectual property must be stored in the enterprise account. Use of personal accounts for the purpose of storing and versioning code that is intellectual property is not permitted.
+
 == {MUST} use review guidelines for version control
 
 All code must be reviewed according to documented and approved guidelines.
