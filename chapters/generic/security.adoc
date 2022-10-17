@@ -33,7 +33,7 @@ Rules] and local privacy legislation such as GDPR or CCPA.
 Must have performed a Security & Privacy intake. When the requirements for
 the new system are clear, the Pon Security & Privacy by Design Process must be
 triggered via completing the
-https://ponintranet.com/en/about-pon/security-privacy/privacy-by-design/[Security
+https://securityprivacy.pon.com/sp-intake/[Security
 & Privacy by Design Intake Form]. The intake process is there to help you create
 APIs that are secure and privacy compliant and friendly. Your Group Security and
 Privacy manager will contact you to discuss the intake.
