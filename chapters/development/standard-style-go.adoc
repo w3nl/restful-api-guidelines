@@ -44,12 +44,12 @@ No code may be build without a code check. This is done by default when rule <<2
 Unlike the development guidelines for other languages in Go we use tabs for indentation. To improve formatting of code we use gofmt to automatically format go code in de IDE. 
 
 [#287]
-== {MUST} use gofmt in the IDE for automatic formatting 
-In Go you don't worry about formatting yourself and use gofmt for automatic formating. Gofmt directions are leading. 
+== {MUST} use gofmt in the IDE and CI pipeline for automatic formatting 
+In Go you don't worry about formatting yourself and use gofmt for automatic formating. Gofmt directions are leading. GOFMT must part of the CI pipeline and is best used in the IDE on the "save" action. 
 
 [#288]
 == {SHALL} every function is commented
-In Go exported functions must be commented and is enforced by linting. Comments on unexported functions are not enforced by linting, but improve readablity of the code. 
+In Go exported functions must be commented and is enforced by linting. Comments on unexported functions are not enforced by linting, but improve readablity of the code. See rule  <<297,297>> for comment syntaxes.
 
 [#277]
 == {MUST} single line multiple declarations are not used
@@ -69,6 +69,60 @@ var valid bool
 var found bool
 var required bool
 ----
+
+[#300]
+== {MUST} global variables are not used
+Global variables can cause al kinds of bugs in your code and result in poor readability and difficult debugging. It is hard to keep track of where the value is modified and will cause race conditions when used in combination with concurrency. Another problem with global variables is that it can cause conflicts when importing packages. When either the package itself or the imported packages has global variables they are available in the other. 
+
+=== Exception
+There is only one valid reason to use global vars and that is for rule <<299,299>> when it concerns unitialized variables, but only when they are never initialized, modified and you are aware of the risks of conflict with imported packages. Rule of thumb is: You don't use global vars when your package is to be imported. 
+
+[#298]
+== {MUST} variables and constants have explicitly declared types
+When declaring a variable or a constant the type is explicitly declared. This avoids problems with int, int64 etc.
+
+=== Invalid declaration
+
+[source,go]
+----
+const constant1 = "value of the constant"
+----
+=== Valid declaration
+
+[source,go]
+----
+const constant1 string = "value of the constant"
+----
+
+[#299]
+== {SHOULD} use unitialized variables to check for zero-values
+An uninitialized variable has the zero value for the declared type. This can be used to check if a variable is zero valued in an absolute and readable manner. These unitialized variabled can be used as global vars to avoid recursion, but be aware of the risks of global vars as stated in rule <<300,300>>. This is an exception to rule 
+
+=== Avoid
+
+[source,go]
+----
+if value == "" {
+    // do something
+}
+----
+
+=== Desired check
+
+[source,go]
+----
+var empty string // this will always be a zero valued string and could be global
+var zero int // this will always be a zero valued int and could be global
+
+if someStringVariable == empty {
+    // do something
+}
+if someIntegerVariable == zero {
+    // do something
+}
+----
+
+
 
 [#278]
 == {MUST} we do not try and catch exceptions. Errors are values and we handle errors
@@ -205,3 +259,54 @@ func something() {
 
 ----
 
+[#297]
+== {SHALL} Documenting comments are always written in the idiomatic syntax.
+The idiomatic syntax for writting comments in go is the // syntax for single line and multi line comments in code. The reason for this is readability. Anyone can spot comment lines instantly even when an IDE is not used. The comment syntax should be followed by a space for readabilty. 
+
+=== Example multi line comments
+[source,go]
+----
+
+// ServiceRequest is used by the core to send a service specification
+// to the plugin.
+// Credentials will be supplied by the core on each ServiceRequest for the
+// plugin to perform configurations on the target platform. The Plugin must not
+// save the credentials, because it can be changed at random and the transport
+// layer must use proper encryption so data can not be read in-flight. The data is base64
+// encoded. The plugin is responsible for being able to read the credentials for
+// the specific platform.
+type ServiceRequest struct {
+	MetaData         metav1beta1.MetaData    `json:",inline"`
+	Credentials      string                  `json:"credentials"`
+	Type             eventsv1beta1.EventType `json:"type"`
+	Service          json.RawMessage         `json:"service"`
+	LinkedService    json.RawMessage         `json:"linkedService"`
+	DependentService json.RawMessage         `json:"dependendService"`
+}
+----
+
+We can also use inline comments, but they are not preferred. 
+[source,go]
+----
+type LogType string
+
+const (
+	DEPLOY     string = "deploy" 
+	BUILD      string = "build" // This is a very special LogType that needs specific comments
+	INITIALIZE string = "initialize"
+	CLONE      string = "clone_repo"
+)
+
+----
+
+Go also supports the block comment syntax of /\*....*/ but is not used inside and between code blocks. A block syntax can be used for the package comment, but only above the package clause at the start of the file (link:https://golang.org/doc/effective_go#commentary[effective go # commentary]).
+
+
+=== Do not use stars or other formatting in comments
+[source.go]
+----
+/**
+* Stars or any other formating are not used in comments.
+* There is also no need to worry about allignment. gofmt takes care of that
+*/
+----
