@@ -5,12 +5,12 @@ This section descibes the generic guidelines for security.
 
 Security and Privacy within Pon is being managed by the Pon Security & Privacy
 Office. All Pon Business Clusters have a dedicated Group
-https://ponintranet.com/profiel/security-privacy/security-privacy-whos-who/[Security
+https://securityprivacy.pon.com/services/our-team/[Security
 and Privacy Manager]. 
 
 Additional resources
 
-- https://ponintranet.com/profiel/security-privacy/privacy-by-design/[Pon Security & Privacy by Design Process - Step by Step]
+- https://securityprivacy.pon.com/pon-data/uploads/2021/02/Pon-Privacy-by-Design-policy.pdf[Pon Security & Privacy by Design Process - Step by Step]
 - https://drive.google.com/drive/folders/1319i3ttsMzCbGk18u0D5ptkpCeacXYOG[Data classification and corresponding security measures]
 
 [#289]
