@@ -3,9 +3,8 @@
 image:https://api.codacy.com/project/badge/Grade/0ea1c25803644664850c891ca9c3775f[link="https://app.codacy.com/gh/PonDigitalSolutions/restful-api-guidelines?utm_source=github.com&utm_medium=referral&utm_content=PonDigitalSolutions/restful-api-guidelines&utm_campaign=Badge_Grade_Dashboard"]
 
 Latest published version:
-https://pondigitalsolutions.github.io/restful-api-guidelines[*HTML*],
-https://pondigitalsolutions.github.io/restful-api-guidelines/pon-guidelines.pdf[*PDF*],
-// https://github.com/PonDigitalSolutions/restful-api-guidelines/pon-guidelines.epub[*EPUB3*]
+https://pondevelopment.github.io/restful-api-guidelines[*HTML*],
+https://pondevelopment.github.io/restful-api-guidelines/pon-guidelines.pdf[*PDF*],
 
 == Purpose
 
