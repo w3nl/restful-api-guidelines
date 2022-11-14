@@ -4,7 +4,7 @@
 
 [#255]
 == {MUST} use enterprise account
-All code that is intellectual property must be stored in the enterprise account. Use of personal accounts for the purpose of storing and versioning code that is intellectual property is not permitted.
+All commissioned code is intellectual property and must be stored in a Pon-managed source code repository. Preferably in the Pon maintained Github environment. Use of personal accounts for the purpose of storing and versioning code that is intellectual property is strictly prohibited.
 
 == {MUST} use review guidelines for version control
 
@@ -16,7 +16,7 @@ Relates to <<244>>.
 * Start reviewing only if the author approved the pull request (PR) and the pipeline passed the linting and automated tests.
 * A review will always result in either an approved or declined PR.
 * A declined PR must be recreated, preferably by the author, when issues have
-been addressed. 
+been addressed.
 * Write comments in a clear, concise, constructive and unambiguous manner as
 described in <<245>>.
 
