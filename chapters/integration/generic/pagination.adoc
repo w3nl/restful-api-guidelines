@@ -138,6 +138,13 @@ this may comprise the support for {prev}, {first}, {last}, and {self} as
 {link-relations}[link relations] (see also <<link-relation-fields>> for
 details).
 
+The first position at the api pagination should be 0, and every next position should be increased by 1.
+Starting with zero makes the math simple.
+API is designed to consumed by another system, and all code starts lists with zero.
+https://en.wikipedia.org/wiki/Zero-based_numbering
+
+If the next position doesn't have results, it shoudn't return a link.
+
 The page content is transported via {items}, while the {query} object may
 contain the query filters applied to the collection resource as follows:
 
