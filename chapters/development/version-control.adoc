@@ -4,7 +4,7 @@
 
 [#255]
 == {MUST} use enterprise account
-All commissioned code is intellectual property and must be stored in a Pon-managed source code repository. Preferably in the Pon maintained Github environment. Use of personal accounts for the purpose of storing and versioning code that is intellectual property is strictly prohibited.
+All commissioned code is intellectual property and must be stored in a Pon-managed source code repository, preferably in the Pon-maintained Github environment. Use of personal accounts to store and version code that is intellectual property is strictly prohibited.
 
 == {MUST} use review guidelines for version control
 
